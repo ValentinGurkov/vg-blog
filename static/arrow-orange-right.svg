@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="6px" height="10px" viewBox="0 0 6 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>keyboard-right-arrow-button</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop/Message/2" transform="translate(-405.000000, -16.000000)" fill="#FF6C0C">
+            <g id="Arrows" transform="translate(405.000000, 11.000000)">
+                <polygon id="keyboard-right-arrow-button" transform="translate(3.000000, 9.500000) scale(-1, 1) rotate(180) translate(-3.000000, -9.500000) " points="1.121 5.398 0 6.519 3.68 10.199 0 13.878 1.121 15 5.922 10.199"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

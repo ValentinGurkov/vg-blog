@@ -1,0 +1,262 @@
+@import '../../scss/variables';
+
+.footer {
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-gap: 1em;
+  grid-auto-columns: 1fr;
+}
+
+.footerTop {
+  color: $white;
+  background-color: $paynes-grey;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(3, 1fr);
+
+  .footerHeading {
+    position: relative;
+    outline: none;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-left: 10px;
+    font-size: 13px;
+    margin: 24px 0;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      transform: skewX(-30deg);
+      transform-origin: 0 100%;
+      left: 0px;
+      background: $safety-orange;
+      width: 2px;
+      height: 9px;
+      top: 4px;
+    }
+  }
+
+  .footerParagraph {
+    color: $white;
+    padding-bottom: 15px;
+    font-size: 12px;
+    line-height: 2.7em;
+    margin: 0;
+  }
+
+  .newsLetter {
+    justify-self: end;
+    padding-bottom: 45px;
+    min-width: 300px;
+
+    .footerInput {
+      border: none;
+      background-color: $liver;
+      margin-left: 0;
+      width: 255px;
+      height: 38px;
+      text-indent: 15px;
+      outline: none;
+      color: $white;
+
+      &::placeholder {
+        font-size: 12px;
+      }
+    }
+
+    .footerButton {
+      cursor: pointer;
+      vertical-align: top;
+      font-weight: bold;
+      font-size: 12px;
+      background-color: #4d4c4d;
+      border: none;
+      color: #ff6c0c;
+      height: 40px;
+      padding: 0;
+      width: 140px;
+      outline: none;
+      text-transform: uppercase;
+      border-radius: 0;
+    }
+  }
+
+  .contact {
+    justify-self: center;
+
+    .contactList {
+      font-size: 12px;
+      list-style: none;
+      line-height: 2.7em;
+      padding: 0;
+      margin: 0;
+      color: $nobel;
+
+      .contactLink {
+        list-style: none;
+
+        a {
+          color: $nobel;
+          text-decoration: none;
+          outline: none;
+        }
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .followUs {
+    justify-self: center;
+
+    .socialIcons {
+      display: grid;
+      grid-gap: 1em;
+      grid-template-columns: repeat(3, 1fr);
+
+      .socialIcon {
+        width: 30px;
+        height: 21px;
+        padding-right: 5px;
+      }
+    }
+  }
+}
+
+.footerBottom {
+  font-size: 12px;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(auto-fit, 300px);
+  background-color: $white;
+  color: $grey-chateau;
+  white-space: nowrap;
+
+  .footerLogo {
+    justify-self: end;
+    align-self: end;
+  }
+
+  .copyright {
+    justify-self: center;
+    align-self: center;
+  }
+
+  nav {
+    justify-self: center;
+    align-self: center;
+
+    .footerNav {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: inline-grid;
+      grid-gap: 2em;
+      grid-template-columns: repeat(3, 1fr);
+
+      .footerLink {
+        list-style: none;
+
+        .footerLinkItem {
+          text-decoration: none;
+          border: none;
+          color: inherit;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .footer {
+    max-width: 1650px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footerTop {
+    grid-template-columns: 1fr;
+    padding: 30px 4%;
+
+    .newsLetter {
+      border-top: 0.5px solid rgba(151, 153, 155, 0.3);
+      justify-self: start;
+      width: 100%;
+      padding-bottom: 0;
+    }
+
+    .contact {
+      border-top: 0.5px solid rgba(151, 153, 155, 0.3);
+      justify-self: start;
+      width: 100%;
+    }
+
+    .followUs {
+      border-top: 0.5px solid rgba(151, 153, 155, 0.3);
+      justify-self: start;
+      width: 100%;
+
+      .socialIcons {
+        display: inline-grid;
+        grid-template-columns: repeat(5, 1fr);
+        width: 33%;
+      }
+    }
+  }
+
+  .footerBottom {
+    grid-template-columns: 1fr;
+
+    .footerLogo {
+      justify-self: center;
+    }
+
+    .copyright {
+      padding-bottom: 15px;
+    }
+
+    nav {
+      .footerNav {
+        grid-gap: 0;
+
+        .footerLink {
+          justify-self: center;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .footerTop {
+    .newsLetter {
+      .footerButton {
+        width: 80px;
+        text-align: left;
+      }
+    }
+  }
+  .footerBottom {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 365px) {
+  .footerTop {
+    .newsLetter {
+      .footerInput {
+        width: 200px;
+      }
+      .footerButton {
+        width: 80px;
+        text-align: left;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.logo {
+  align-self: center;
+  width: 164px;
+  background-color: white;
+  l img {
+    max-width: 100%;
+  }
+}
+
+.footerLogo {
+  align-self: center;
+  width: 164px;
+  background-color: black;
+  l img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .logo {
+    width: 40px;
+  }
+}

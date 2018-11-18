@@ -1,0 +1,42 @@
+@import '../../scss/variables';
+
+.wrapper {
+  display: grid;
+  width: 100%px;
+  height: 65px;
+  padding: 0 15px;
+  box-sizing: border-box;
+  background: $paynes-grey;
+  margin: 0 auto;
+  grid-template-columns: 10% 1fr;
+}
+
+.navigation {
+  align-self: center;
+}
+
+.visuallyHidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+@media (min-width: 900px) {
+  .wrapper {
+    max-width: 1650px;
+  }
+}
+
+@media (max-width: 499px) {
+  .navigation {
+    justify-self: right;
+  }
+  .desktopOnly {
+    display: none;
+  }
+}

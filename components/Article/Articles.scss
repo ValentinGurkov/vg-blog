@@ -1,0 +1,10 @@
+.articles {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 500px);
+  grid-gap: 1em;
+  text-align: center;
+  justify-content: center;
+  margin: 0;
+  padding: 40px 0;
+}
