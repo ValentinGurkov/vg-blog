@@ -3,13 +3,14 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "set NODE_ENV=production& node server.js"
+    "start": "next start"
   },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
     "autoprefixer": "^9.3.1",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
+    "google-maps-react": "^2.0.2",
     "moment": "^2.22.2",
     "next": "^7.0.2",
     "node-sass": "^4.10.0",

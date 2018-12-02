@@ -49,6 +49,10 @@ app
       res.status(200).sendFile('favicon.ico', faviconOptions)
     )
 
+    server.get('/privacy-policy', (req, res) => {
+      return app.render(req, res, '/privacy', req.query)
+    })
+
     server.get('/blog/:slug', (req, res) => {
       const nextJsPage = '/blogPost'
       const queryParams = { slug: req.params.slug }

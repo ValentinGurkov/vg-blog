@@ -109,22 +109,24 @@ const footer = () => {
         <nav>
           <ul className={classes.footerNav}>
             <li className={classes.footerLink}>
-              <Link href='/terms'>
+              <Link href='/terms' as='terms-and-conditions'>
                 <a className={classes.footerLinkItem} title='Terms'>
                   Terms
                 </a>
               </Link>
             </li>
             <li className={classes.footerLink}>
-              <Link href='/privacyPolicy' as='/privacy-policy'>
-                <a className={classes.footerLinkItem} title='Terms'>
+              <Link href='/privacy' as='/privacy-policy'>
+                <a
+                  className={classes.footerLinkItem}
+                  title='Privacy and Cookie Policy'>
                   Privacy & Cookie Policy
                 </a>
               </Link>
             </li>
             <li className={classes.footerLink}>
               <Link href='/sitemap'>
-                <a className={classes.footerLinkItem} title='Terms'>
+                <a className={classes.footerLinkItem} title='Site Map'>
                   Site Map
                 </a>
               </Link>

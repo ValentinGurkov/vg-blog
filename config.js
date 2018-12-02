@@ -22,3 +22,6 @@ export const DEFAULT_SEO = {
     cardType: 'summary_large_image'
   }
 };
+
+export const GOOGLE_API_KEY = 'AIzaSyB8fvIWLECBvLWsyULSfpdt9oHYU95_vH4';
+export const OFFICE_COORDINATES = { lat: -6.1028928, lng: 105.4226227 };
