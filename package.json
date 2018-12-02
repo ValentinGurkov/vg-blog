@@ -3,6 +3,7 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
+    "heroku-postbuild": "yarn build",
     "start": "next start"
   },
   "dependencies": {
