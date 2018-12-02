@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "heroku-postbuild": "npm run build",
+    "postinstall": "npm run build"
     "start": "next start"
   },
   "dependencies": {
