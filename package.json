@@ -4,6 +4,7 @@
     "dev": "node server.js",
     "build": "next build",
     "postinstall": "npm run build",
+     "heroku-postbuild": "npm run build",
     "start": "next start"
   },
   "dependencies": {
