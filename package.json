@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build",
     "start": "next start"
   },
   "dependencies": {
