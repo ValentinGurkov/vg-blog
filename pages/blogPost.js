@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Head from 'next/head';
 import { RichText } from 'prismic-reactjs';
 import { getBlogPostAPI } from '../api';
-import linkResolver from '../helpers';
+import linkResolver from '../lib/prismic';
 import { ROOT_URL } from '../config';
 
 const addJSONLD = (post, info, postUrl, logoUrl) => {
