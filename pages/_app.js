@@ -1,8 +1,7 @@
 import React from 'react';
 import App, { Container } from 'next/app';
 import Head from 'next/head';
-import Header from '../containers/Header/Hader';
-import Footer from '../components/Footer/Footer';
+import Layout from '../components/Layout/Layout';
 import { DEFAULT_SEO } from '../config';
 import '../scss/global.scss';
 export default class MyApp extends App {
@@ -80,11 +79,11 @@ export default class MyApp extends App {
             content={DEFAULT_SEO.openGraph.url}
           />
         </Head>
-        <Header />
-        <main>
-          <Component {...pageProps} />
-        </main>
-        <Footer />
+        <Layout>
+          <main>
+            <Component {...pageProps} />
+          </main>
+        </Layout>
       </Container>
     );
   }

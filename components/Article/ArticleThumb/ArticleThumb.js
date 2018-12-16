@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import moment from 'moment';
-import { linkResolver } from '../../../helpers/';
+import { linkResolver } from '../../../lib/prismic';
 import classes from './ArticleThumb.scss';
 
 const ArticleThumb = props => {
