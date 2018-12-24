@@ -14,6 +14,9 @@ module.exports = sitemap => {
   let diskPages = glob.sync(SOURCE);
 
   diskPages.forEach(page => {
+    if (page.match(/.*\/blogPost$/)) {
+      continue;
+    }
     let stats = fs.statSync(page);
     let modDate = new Date(stats.mtime);
     let lastMod = `${modDate.getFullYear()}-${(
@@ -27,13 +30,22 @@ module.exports = sitemap => {
 
     if (page.match(/.*\/index$/)) {
       page = page.replace(/(.*)index$/, '$1');
+      sitemap.add({
+        url: page,
+        lastmodISO: lastMod,
+        changefreq: 'always',
+        priority: 1
+      });
+    } else {
+      if (page.match(/.*\/privacy$/)) {
+        page = page.replace(/(.*)privacy$/, '$1privacy-policy');
+      }
+      sitemap.add({
+        url: page,
+        lastmodISO: lastMod,
+        changefreq: 'always',
+        priority: 0.5
+      });
     }
-
-    sitemap.add({
-      url: page,
-      lastmodISO: lastMod,
-      changefreq: 'always',
-      priority: 0.5
-    });
   });
 };

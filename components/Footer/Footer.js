@@ -125,7 +125,7 @@ const footer = () => {
               </Link>
             </li>
             <li className={classes.footerLink}>
-              <Link href='/sitemap'>
+              <Link href='/sitemap.xml'>
                 <a className={classes.footerLinkItem} title='Site Map'>
                   Site Map
                 </a>
