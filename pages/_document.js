@@ -97,6 +97,7 @@ export default class MyDocument extends Document {
             rel='shortcut icon'
             href='/static/favicon.ico'
           />
+          <meta name='robots' content='index,follow' />
           <meta key={DEFAULT_SEO.charset} charSet={DEFAULT_SEO.charset} />
           <meta
             key='viewport'

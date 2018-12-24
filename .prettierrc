@@ -5,7 +5,7 @@
   "jsxBracketSameLine": true,
   "overrides": [
     {
-      "files": "server.js",
+      "files": "/server/index.js",
       "options": {
         "semi": false,
         "singleQuote": true,
