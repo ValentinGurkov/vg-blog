@@ -14,11 +14,17 @@ const sitemap = sm.createSitemap({
 const setup = async ({ server }) => {
   const posts = await require('./posts');
   let post;
+  let modDate;
   for (let i = 0; i < posts.length; i += 1) {
     post = posts[i];
+    modDate = new Date(post.last_publication_date);
+    modDate = `${modDate.getFullYear()}-${(
+      '0' +
+      (modDate.getMonth() + 1)
+    ).slice(-2)}-${('0' + modDate.getDate()).slice(-2)}`;
     sitemap.add({
       url: `/blog/${post.uid}`,
-      lastmodISO: post.last_publication_date,
+      lastmodISO: modDate,
       changefreq: 'daily',
       priority: 0.9
     });
