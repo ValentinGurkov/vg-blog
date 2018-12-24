@@ -15,7 +15,7 @@ module.exports = sitemap => {
 
   diskPages.forEach(page => {
     if (page.match(/.*\/blogPost$/)) {
-      continue;
+      return;
     }
     let stats = fs.statSync(page);
     let modDate = new Date(stats.mtime);
