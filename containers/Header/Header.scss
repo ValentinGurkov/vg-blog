@@ -2,7 +2,7 @@
 
 .wrapper {
   display: grid;
-  width: 100%px;
+  width: 100px;
   height: 65px;
   padding: 0 15px;
   box-sizing: border-box;
@@ -36,6 +36,7 @@
   .navigation {
     justify-self: right;
   }
+
   .desktopOnly {
     display: none;
   }

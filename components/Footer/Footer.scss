@@ -19,7 +19,6 @@
   .footerHeading {
     position: relative;
     outline: none;
-    margin: 0;
     text-transform: uppercase;
     font-weight: bold;
     padding-left: 10px;
@@ -32,7 +31,7 @@
       position: absolute;
       transform: skewX(-30deg);
       transform-origin: 0 100%;
-      left: 0px;
+      left: 0;
       background: $safety-orange;
       width: 2px;
       height: 9px;
@@ -242,6 +241,7 @@
       }
     }
   }
+
   .footerBottom {
     margin-bottom: 20px;
   }
@@ -253,6 +253,7 @@
       .footerInput {
         width: 200px;
       }
+
       .footerButton {
         width: 80px;
         text-align: left;

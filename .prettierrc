@@ -9,9 +9,7 @@
       "files": "server/*.js",
       "options": {
         "semi": false,
-        "singleQuote": true,
-        "jsxSingleQuote": true,
-        "jsxBracketSameLine": true
+        "singleQuote": true
       }
     }
   ]
