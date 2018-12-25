@@ -9,6 +9,9 @@
       "classes": true
     }
   },
+  "settings": {
+    "import/resolver": "babel-plugin-root-import"
+  },
   "env": {
     "browser": true,
     "node": true,

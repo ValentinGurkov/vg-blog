@@ -7,7 +7,7 @@ const Logo = props => (
   <div className={props.footer ? classes.footerLogo : classes.logo}>
     <Link prefetch href='/'>
       <a title='Home'>
-        <img src={props.src} alt='Logo' />
+        <img width='40px' height='40px' src={props.src} alt='Logo' />
       </a>
     </Link>
   </div>

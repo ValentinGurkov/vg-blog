@@ -21,18 +21,16 @@ class Hader extends Component {
   render() {
     const desktopNav = [classes.navigation, classes.desktopOnly].join(' ');
     return (
-      <>
-        <header>
-          <div className={classes.wrapper}>
-            <Logo src='/static/logo.svg' />
-            <nav className={desktopNav}>
-              <NavigationItems />
-            </nav>
-            <DrawerToggle clicked={this.sideDrawerToggledHandler} />
-            <SideDrawer open={this.state.showSideDrawer} closed={this.sideDrawerClosedHandler} />
-          </div>
-        </header>
-      </>
+      <header>
+        <div className={classes.wrapper}>
+          <Logo src='/static/logo.svg' />
+          <nav className={desktopNav}>
+            <NavigationItems />
+          </nav>
+          <DrawerToggle clicked={this.sideDrawerToggledHandler} />
+          <SideDrawer open={this.state.showSideDrawer} closed={this.sideDrawerClosedHandler} />
+        </div>
+      </header>
     );
   }
 }
