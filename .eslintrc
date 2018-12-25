@@ -38,12 +38,7 @@
         "allowTaggedTemplates": true
       }
     ],
-    "no-param-reassign": [
-      2,
-      {
-        "props": false
-      }
-    ],
+    "no-param-reassign": 0,
     "no-console": 0,
     "import/prefer-default-export": 0,
     "import": 0,
@@ -87,9 +82,9 @@
     "prettier/prettier": [
       "error",
       {
-        "trailingComma": "es5",
+        "trailingComma": "none",
         "singleQuote": true,
-        "printWidth": 80
+        "printWidth": 120
       }
     ],
     "jsx-a11y/href-no-hash": "off",
@@ -98,7 +93,12 @@
       {
         "aspects": ["invalidHref"]
       }
-    ]
+    ],
+    "react/destructuring-assignment": 0,
+    "global-require": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "no-await-in-loop": 0
   },
   "plugins": ["prettier"]
 }

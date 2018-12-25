@@ -67,59 +67,19 @@ export default class MyDocument extends Document {
             sizes='180x180'
             href='/static/icons/apple-touch-icon-180x180.png'
           />
-          <link
-            key='icon-32x32'
-            rel='icon'
-            type='image/png'
-            sizes='32x32'
-            href='/static/icons/favicon-32x32.png'
-          />
-          <link
-            key='icon-16x16'
-            rel='icon'
-            type='image/png'
-            sizes='16x16'
-            href='/static/icons/favicon-16x16.png'
-          />
-          <link
-            key='manifest'
-            rel='manifest'
-            href='/static/icons/site.webmanifest'
-          />
-          <link
-            key='mask-icon'
-            rel='mask-icon'
-            href='/static/icons/safari-pinned-tab.svg'
-            color='#414042'
-          />
-          <link
-            key='shortcut icon'
-            rel='shortcut icon'
-            href='/static/favicon.ico'
-          />
+          <link key='icon-32x32' rel='icon' type='image/png' sizes='32x32' href='/static/icons/favicon-32x32.png' />
+          <link key='icon-16x16' rel='icon' type='image/png' sizes='16x16' href='/static/icons/favicon-16x16.png' />
+          <link key='manifest' rel='manifest' href='/static/icons/site.webmanifest' />
+          <link key='mask-icon' rel='mask-icon' href='/static/icons/safari-pinned-tab.svg' color='#414042' />
+          <link key='shortcut icon' rel='shortcut icon' href='/static/favicon.ico' />
           <meta name='robots' content='index,follow' />
           <meta key={DEFAULT_SEO.charset} charSet={DEFAULT_SEO.charset} />
-          <meta
-            key='viewport'
-            name='viewport'
-            content='width=device-width, initial-scale=1'
-          />
-          <meta
-            key='msapplication-TileColor'
-            name='msapplication-TileColor'
-            content='#da532c'
-          />
-          <meta
-            key='msapplication-config'
-            name='msapplication-config'
-            content='/static/icons/browserconfig.xml'
-          />
+          <meta key='viewport' name='viewport' content='width=device-width, initial-scale=1' />
+          <meta key='msapplication-TileColor' name='msapplication-TileColor' content='#da532c' />
+          <meta key='msapplication-config' name='msapplication-config' content='/static/icons/browserconfig.xml' />
           <meta key='theme-color' name='theme-color' content='#ff6c0c' />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
-          <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-          />
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
           <script
             dangerouslySetInnerHTML={{
               __html: `

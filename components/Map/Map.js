@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import PropTypes from 'prop-types';
 import { GOOGLE_API_KEY, OFFICE_COORDINATES } from '../../config';
 import classes from './Map.scss';
 
@@ -16,7 +17,7 @@ export class MapContainer extends Component {
         }}>
         <Marker
           title={"VG Blog's Office."}
-          name={'Office'}
+          name='Office'
           position={{
             lat: OFFICE_COORDINATES.lat,
             lng: OFFICE_COORDINATES.lng
@@ -26,6 +27,10 @@ export class MapContainer extends Component {
     );
   }
 }
+
+MapContainer.propTypes = {
+  google: PropTypes.object.isRequired
+};
 
 export default GoogleApiWrapper({
   apiKey: GOOGLE_API_KEY

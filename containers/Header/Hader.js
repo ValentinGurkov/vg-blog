@@ -17,6 +17,7 @@ class Hader extends Component {
   sideDrawerClosedHandler = () => {
     this.setState({ showSideDrawer: false });
   };
+
   render() {
     const desktopNav = [classes.navigation, classes.desktopOnly].join(' ');
     return (
@@ -28,10 +29,7 @@ class Hader extends Component {
               <NavigationItems />
             </nav>
             <DrawerToggle clicked={this.sideDrawerToggledHandler} />
-            <SideDrawer
-              open={this.state.showSideDrawer}
-              closed={this.sideDrawerClosedHandler}
-            />
+            <SideDrawer open={this.state.showSideDrawer} closed={this.sideDrawerClosedHandler} />
           </div>
         </header>
       </>

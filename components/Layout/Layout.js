@@ -8,14 +8,12 @@ import * as gtag from '../../lib/gtag';
 
 Router.events.on('routeChangeComplete', url => gtag.pageview(url));
 
-const Layout = ({ children }) => {
-  return (
-    <>
-      <Header />
-      {children}
-      <Footer />
-    </>
-  );
-};
+const Layout = ({ children }) => (
+  <>
+    <Header />
+    {children}
+    <Footer />
+  </>
+);
 
 export default Layout;

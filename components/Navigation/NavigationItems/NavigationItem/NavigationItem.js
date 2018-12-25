@@ -5,7 +5,7 @@ import classes from './NavigationItem.scss';
 
 const NavigationItem = props => (
   <li className={classes.menuItem}>
-    <Link prefetch href={props.to} prefetch={props.prefetch}>
+    <Link as={props.as} href={props.to} prefetch>
       <a className={classes.menuLink} title={props.title}>
         {props.children}
       </a>
@@ -16,7 +16,6 @@ const NavigationItem = props => (
 NavigationItem.propTypes = {
   to: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  prefetch: PropTypes.bool,
   as: PropTypes.string,
   children: PropTypes.string.isRequired
 };

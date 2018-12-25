@@ -15,12 +15,12 @@ export const DEFAULT_SEO = {
     image: 'http://localhost:3000/static/icons/og-image.png',
     site_name: 'vgblog.com',
     imageWidth: 279,
-    imageHeight: 279
+    imageHeight: 279,
   },
   twitter: {
     handle: '@vgblog',
-    cardType: 'summary_large_image'
-  }
+    cardType: 'summary_large_image',
+  },
 };
 
 export const GOOGLE_API_KEY = 'AIzaSyB8fvIWLECBvLWsyULSfpdt9oHYU95_vH4';

@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import PropTypes from 'prop-types';
 import classes from './Logo.scss';
 
 const Logo = props => (
@@ -11,5 +12,10 @@ const Logo = props => (
     </Link>
   </div>
 );
+
+Logo.propTypes = {
+  footer: PropTypes.bool,
+  src: PropTypes.string.isRequired
+};
 
 export default Logo;

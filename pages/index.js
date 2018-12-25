@@ -1,5 +1,5 @@
 import React from 'react';
-import Head from 'next/head';
+import PropTypes from 'prop-types';
 import FeaturedArticle from '../components/Article/FeaturedArticle/FeaturedArticle';
 import { getBlogPostsAPI } from '../api';
 
@@ -11,6 +11,10 @@ Index.getInitialProps = async () => {
   return {
     posts: response.results
   };
+};
+
+Index.propTypes = {
+  posts: PropTypes.array.isRequired
 };
 
 export default Index;
