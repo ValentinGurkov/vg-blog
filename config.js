@@ -1,5 +1,6 @@
 export const PRISMIC_API_URL = 'https://uniblog.cdn.prismic.io/api/v2';
-export const ROOT_URL = 'http://localhost:3000';
+export const ROOT_URL = process.env.SITE_ROOT || 'https://valentingurkov.herokuapp.com'
+;
 export const DEFAULT_SEO = {
   title: 'VG BLOG',
   description: 'Making good health and lifestyle choices has never been easier',
