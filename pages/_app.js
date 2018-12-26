@@ -1,9 +1,9 @@
 import React from 'react';
 import App, { Container } from 'next/app';
 import Head from 'next/head';
-import Layout from '../components/Layout/Layout';
-import { DEFAULT_SEO } from '../config';
-import '../scss/global.scss';
+import Layout from '~/components/Layout/Layout';
+import { DEFAULT_SEO } from '~/config';
+import '~/scss/global.scss';
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
