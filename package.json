@@ -5,7 +5,7 @@
     "build": "next build",
     "postinstall": "yarn build",
     "start": "NODE_ENV=production node server/",
-    "start:windows": "set NODE_ENV=production& node server/",
+    "start:win": "set NODE_ENV=production& node server/",
     "lint:js": "eslint --fix --ext .js pages components server containers lib api next.config.js",
     "lint:css": "stylelint --fix containers/**/*.scss components/**/*.scss",
     "lint": "yarn lint:js && yarn lint:css",

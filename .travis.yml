@@ -4,9 +4,14 @@ node_js:
 script:
   - yarn lint
   - yarn test
+  - 'yarn build'
 notifications:
   email:
     on_failure: change
+cache:
+  yarn: true
+  directories:
+    - node_modules
 deploy:
   provider: heroku
   app: valentingurkov
