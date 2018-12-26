@@ -1,0 +1,22 @@
+version: '2'
+plugins:
+  eslint:
+    enabled: true
+    channel: 'eslint-5'
+    config:
+      ignore_warnings: true
+      config: /.eslintrc
+  stylelint:
+    enabled: true
+    config:
+      ignore_warnings: true
+      config: /.stylelintrc
+  editorconfig:
+    enabled: true
+    config:
+      editorconfig: /.editorconfig
+
+exclude_paths:
+  - node_modules/
+  - .next/
+  - static/
