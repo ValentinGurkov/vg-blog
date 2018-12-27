@@ -12,7 +12,7 @@ export default class MyDocument extends Document {
     return (
       <html lang='en'>
         <Head>
-          <link key='manifest' rel='manifest' href='/static/manifest' />
+          <link key='manifest' rel='manifest' href='/_next/static/manifest.json' />
           <link
             key='apple-touch-icon-57x57'
             rel='apple-touch-icon'
@@ -69,7 +69,7 @@ export default class MyDocument extends Document {
           />
           <link key='icon-32x32' rel='icon' type='image/png' sizes='32x32' href='/static/icons/favicon-32x32.png' />
           <link key='icon-16x16' rel='icon' type='image/png' sizes='16x16' href='/static/icons/favicon-16x16.png' />
-          <link key='manifest' rel='manifest' href='/static/manifest' />
+          <link key='manifest' rel='manifest' href='/_next/static/manifest.json' />
           <link key='mask-icon' rel='mask-icon' href='/static/icons/safari-pinned-tab.svg' color='#414042' />
           <link key='shortcut icon' rel='shortcut icon' href='/static/favicon.ico' />
           <meta name='robots' content='index,follow' />
