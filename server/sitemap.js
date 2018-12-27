@@ -11,7 +11,7 @@ const sitemap = sm.createSitemap({
   cacheTime: 600000 // 600 sec - cache purge period
 })
 
-const setup = async ({ server }) => {
+const setup = async () => {
   const posts = await require('./posts')
   let post
   let modDate
@@ -29,26 +29,7 @@ const setup = async ({ server }) => {
 
   require('./pages')(sitemap)
 
-  server.get('/sitemap.xml', (req, res) => {
-    sitemap.toXML((err, xml) => {
-      if (err) {
-        res.status(500).end()
-        return
-      }
-
-      res.header('Content-Type', 'application/xml;charset=UTF-8')
-      res.status(200).send(xml)
-    })
-  })
-
-  const robotsOptions = {
-    root: path.join(__dirname, '../static'),
-    headers: {
-      'Content-Type': 'text/plain;charset=UTF-8'
-    }
-  }
-
-  server.get('/robots.txt', (req, res) => res.status(200).sendFile('robots.txt', robotsOptions))
+  return sitemap
 }
 
 module.exports = setup

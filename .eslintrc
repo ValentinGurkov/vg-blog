@@ -14,7 +14,8 @@
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
       "impliedStrict": true,
-      "classes": true
+      "classes": true,
+      "jsx": true
     }
   },
   "settings": {
@@ -90,14 +91,8 @@
         "allowTemplateLiterals": true
       }
     ],
-    "prettier/prettier": [
-      "error",
-      {
-        "trailingComma": "none",
-        "singleQuote": true,
-        "printWidth": 120
-      }
-    ],
+    "jsx-quotes": ["error", "prefer-single"],
+    "prettier/prettier": "error",
     "jsx-a11y/href-no-hash": "off",
     "jsx-a11y/anchor-is-valid": [
       "warn",
@@ -111,5 +106,5 @@
     "jsx-a11y/click-events-have-key-events": 1,
     "no-await-in-loop": 0
   },
-  "plugins": ["prettier", "jest", "import"]
+  "plugins": ["prettier", "jest", "import", "jsx-a11y", "promise", "react"]
 }

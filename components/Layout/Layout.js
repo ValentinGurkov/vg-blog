@@ -1,10 +1,10 @@
 import React from 'react';
 import Router from 'next/router';
 
-import Header from '../../containers/Header/Hader';
+import Header from '~/containers/Header/Header';
 import Footer from '../Footer/Footer';
 
-import * as gtag from '../../lib/gtag';
+import * as gtag from '~/lib/gtag';
 
 Router.events.on('routeChangeComplete', url => gtag.pageview(url));
 

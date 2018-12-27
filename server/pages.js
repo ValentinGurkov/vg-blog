@@ -12,7 +12,7 @@ module.exports = sitemap => {
   const diskPages = glob.sync(SOURCE)
 
   diskPages.forEach(page => {
-    if (page.match(/.*\/blogPost$/)) {
+    if (page.match(/.*\/blogPost.js$/)) {
       return
     }
     const stats = fs.statSync(page)

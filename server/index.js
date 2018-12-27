@@ -7,7 +7,7 @@ const port = parseInt(process.env.PORT, 10) || 3000
 const root = dev ? `http://localhost:${port}` : 'https://valentingurkov.herokuapp.com'
 const app = next({ dev })
 const handle = app.getRequestHandler()
-const sitemapAndRobots = require('./sitemapAndRobots')
+const generateSitemap = require('./sitemap')
 
 if (dev) {
   require('dotenv').load()
@@ -17,7 +17,7 @@ require('pretty-error').start()
 
 app
   .prepare()
-  .then(async () => {
+  .then(() => {
     const server = express()
 
     /* server.get('/b', (req, res) => {
@@ -28,12 +28,32 @@ app
     return app.render(req, res, '/posts', { id: req.params.id })
   }) */
 
-    await sitemapAndRobots({ server })
+    server.get('/sitemap.xml', async (req, res) => {
+      const sitemap = await generateSitemap()
+      sitemap.toXML((err, xml) => {
+        if (err) {
+          res.status(500).end()
+          return
+        }
+
+        res.header('Content-Type', 'application/xml;charset=UTF-8')
+        res.status(200).send(xml)
+      })
+    })
 
     const faviconOptions = {
       root: path.join(__dirname, '../static')
     }
     server.get('/favicon.ico', (req, res) => res.status(200).sendFile('favicon.ico', faviconOptions))
+
+    const robotsOptions = {
+      root: path.join(__dirname, '../static'),
+      headers: {
+        'Content-Type': 'text/plain;charset=UTF-8'
+      }
+    }
+
+    server.get('/robots.txt', (req, res) => res.status(200).sendFile('robots.txt', robotsOptions))
 
     server.get('/privacy-policy', (req, res) => app.render(req, res, '/privacy', req.query))
 
@@ -52,5 +72,5 @@ app
   })
   .catch(ex => {
     console.error(ex.stack)
-    process.exit(1)
+    throw new Error()
   })
