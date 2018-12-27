@@ -5,7 +5,6 @@ if (dev) {
 const express = require('express')
 const next = require('next')
 const { join } = require('path')
-const { parse } = require('url')
 const LRUCache = require('lru-cache')
 const generateSitemap = require('./generateSitemap')
 
@@ -101,7 +100,8 @@ async function renderAndCache(req, res, pagePath, queryParams) {
     const html = await app.renderToHTML(req, res, pagePath, queryParams)
 
     // if something wrong with the request, let's skip the cache
-    if (dev || res.statusCode !== 200) {
+    if (true) {
+      // dev || res.statusCode !== 200
       res.send(html)
       return
     }
