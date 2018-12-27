@@ -30,6 +30,16 @@ app
   .then(() => {
     const server = express()
 
+    server.get('/', (req, res) => renderAndCache(req, res))
+
+    server.get('/privacy-policy', (req, res) => renderAndCache(req, res, '/privacy', req.query))
+
+    server.get('/blog/:slug', (req, res) => {
+      const nextJsPage = '/blogPost'
+      const queryParams = { slug: req.params.slug }
+      renderAndCache(req, res, nextJsPage, queryParams)
+    })
+
     server.get('/sitemap.xml', async (req, res) => {
       const sitemap = await generateSitemap()
       sitemap.toXML((err, xml) => {
@@ -56,14 +66,6 @@ app
     }
 
     server.get('/robots.txt', (req, res) => res.status(200).sendFile('robots.txt', robotsOptions))
-
-    server.get('/privacy-policy', (req, res) => renderAndCache(req, res, '/privacy', req.query))
-
-    server.get('/blog/:slug', (req, res) => {
-      const nextJsPage = '/blogPost'
-      const queryParams = { slug: req.params.slug }
-      renderAndCache(req, res, nextJsPage, queryParams)
-    })
 
     server.get('*', (req, res) => {
       if (req.url.includes('/service-worker.js')) {
