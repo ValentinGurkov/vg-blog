@@ -18,9 +18,9 @@ describe('<Logo/>', () => {
   it('should have image with title and alt', () => {
     const img = wrapper.find('img');
     expect(img).toHaveLength(1);
-    expect(img.prop('src').length).toBeGreaterThan(1);
-    expect(img.prop('alt').length).toBeGreaterThan(1);
-    expect(img.prop('height').length).toBeGreaterThan(1);
-    expect(img.prop('width').length).toBeGreaterThan(1);
+    expect(img.prop('src')).toBeDefined();
+    expect(img.prop('alt')).toBeDefined();
+    expect(img.prop('height')).toBeDefined();
+    expect(img.prop('width')).toBeDefined();
   });
 });

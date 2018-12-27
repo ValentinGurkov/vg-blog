@@ -4,6 +4,7 @@
     "prettier",
     "prettier/react",
     "react-app",
+    "plugin:react/recommended",
     "plugin:jest/recommended",
     "plugin:import/errors",
     "standard-jsx"
@@ -25,7 +26,8 @@
     "browser": true,
     "node": true,
     "es6": true,
-    "mongo": true
+    "mongo": true,
+    "jest": true
   },
   "rules": {
     "no-debugger": 0,
@@ -69,6 +71,7 @@
     "react/no-unescaped-entities": 0,
     "jsx-a11y/accessible-emoji": 0,
     "react/require-default-props": 0,
+    "react/jsx-uses-react": 1,
     "react/jsx-filename-extension": [
       1,
       {
@@ -104,7 +107,8 @@
     "global-require": 0,
     "jsx-a11y/no-static-element-interactions": 1,
     "jsx-a11y/click-events-have-key-events": 1,
-    "no-await-in-loop": 0
+    "no-await-in-loop": 0,
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": ["**/*.test.js", "./jest/jest.js"] }]
   },
   "plugins": ["prettier", "jest", "import", "jsx-a11y", "promise", "react"]
 }

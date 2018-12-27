@@ -1,7 +1,5 @@
 const sm = require('sitemap')
-const path = require('path')
 
-// If you use Dotenv you can include your .env variables uncommenting the following line
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').load()
 }

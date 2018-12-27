@@ -1,6 +1,5 @@
 export const PRISMIC_API_URL = 'https://uniblog.cdn.prismic.io/api/v2';
-export const ROOT_URL = process.env.SITE_ROOT || 'https://valentingurkov.herokuapp.com'
-;
+export const ROOT_URL = process.env.SITE_ROOT || 'https://valentingurkov.herokuapp.com';
 export const DEFAULT_SEO = {
   title: 'VG BLOG',
   description: 'Making good health and lifestyle choices has never been easier',
@@ -16,12 +15,12 @@ export const DEFAULT_SEO = {
     image: 'http://localhost:3000/static/icons/og-image.png',
     site_name: 'vgblog.com',
     imageWidth: 279,
-    imageHeight: 279,
+    imageHeight: 279
   },
   twitter: {
     handle: '@vgblog',
-    cardType: 'summary_large_image',
-  },
+    cardType: 'summary_large_image'
+  }
 };
 
 export const GOOGLE_API_KEY = 'AIzaSyB8fvIWLECBvLWsyULSfpdt9oHYU95_vH4';
