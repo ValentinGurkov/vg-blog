@@ -10,7 +10,7 @@ plugins:
     enabled: true
     config:
       ignore_warnings: true
-      config: /.stylelintrc
+      config: .stylelintrc
   editorconfig:
     enabled: true
     config:
