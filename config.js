@@ -12,7 +12,7 @@ export const DEFAULT_SEO = {
     url: 'https://vgblog.com',
     title: 'VG BLOG',
     description: 'Making good health and lifestyle choices',
-    image: 'http://localhost:3000/static/icons/og-image.png',
+    image: `${ROOT_URL}/static/icons/og-image.png`,
     site_name: 'vgblog.com',
     imageWidth: 279,
     imageHeight: 279
