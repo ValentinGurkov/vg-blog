@@ -5,7 +5,7 @@ plugins:
     channel: 'eslint-5'
     config:
       ignore_warnings: true
-      config: /.eslintrc
+      config: .eslintrc
   stylelint:
     enabled: true
     config:
@@ -13,8 +13,9 @@ plugins:
       config: .stylelintrc
   editorconfig:
     enabled: true
+    channel: beta
     config:
-      editorconfig: /.editorconfig
+      editorconfig: .editorconfig
 exclude_patterns:
   - node_modules/
   - .next/
