@@ -29,7 +29,7 @@ app
   .then(() => {
     const server = express()
 
-    server.get('/', (req, res) => renderAndCache(req, res))
+    server.get('/', (req, res) => renderAndCache(req, res, '/'))
 
     server.get('/privacy-policy', (req, res) => renderAndCache(req, res, '/privacy', req.query))
 
@@ -99,9 +99,8 @@ async function renderAndCache(req, res, pagePath, queryParams) {
     // if not in cache, render the page into HTML
     const html = await app.renderToHTML(req, res, pagePath, queryParams)
 
-    // if something wrong with the request, let's skip the cache
-    if (true) {
-      // dev || res.statusCode !== 200
+    // if something wrong with the request, let's skip the cache or we're in development mode
+    if (dev || res.statusCode !== 200) {
       res.send(html)
       return
     }
