@@ -8,7 +8,7 @@ plugins:
       config: /.eslintrc
   stylelint:
     enabled: true
-    config:
+   config:
       ignore_warnings: true
       config: /.stylelintrc
   editorconfig:
