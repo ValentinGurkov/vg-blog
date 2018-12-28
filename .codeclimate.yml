@@ -15,8 +15,7 @@ plugins:
     enabled: true
     config:
       editorconfig: /.editorconfig
-
-exclude_paths:
+exclude_patterns:
   - node_modules/
   - .next/
   - static/
