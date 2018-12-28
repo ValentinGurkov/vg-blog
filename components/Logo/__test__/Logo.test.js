@@ -5,7 +5,7 @@ import Logo from '../Logo';
 describe('<Logo/>', () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = shallow(<Logo src='some-src' />);
+    wrapper = shallow(<Logo src="some-src" />);
   });
 
   it('should have footerLogo class when used in footer', () => {

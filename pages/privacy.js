@@ -65,7 +65,7 @@ const privacyPolicy = () => (
     <p>
       You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do
       not accept cookies, you may not be able to use some portions of our Service. You can learn more how to manage
-      cookies in the <a href='https://privacypolicies.com/blog/how-to-delete-cookies/'>Browser Cookies Guide</a>.
+      cookies in the <a href="https://privacypolicies.com/blog/how-to-delete-cookies/">Browser Cookies Guide</a>.
     </p>
     <p>Examples of Cookies we use:</p>
     <ul>
@@ -167,7 +167,7 @@ const privacyPolicy = () => (
         </p>{' '}
         <p>
           For more information on the privacy practices of Google, please the Google Privacy & Terms web page:{' '}
-          <a href='https://policies.google.com/privacy?hl=en'>https://policies.google.com/privacy?hl=en</a>
+          <a href="https://policies.google.com/privacy?hl=en">https://policies.google.com/privacy?hl=en</a>
         </p>
       </li>
     </ul>

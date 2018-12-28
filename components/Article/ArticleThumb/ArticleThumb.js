@@ -33,7 +33,7 @@ const ArticleThumb = props => {
       </p>
       <Link as={linkResolver(props.post)} href={`/blogPost?slug=${props.post.uid}`}>
         <strong>
-          <a className={classes.readMore} title='Read more'>
+          <a className={classes.readMore} title="Read more">
             Read more
           </a>
         </strong>

@@ -42,7 +42,7 @@ Layout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired
 };
 
-const Loader = ({ loading }) => <div className={loading ? 'loading-show' : ''} id='loader-bar' />;
+const Loader = ({ loading }) => <div className={loading ? 'loading-show' : ''} id="loader-bar" />;
 
 Loader.propTypes = {
   loading: PropTypes.bool
