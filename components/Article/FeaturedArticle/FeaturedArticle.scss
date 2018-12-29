@@ -9,6 +9,10 @@
   margin: 0;
   padding: 40px 0;
 
+  .featuredImage {
+    width: 100%;
+  }
+
   .smallTitle {
     color: #999;
     font-size: 12px;
@@ -78,6 +82,17 @@
       right: 0;
       top: 52%;
       transform: translateY(-50%);
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .wrapper {
+    padding: 0;
+
+    .featuredImage {
+      height: auto;
+      width: 100%;
     }
   }
 }

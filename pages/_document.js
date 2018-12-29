@@ -12,6 +12,7 @@ export default class MyDocument extends Document {
     return (
       <html lang="en">
         <Head>
+          <meta key="charset" charSet={DEFAULT_SEO.charset} />
           <link key="manifest" rel="manifest" href="/_next/static/manifest.json" />
           <link
             key="apple-touch-icon-57x57"
@@ -73,7 +74,6 @@ export default class MyDocument extends Document {
           <link key="mask-icon" rel="mask-icon" href="/static/icons/safari-pinned-tab.svg" color="#414042" />
           <link key="shortcut icon" rel="shortcut icon" href="/static/favicon.ico" />
           <meta name="robots" content="index,follow" />
-          <meta key={DEFAULT_SEO.charset} charSet={DEFAULT_SEO.charset} />
           <meta key="viewport" name="viewport" content="width=device-width, initial-scale=1" />
           <meta key="msapplication-TileColor" name="msapplication-TileColor" content="#da532c" />
           <meta key="msapplication-config" name="msapplication-config" content="/static/icons/browserconfig.xml" />

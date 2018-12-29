@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import moment from 'moment';
-import { linkResolver } from '../../../lib/prismic';
+import { linkResolver } from '~/lib/prismic';
 import classes from './FeaturedArticle.scss';
 
 const FeaturedArticle = props => {
@@ -11,7 +11,10 @@ const FeaturedArticle = props => {
     <div className={classes.wrapper}>
       <div>
         <Link as={linkResolver(props.post)} href={`/blogPost?slug=${props.post.uid}`}>
-          <img src={props.post.data.images.url} alt={props.post.data.images.alt} />
+          <picture>
+            <source media="(max-width: 375x)" srcSet={props.post.data.images.mobile.url} />
+            <img className={classes.featuredImage} src={props.post.data.images.url} alt={props.post.data.images.alt} />
+          </picture>
         </Link>
       </div>
       <div>
