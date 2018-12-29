@@ -13,9 +13,6 @@ module.exports = withOffline(
         importLoaders: 1,
         localIdentName: '[local]___[hash:base64:5]'
       },
-      sassLoaderOptions: {
-        outputStyle: 'compressed'
-      },
       workboxOpts: {
         swDest: 'static/service-worker.js',
         clientsClaim: true,

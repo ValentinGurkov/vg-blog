@@ -22,9 +22,7 @@
     }
   },
   "settings": {
-    "import/resolver": {
-      "babel-plugin-root-import": {}
-    }
+    "import/resolver": "babel-plugin-root-import"
   },
   "env": {
     "browser": true,
