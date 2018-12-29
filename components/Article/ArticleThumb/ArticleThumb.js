@@ -22,15 +22,10 @@ const ArticleThumb = props => {
       </p>
       <p className={classes.title}>
         <Link as={linkResolver(props.post)} href={`/blogPost?slug=${props.post.uid}`}>
-          <a title={props.post.data.title[0].text}>
-            <span>{props.post.data.title[0].text}</span>
-          </a>
+          <a title={props.post.data.title[0].text}>props.post.data.title[0].text}</a>
         </Link>
       </p>
-      <p className={classes.shortDescription}>
-        Get into the spirit of Halloween by starting your day, or surprising someone, with a nutritious Halloween
-        Oatmeal bowl. Tasty, simple and scarylicious.
-      </p>
+      <p className={classes.shortDescription}>{props.post.data.og_description[0].text}</p>
       <Link as={linkResolver(props.post)} href={`/blogPost?slug=${props.post.uid}`}>
         <strong>
           <a className={classes.readMore} title="Read more">

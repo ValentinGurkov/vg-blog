@@ -3,6 +3,9 @@
   "syntax": "scss",
   "rules": {
     "block-opening-brace-space-after": "never-single-line",
-    "block-closing-brace-space-before": "never-single-line"
+    "block-closing-brace-space-before": "never-single-line",
+    "at-rule-no-unknown": [true, {
+      "ignoreAtRules": ["function", "if", "each", "include", "mixin", "error", "return", "else", "extend"]
+    }]
   }
 }

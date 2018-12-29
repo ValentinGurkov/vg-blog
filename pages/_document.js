@@ -1,5 +1,5 @@
 import Document, { Head, Main, NextScript } from 'next/document';
-import { DEFAULT_SEO } from '../config';
+import { DEFAULT_SEO } from '../lib/config';
 import { GA_TRACKING_ID } from '../lib/gtag';
 
 export default class MyDocument extends Document {

@@ -4,8 +4,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, 600px);
   grid-gap: 1em;
-  text-align: center;
-  justify-content: center;
   margin: 0;
   padding: 40px 0;
 
@@ -86,13 +84,24 @@
   }
 }
 
+@media (min-width: 900px) {
+  .wrapper {
+    text-align: center;
+    justify-content: center;
+  }
+}
+
 @media (max-width: 375px) {
   .wrapper {
     padding: 0;
 
     .featuredImage {
       height: auto;
-      width: 100%;
+      width: 375px;
+    }
+
+    .articleDescription {
+      max-width: 375px;
     }
   }
 }

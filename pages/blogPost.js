@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { RichText } from 'prismic-reactjs';
 import { getBlogPostAPI } from '../api';
 import linkResolver from '../lib/prismic';
-import { ROOT_URL } from '../config';
+import { ROOT_URL } from '../lib/config';
 
 const addJSONLD = (post, info, postUrl, logoUrl) => ({
   __html: `{

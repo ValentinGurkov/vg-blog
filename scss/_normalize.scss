@@ -22,8 +22,7 @@
   0.67 *
   $base-font-size or
   $indent-amount !=
-  40px
-{
+  40px {
   $normalize-vertical-rhythm: true !global;
 }
 
@@ -41,18 +40,23 @@ html {
     /* Change the default font family in all browsers (opinionated). */
     font-family: $base-font-family;
   }
+
   @if $base-font-size != 16px or $normalize-vertical-rhythm {
     // Correct old browser bug that prevented accessible resizing of text
     // when root font-size is set with px or em.
     font-size: ($base-font-size / 16px) * 100%;
   }
+
   @if $normalize-vertical-rhythm {
     // Establish a vertical rhythm unit using $base-font-size and
     // $base-line-height variables.
     line-height: ($base-line-height / $base-font-size) * 1em; /* 1 */
-  } @else {
+  }
+
+  @else {
     line-height: 1.15; /* 1 */
   }
+
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
@@ -88,6 +92,7 @@ section {
 
 h1 {
   @include normalize-font-size($h1-font-size);
+
   @if $normalize-vertical-rhythm {
     @include normalize-line-height($h1-font-size);
   }
@@ -95,7 +100,9 @@ h1 {
   @if $normalize-vertical-rhythm {
     /* Set 1 unit of vertical rhythm on the top and bottom margins. */
     @include normalize-margin(1 0, $h1-font-size);
-  } @else {
+  }
+
+  @else {
     margin: 0.67em 0;
   }
 }
@@ -166,8 +173,8 @@ h1 {
     margin: 0 0 0 $indent-amount;
   }
 
-  ol,
-  ul {
+  ul,
+  ol {
     padding: 0 0 0 $indent-amount;
   }
 }
@@ -188,7 +195,9 @@ figure {
 figure {
   @if $normalize-vertical-rhythm {
     @include normalize-margin(1 $indent-amount);
-  } @else {
+  }
+
+  @else {
     margin: 1em $indent-amount;
   }
 }
@@ -229,7 +238,7 @@ main {
  */
 
 %monospace {
-  font-family: monospace, monospace; /* 1 */
+  font-family: monospace; /* 1 */
   font-size: 1em; /* 2 */
 }
 
@@ -415,9 +424,12 @@ select,
 textarea {
   @if $normalize-vertical-rhythm {
     @include normalize-line-height($base-font-size); /* 1 */
-  } @else {
+  }
+
+  @else {
     line-height: 1.15; /* 1 */
   }
+
   font-family: if($base-font-family, $base-font-family, sans-serif); /* 1 */
   font-size: 100%; /* 1 */
   margin: 0; /* 2 */
@@ -609,6 +621,7 @@ menu {
      */
 
     @include normalize-margin(1 0); /* 1 */
+
     padding: 0 0 0 $indent-amount; /* 2 */
 
     /**

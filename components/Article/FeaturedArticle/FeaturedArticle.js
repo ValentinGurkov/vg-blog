@@ -9,15 +9,13 @@ const FeaturedArticle = props => {
   const date = moment(new Date(props.post.data.date_published)).format('D MMMM');
   return (
     <div className={classes.wrapper}>
-      <div>
-        <Link as={linkResolver(props.post)} href={`/blogPost?slug=${props.post.uid}`}>
-          <picture>
-            <source media="(max-width: 375x)" srcSet={props.post.data.images.mobile.url} />
-            <img className={classes.featuredImage} src={props.post.data.images.url} alt={props.post.data.images.alt} />
-          </picture>
-        </Link>
-      </div>
-      <div>
+      <Link as={linkResolver(props.post)} href={`/blogPost?slug=${props.post.uid}`}>
+        <picture>
+          <source media="(min-width: 376px)" srcSet={props.post.data.images.mobile.url} />
+          <img className={classes.featuredImage} src={props.post.data.images.url} alt={props.post.data.images.alt} />
+        </picture>
+      </Link>
+      <div className={classes.articleDescription}>
         <p className={classes.smallTitle}>
           <span className={classes.featured}>Featued post</span>
           <span className={classes.date}>{date}</span>
