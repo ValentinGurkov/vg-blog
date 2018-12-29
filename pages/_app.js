@@ -1,5 +1,4 @@
 import React from 'react';
-import Head from 'next/head';
 import App, { Container } from 'next/app';
 import Layout from '~/containers/Layout/Layout';
 import DefaultMeta from '~/components/DefaultMeta/DefaultMeta';
@@ -21,9 +20,7 @@ export default class MyApp extends App {
 
     return (
       <Container>
-        <Head>
-          <DefaultMeta />
-        </Head>
+        <DefaultMeta />
         <Layout>
           <main>
             <Component {...pageProps} />

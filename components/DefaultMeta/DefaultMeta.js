@@ -1,8 +1,9 @@
 import React from 'react';
 import { DEFAULT_SEO } from '~/config';
+import Head from 'next/head';
 
 const DefaultMeta = () => (
-  <>
+  <Head>
     <title key="title">{DEFAULT_SEO.title}</title>
     <meta key="description" name="description" content={DEFAULT_SEO.description} />
     <meta key="keywods" name="keywods" content={DEFAULT_SEO.keywords} />
@@ -16,7 +17,7 @@ const DefaultMeta = () => (
     <meta key="og:title" property="og:title" content={DEFAULT_SEO.openGraph.title} />
     <meta key="og:image" property="og:image" content={DEFAULT_SEO.openGraph.image} />
     <meta key="og:url" property="og:url" content={DEFAULT_SEO.openGraph.url} />
-  </>
+  </Head>
 );
 
 export default DefaultMeta;
