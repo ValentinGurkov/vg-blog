@@ -11,7 +11,7 @@ const FeaturedArticle = props => {
     <div className={classes.wrapper}>
       <Link as={linkResolver(props.post)} href={`/blogPost?slug=${props.post.uid}`}>
         <picture>
-          <source media="(min-width: 376px)" srcSet={props.post.data.images.mobile.url} />
+          <source media="(max-width: 375x)" srcSet={props.post.data.images.mobile.url} />
           <img className={classes.featuredImage} src={props.post.data.images.url} alt={props.post.data.images.alt} />
         </picture>
       </Link>
