@@ -1,6 +1,7 @@
 const path = require('path')
 const glob = require('glob')
 const fs = require('fs')
+const { getLastModifiedDate } = require('./util')
 
 const SOURCE = process.env.SOURCE || path.join(__dirname, '..', 'pages', '/**/!(_*).js')
 const SITE_ROOT = process.env.SITE_ROOT || 'https://valentingurkov.herokuapp.com'
@@ -13,9 +14,7 @@ const transformUlr = page => {
 
   const stats = fs.statSync(page)
   const modDate = new Date(stats.mtime)
-  const lastMod = `${modDate.getFullYear()}-${`0${modDate.getMonth() + 1}`.slice(-2)}-${`0${modDate.getDate()}`.slice(
-    -2
-  )}`
+  const lastMod = getLastModifiedDate(modDate)
 
   page = page.replace(resolveApp('pages'), '')
   page = page.replace(/.js$/, '')

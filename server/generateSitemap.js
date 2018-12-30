@@ -1,4 +1,5 @@
 const sm = require('sitemap')
+const { getLastModifiedDate } = require('./util')
 
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').load()
@@ -16,7 +17,7 @@ const setup = async () => {
   for (let i = 0; i < posts.length; i += 1) {
     post = posts[i]
     modDate = new Date(post.last_publication_date)
-    modDate = `${modDate.getFullYear()}-${`0${modDate.getMonth() + 1}`.slice(-2)}-${`0${modDate.getDate()}`.slice(-2)}`
+    modDate = getLastModifiedDate(modDate)
     sitemap.add({
       url: `/blog/${post.uid}`,
       lastmodISO: modDate,
