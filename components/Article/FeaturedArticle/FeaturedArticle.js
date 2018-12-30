@@ -1,5 +1,4 @@
 import React from 'react';
-import MediaQuery from 'react-responsive';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import moment from 'moment';
