@@ -1,4 +1,5 @@
 import React from 'react';
+import MediaQuery from 'react-responsive';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import moment from 'moment';
@@ -10,10 +11,7 @@ const FeaturedArticle = props => {
   return (
     <div className={classes.wrapper}>
       <Link as={linkResolver(props.post)} href={`/blogPost?slug=${props.post.uid}`}>
-        <picture>
-          <source media="(max-width: 375x)" srcSet={props.post.data.images.mobile.url} />
-          <img className={classes.featuredImage} src={props.post.data.images.url} alt={props.post.data.images.alt} />
-        </picture>
+        <img className={classes.featuredImage} src={props.post.data.images.url} alt={props.post.data.images.alt} />
       </Link>
       <div className={classes.articleDescription}>
         <p className={classes.smallTitle}>
@@ -23,11 +21,13 @@ const FeaturedArticle = props => {
         <p className={classes.mediumTitle}>{props.post.data.title[0].text}</p>
         <p className={classes.shortDescription}>{props.post.data.og_description[0].text}</p>
         <Link as={linkResolver(props.post)} href={`/blogPost?slug=${props.post.uid}`}>
-          <strong>
-            <a className={classes.readMore} title="Read more">
-              Read more
-            </a>
-          </strong>
+          <p>
+            <strong>
+              <a className={classes.readMore} title="Read more">
+                Read more
+              </a>
+            </strong>
+          </p>
         </Link>
       </div>
     </div>
