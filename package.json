@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node server/",
     "build": "next build",
-    "a": "yarn build",
+    "postinstall": "yarn build",
     "start": "NODE_ENV=production node server/",
     "start:win": "set NODE_ENV=production& node server/",
     "lint:js": "eslint --fix --ext .js pages components server containers lib api next.config.js",
