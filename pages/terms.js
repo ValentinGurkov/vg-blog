@@ -18,8 +18,7 @@ const terms = () => (
 
     <p>
       By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms
-      then you may not access the Service. This Terms and Conditions agreement for Valentin Gurkov's Blog is managed by{' '}
-      <a href="https://termsfeed.com/terms-conditions/generator/">TermsFeed's Terms and Conditions Generator</a>.
+      then you may not access the Service.
     </p>
 
     <h2>Links To Other Web Sites</h2>
