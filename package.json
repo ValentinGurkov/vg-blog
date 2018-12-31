@@ -30,7 +30,8 @@
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "sitemap": "^2.1.0"
+    "sitemap": "^2.1.0",
+    "@zeit/next-sass": "^1.0.1"
   },
   "browserslist": [
     "last 2 versions",
@@ -74,7 +75,6 @@
     "next-offline": "^3.3.1",
     "next-purgecss": "^3.0.0",
     "node-sass": "^4.11.0",
-    "@zeit/next-sass": "^1.0.1",
     "postcss-easy-import": "^3.0.0",
     "postcss-flexbugs-fixes": "^4.1.0",
     "autoprefixer": "^9.4.3",
