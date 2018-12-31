@@ -31,7 +31,11 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "sitemap": "^2.1.0",
-    "@zeit/next-sass": "^1.0.1"
+    "@zeit/next-sass": "^1.0.1",
+    "next-offline": "^3.3.1",
+    "webpack-pwa-manifest": "^4.0.0",
+    "next-purgecss": "^3.0.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1"
   },
   "browserslist": [
     "last 2 versions",
@@ -66,18 +70,14 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
     "jest-environment-node-debug": "^2.0.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.1",
     "prettier": "^1.15.3",
     "prettier-stylelint": "^0.4.2",
     "react-test-renderer": "^16.7.0",
     "stylelint": "^9.9.0",
     "stylelint-config-standard": "^18.2.0",
-    "next-offline": "^3.3.1",
-    "next-purgecss": "^3.0.0",
     "node-sass": "^4.11.0",
     "postcss-easy-import": "^3.0.0",
     "postcss-flexbugs-fixes": "^4.1.0",
-    "autoprefixer": "^9.4.3",
-    "webpack-pwa-manifest": "^4.0.0"
+    "autoprefixer": "^9.4.3"
   }
 }

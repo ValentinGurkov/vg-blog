@@ -3,6 +3,10 @@ checks:
   method-lines:
     config:
       threshold: 35
+  identical-code:
+    config:
+      javascript:
+        threshold: 55
 plugins:
   eslint:
     enabled: true
