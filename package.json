@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "node server/",
     "build": "next build",
-    "postinstall": "yarn build",
     "start": "NODE_ENV=production node server/",
     "start:win": "set NODE_ENV=production& node server/",
     "lint:js": "eslint --fix --ext .js pages components server containers lib api next.config.js",
@@ -35,7 +34,10 @@
     "next-offline": "^3.3.1",
     "webpack-pwa-manifest": "^4.0.0",
     "next-purgecss": "^3.0.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.1"
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-flexbugs-fixes": "^4.1.0",
+    "autoprefixer": "^9.4.3"
   },
   "browserslist": [
     "last 2 versions",
@@ -75,9 +77,6 @@
     "react-test-renderer": "^16.7.0",
     "stylelint": "^9.9.0",
     "stylelint-config-standard": "^18.2.0",
-    "node-sass": "^4.11.0",
-    "postcss-easy-import": "^3.0.0",
-    "postcss-flexbugs-fixes": "^4.1.0",
-    "autoprefixer": "^9.4.3"
+    "node-sass": "^4.11.0"
   }
 }

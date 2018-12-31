@@ -6,7 +6,7 @@ checks:
   identical-code:
     config:
       javascript:
-        threshold: 55
+        threshold: 100
 plugins:
   eslint:
     enabled: true

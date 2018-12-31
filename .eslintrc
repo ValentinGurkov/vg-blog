@@ -110,10 +110,7 @@
     "jsx-a11y/no-static-element-interactions": 1,
     "jsx-a11y/click-events-have-key-events": 1,
     "no-await-in-loop": 0,
-    "import/no-extraneous-dependencies": [
-      "error",
-      { "devDependencies": ["**/*.test.js", "./jest/jest.js", "./next.config.js", "./postcss.config.js"] }
-    ]
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": ["**/*.test.js", "./jest/jest.js"] }]
   },
   "plugins": ["prettier", "jest", "import", "jsx-a11y", "promise", "react"]
 }
