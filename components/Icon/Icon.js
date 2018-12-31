@@ -3,12 +3,12 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 import classes from './Icon.scss';
 
-const Icon = props => {
+const getIconProps = type => {
   let url;
   let title;
   let alt;
   let src;
-  switch (props.type) {
+  switch (type) {
     case 'facebook':
       url = 'https://www.facebook.com';
       alt = 'Facebook icon';
@@ -46,6 +46,12 @@ const Icon = props => {
       src = '/static/social/facebook.svg';
       break;
   }
+
+  return { url, title, alt, src };
+};
+
+const Icon = props => {
+  const { url, title, alt, src } = getIconProps(props.type);
   return (
     <Link href={url}>
       <a title={title} target="_blank" rel="noopener">

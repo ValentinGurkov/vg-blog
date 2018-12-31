@@ -2,6 +2,7 @@ const withSass = require('@zeit/next-sass');
 const withOffline = require('next-offline');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const withPurgeCss = require('next-purgecss');
+const OptimizeCssAssets = require('optimize-css-assets-webpack-plugin');
 const { resolve } = require('path');
 
 module.exports = withOffline(
@@ -66,37 +67,43 @@ module.exports = withOffline(
         ]
       },
       webpack: (config, { isServer, dev }) => {
-        if (!isServer && !dev) {
-          config.plugins.push(
-            new WebpackPwaManifest({
-              filename: 'static/manifest.json',
-              name: "Valentin Gurkov's Blog",
-              short_name: 'VG Blog',
-              description: 'Making good health and lifestyle choices has never been easier!',
-              background_color: '#414042',
-              theme_color: '#ff6c0c',
-              display: 'standalone',
-              orientation: 'portrait',
-              fingerprints: false,
-              inject: false,
-              start_url: '/',
-              lang: 'en',
-              dir: 'ltr',
-              ios: {
-                'apple-mobile-web-app-title': 'VG Blog',
-                'apple-mobile-web-app-status-bar-style': '#ff6c0'
-              },
-              icons: [
-                {
-                  src: resolve('static/logo.png'),
-                  sizes: [96, 128, 192, 256, 384, 512],
-                  destination: '/static'
-                }
-              ],
-              includeDirectory: true,
-              publicPath: '..'
-            })
-          );
+        if (!dev) {
+          if (!Array.isArray(config.optimization.minimizer)) {
+            config.optimization.minimizer = [];
+          }
+          config.optimization.minimizer.push(new OptimizeCssAssets({}));
+          if (!isServer) {
+            config.plugins.push(
+              new WebpackPwaManifest({
+                filename: 'static/manifest.json',
+                name: "Valentin Gurkov's Blog",
+                short_name: 'VG Blog',
+                description: 'Making good health and lifestyle choices has never been easier!',
+                background_color: '#414042',
+                theme_color: '#ff6c0c',
+                display: 'standalone',
+                orientation: 'portrait',
+                fingerprints: false,
+                inject: false,
+                start_url: '/',
+                lang: 'en',
+                dir: 'ltr',
+                ios: {
+                  'apple-mobile-web-app-title': 'VG Blog',
+                  'apple-mobile-web-app-status-bar-style': '#ff6c0'
+                },
+                icons: [
+                  {
+                    src: resolve('static/logo.png'),
+                    sizes: [96, 128, 192, 256, 384, 512],
+                    destination: '/static'
+                  }
+                ],
+                includeDirectory: true,
+                publicPath: '..'
+              })
+            );
+          }
         }
         // Fixes npm packages that depend on `fs` module
         config.node = {
