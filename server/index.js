@@ -6,6 +6,8 @@ const express = require('express')
 const next = require('next')
 const { join } = require('path')
 const LRUCache = require('lru-cache')
+const compression = require('compression')
+const helmet = require('helmet')
 const generateSitemap = require('./generateSitemap')
 
 const port = parseInt(process.env.PORT, 10) || 3000
@@ -28,6 +30,8 @@ app
   .prepare()
   .then(() => {
     const server = express()
+    server.use(compression())
+    server.use(helmet())
 
     server.get('/', (req, res) => renderAndCache(req, res, '/'))
 
