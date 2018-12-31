@@ -9,7 +9,7 @@ const FeaturedArticle = props => {
   const date = moment(new Date(props.post.data.date_published)).format('D MMMM');
   return (
     <div className={classes.wrapper}>
-      <Link as={linkResolver(props.post)} href={`/blogPost?slug=${props.post.uid}`}>
+      <Link prefetch as={linkResolver(props.post)} href={`/blogPost?slug=${props.post.uid}`}>
         <img className={classes.featuredImage} src={props.post.data.images.url} alt={props.post.data.images.alt} />
       </Link>
       <div className={classes.articleDescription}>
@@ -19,7 +19,7 @@ const FeaturedArticle = props => {
         </p>
         <p className={classes.mediumTitle}>{props.post.data.title[0].text}</p>
         <p className={classes.shortDescription}>{props.post.data.og_description[0].text}</p>
-        <Link as={linkResolver(props.post)} href={`/blogPost?slug=${props.post.uid}`}>
+        <Link prefetch as={linkResolver(props.post)} href={`/blogPost?slug=${props.post.uid}`}>
           <p>
             <strong>
               <a className={classes.readMore} title="Read more">

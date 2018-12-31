@@ -12,21 +12,21 @@ const FooterBottom = () => (
     <nav>
       <ul className={classes.footerNav}>
         <li className={classes.footerLink}>
-          <Link href="/terms" as="terms-and-conditions">
+          <Link prefetch href="/terms" as="terms-and-conditions">
             <a className={classes.footerLinkItem} title="Terms">
               Terms
             </a>
           </Link>
         </li>
         <li className={classes.footerLink}>
-          <Link href="/privacy" as="/privacy-policy">
+          <Link prefetch href="/privacy" as="/privacy-policy">
             <a className={classes.footerLinkItem} title="Privacy and Cookie Policy">
               Privacy & Cookie Policy
             </a>
           </Link>
         </li>
         <li className={classes.footerLink}>
-          <Link href="/sitemap.xml">
+          <Link prefetch href="/sitemap.xml">
             <a className={classes.footerLinkItem} title="Site Map">
               Site Map
             </a>
