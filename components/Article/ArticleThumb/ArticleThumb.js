@@ -15,7 +15,7 @@ const ArticleThumb = props => {
           src={props.post.data.images.thumbnail.url}
           alt={props.post.data.images.thumbnail.alt}
         />
-      </Lin>
+      </Link>
       <p className={classes.smallTitle}>
         <span className={classes.category}>{props.post.data.category}</span>
         <span className={classes.date}>{date}</span>
