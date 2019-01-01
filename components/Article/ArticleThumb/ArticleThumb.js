@@ -22,7 +22,7 @@ const ArticleThumb = props => {
       </p>
       <p className={classes.title}>
         <Link prefetch as={linkResolver(props.post)} href={`/blogPost?slug=${props.post.uid}`}>
-          <a title={props.post.data.title[0].text}>props.post.data.title[0].text}</a>
+          <a title={props.post.data.title[0].text}>{props.post.data.title[0].text}</a>
         </Link>
       </p>
       <p className={classes.shortDescription}>{props.post.data.og_description[0].text}</p>

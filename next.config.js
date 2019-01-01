@@ -30,7 +30,13 @@ module.exports = withOffline(
               cacheName: 'html-cache'
             }
           },
-          { urlPattern: /^https?.*/, handler: 'networkFirst' },
+          {
+            urlPattern: /^https?.*/,
+            handler: 'networkFirst',
+            options: {
+              cacheName: 'html-cache'
+            }
+          },
           {
             urlPattern: new RegExp('https://uniblog.cdn.prismic.io/api/v2'),
             handler: 'staleWhileRevalidate',
