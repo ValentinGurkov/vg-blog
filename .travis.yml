@@ -22,7 +22,7 @@ script:
   - yarn build
   # build docker images
   - docker build -t green03/next-blog
-  - docker tag green03 /next-blog registry.heroku.com/$HEROKU_APP_NAME/web
+  - docker tag green03/next-blog registry.heroku.com/$HEROKU_APP_NAME/web
 
 deploy:
   provider: script
