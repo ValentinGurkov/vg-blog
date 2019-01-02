@@ -5,12 +5,13 @@ if (dev) {
 const express = require('express')
 const next = require('next')
 const { join } = require('path')
+const fs = require('fs')
 const LRUCache = require('lru-cache')
 const compression = require('compression')
 const helmet = require('helmet')
 const generateSitemap = require('./generateSitemap')
 
-const port = parseInt(process.env.PORT, 10) || 3000
+const port = 3001
 
 const root = dev ? `http://localhost:${port}` : 'https://valentingurkov.herokuapp.com'
 const app = next({ dev })
@@ -81,12 +82,16 @@ app
 
     server.listen(port, err => {
       if (err) throw err
+      if (process.env.DYNO) {
+        console.log('This is on Heroku..!!')
+        fs.openSync('/tmp/app-initialized', 'w')
+      }
       console.log(`> Ready on ${root}`)
     })
   })
   .catch(ex => {
     console.error(ex.stack)
-    throw new Error()
+    throw ex
   })
 
 async function renderAndCache(req, res, pagePath, queryParams) {
