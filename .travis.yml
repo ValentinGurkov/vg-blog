@@ -10,7 +10,7 @@ before_install:
   - wget -qO- https://toolbelt.heroku.com/install.sh |  sh
   # login to docker registries (dockerhub + heroku)
   - echo "$DOCKER_PASSWORD" |  docker login -u "$DOCKER_USERNAME" --password-stdin
-  - echo "$ HEROKU_PASSWORD" |  docker login -u "$ HEROKU_USERNAME" --password-stdin registry.heroku.com
+  - echo "$HEROKU_PASSWORD" |  docker login -u "$HEROKU_USERNAME" --password-stdin registry.heroku.com
 
 install:
   # install deps
@@ -30,4 +30,4 @@ deploy:
     # push to dockerhub & heroku
     - docker push unqpdes / todo-list-front;
     - docker push registry.heroku.com/$HEROKU_APP_NAME/web;
-    - heroku container: web release --app $ HEROKU_APP_NAME
+    - heroku container: web release --app $HEROKU_APP_NAME
