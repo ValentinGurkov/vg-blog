@@ -23,11 +23,14 @@ script:
   # build docker images
   - docker-compose up -d
   - docker tag green03/next-blog registry.heroku.com/valentingurkov/web
+  - docker tag green03/nginx registry.heroku.com/valentingurkov/web
 
 deploy:
   provider: script
   script:
     # push to dockerhub & heroku
     - docker push green03/next-blog
+    - docker push registry.heroku.com/valentingurkov/web
+    - docker push green03/nginx
     - docker push registry.heroku.com/valentingurkov/web
     - heroku container: web release --app valentingurkov
