@@ -21,7 +21,7 @@ script:
   - yarn test
   - yarn build
   # build docker images
-  - docker build -t green03/next-blog
+  - docker build -t green03/next-blog .
   - docker tag green03/next-blog registry.heroku.com/valentingurkov/web
 
 deploy:
