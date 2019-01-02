@@ -7,9 +7,8 @@ node_js:
 before_script:
   - yarn lint
   - yarn test
-  - docker-compose build
 script:
-  - docker-compose run
+  - docker-compose up --build
 notifications:
   email:
     on_failure: change
