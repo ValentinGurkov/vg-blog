@@ -1,14 +1,14 @@
 version: '3'
 services:
   nginx:
-    container_name: green03/nginx
+    container_name: green03_nginx
     build: ./nginx
     links:
       - app:app
     ports:
       - '49160:80'
   app:
-    container_name: green03/next-blog
+    container_name: green03_next-blog
     restart: always
     build: .
     ports:
