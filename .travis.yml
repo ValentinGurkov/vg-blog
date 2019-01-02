@@ -22,12 +22,12 @@ script:
   - yarn build
   # build docker images
   - docker build -t green03/next-blog
-  - docker tag green03/next-blog registry.heroku.com/$HEROKU_APP_NAME/web
+  - docker tag green03/next-blog registry.heroku.com/valentingurkov/web
 
 deploy:
   provider: script
   script:
     # push to dockerhub & heroku
     - docker push green03/next-blog
-    - docker push registry.heroku.com/$HEROKU_APP_NAME/web
-    - heroku container: web release --app $HEROKU_APP_NAME
+    - docker push registry.heroku.com/valentingurkov/web
+    - heroku container: web release --app valentingurkov
