@@ -9,8 +9,8 @@ before_install:
   # install heroku CLI
   - wget -qO- https://toolbelt.heroku.com/install.sh |  sh
   # login to docker registries (dockerhub + heroku)
-  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-  - docker login -u "$HEROKU_USERNAME" -p "$HEROKU_PASSWORD" registry.heroku.com
+  - echo "$DOCKER_PASSWORD" |  docker login -u "$DOCKER_USERNAME" --password-stdin
+  - echo "$HEROKU_PASSWORD" |  docker login -u "$HEROKU_USERNAME" --password-stdin registry.heroku.com
 
 install:
   # install deps
@@ -21,8 +21,8 @@ script:
   - yarn test
   - yarn build
   # build docker images
-  - docker build -t green03 / next-blog.
-  - docker tag green03 / next-blog registry.heroku.com/$HEROKU_APP_NAME/web
+  - docker build -t green03  / next-blog.
+  - docker tag green03  /next-blog registry.heroku.com/$HEROKU_APP_NAME/web
 
 deploy:
   provider: script
@@ -30,4 +30,4 @@ deploy:
     # push to dockerhub & heroku
     - docker push green03 / next-blog;
     - docker push registry.heroku.com/$HEROKU_APP_NAME/web;
-    - heroku container: web release --app $HEROKU_APP_NAME
+    - heroku container: web release --app $ HEROKU_APP_NAME
