@@ -28,6 +28,6 @@ deploy:
   provider: script
   script:
     # push to dockerhub & heroku
-    - docker push green03/next-blog;
+    - docker push green03/next-blog
     - docker push registry.heroku.com/$HEROKU_APP_NAME/web
     - heroku container: web release --app $ HEROKU_APP_NAME
