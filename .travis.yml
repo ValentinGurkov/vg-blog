@@ -9,7 +9,7 @@ before_install:
   # install heroku CLI
   - wget -qO- https://toolbelt.heroku.com/install.sh |  sh
   # login to docker registries (dockerhub + heroku)
-  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
   - docker login -u "$HEROKU_USERNAME" -p "$HEROKU_PASSWORD" registry.heroku.com
 
 install:
