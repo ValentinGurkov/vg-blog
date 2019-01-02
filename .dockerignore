@@ -1,0 +1,15 @@
+node_modules
+yarn-debug*.log
+yarn-error*.log
+Dockerfile*
+docker-compose*
+.dockerignore
+.git
+.gitignore
+.env
+*/bin
+*/obj
+README.md
+LICENSE
+.vscode
+coverage

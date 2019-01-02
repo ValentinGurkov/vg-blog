@@ -26,6 +26,7 @@ export default class MyApp extends App {
             <Component {...pageProps} />
           </main>
         </Layout>
+        <noscript>Enable javascript to run this web app.</noscript>
       </Container>
     );
   }

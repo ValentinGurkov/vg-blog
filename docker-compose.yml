@@ -1,0 +1,14 @@
+version: '3'
+services:
+  nginx:
+    build: ./nginx
+    links:
+      - app:app
+    ports:
+      - '49160:80'
+  app:
+    container_name: next-blog
+    restart: always
+    build: .
+    ports:
+      - '3000'

@@ -86,7 +86,7 @@ app
   })
   .catch(ex => {
     console.error(ex.stack)
-    throw new Error()
+    throw new Error(ex)
   })
 
 async function renderAndCache(req, res, pagePath, queryParams) {
