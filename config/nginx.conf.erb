@@ -32,19 +32,67 @@ http {
 
 	server {
 		listen <%= ENV["PORT"] %>;
+    listen 443 ssl http2;
 		server_name _;
 		keepalive_timeout 5;
 
-    	# root   ./;
-	#index  index.html index.htm;
+    # root   ./;
+    #index  index.html index.htm;
 
 		location  / {
-			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-			proxy_set_header Host $http_host;
-			proxy_redirect off;
-			# 3001 needs to be hardcoded on the node server/webpack or whatsoever
-			proxy_pass http://127.0.0.1:3001;
-			client_max_body_size 15m;
+
+       # default port, could be changed if you use next with custom server
+      proxy_pass http://localhost:3001;
+      proxy_http_version 1.1;
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection 'upgrade';
+      proxy_set_header Host $host;
+      proxy_cache_bypass $http_upgrade;
 		}
+
+    # Match our app.js file and serve it with NGINX
+    location ~* ^\/_next\/.*\/app.js$ {
+      sendfile   on;
+      tcp_nopush on;
+      default_type application/javascript;
+      root /var/www/next;
+      rewrite ^ /build/.next/app.js break;
+
+      # static app.js file has a build hash, cache for a year or forever if supported
+      add_header Cache-Control "public, max-age=31536000, immutable" always;
+    }
+
+    # Match our page js files and serve it with NGINX
+    location ~* ^\/_next\/.*\/page\/(?<page_name>[^\/\n?]*).*$ {
+      sendfile   on;
+      tcp_nopush on;
+      default_type application/javascript;
+      root /var/www/next;
+      if ($page_name = '') {
+          set $page_name index;
+      }
+      rewrite ^ /build/.next/bundles/pages/$page_name.js break;
+
+      # static page JS bundle requests build hash, cache for a year or forever if supported
+      add_header Cache-Control "public, max-age=31536000, immutable" always;
+    }
+
+    # Match any chunk files and serve them with NGINX
+    location ~* ^\/_next\/.*\/webpack\/chunks\/(?<chunk_name>[^\/\n?]*).*$ {
+      sendfile   on;
+      tcp_nopush on;
+      default_type application/javascript;
+      root /var/www/next;
+      rewrite ^ /build/.next/chunks/$chunk_name break;
+      # static chunk requests build hash, cache for a year or forever if supported
+      add_header Cache-Control "public, max-age=31536000, immutable" always;
+    }
+
+    # Serve any static assets with NGINX
+    location /static {
+      root /var/www/next;
+      # The static directory doesn't use a BuildID, so we must have a short 1 day cache for now
+      add_header Cache-Control "public, max-age=86400" always;
+    }
 	}
 }
