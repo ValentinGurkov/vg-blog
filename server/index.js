@@ -11,9 +11,7 @@ const helmet = require('helmet')
 const cors = require('cors')
 const generateSitemap = require('./generateSitemap')
 
-const devSslPort = parseInt(process.env.SSL_PORT, 10) || 3443
 const port = process.env.PORT || 3000
-
 const root = dev ? `http://localhost:${port}` : `https://valentingurkov.com:${port}`
 const app = next({ dev })
 const handle = app.getRequestHandler()
@@ -28,8 +26,8 @@ const ssrCache = new LRUCache({
 
 const whitelist = [
   `http://localhost:${port}`,
-  `https://www.valentingurkov.com:${devSslPort}`,
-  `https://valentingurkov.com:${devSslPort}`,
+  'https://www.valentingurkov.com',
+  'https://valentingurkov.com',
   'https://cdn.valentingurkov.com',
   'https:valentingurkov.herokuapp.com'
 ]
