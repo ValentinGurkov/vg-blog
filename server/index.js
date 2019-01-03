@@ -95,6 +95,7 @@ app
 
     server.get('*', (req, res) => {
       if (req.url.includes('/service-worker.js')) {
+        console.log('request for service worker!!!!!!!!!!')
         const filePath = join(__dirname, '../.next/static', 'service-worker.js')
         app.serveStatic(req, res, filePath)
       } else {
