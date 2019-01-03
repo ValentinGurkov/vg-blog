@@ -11,7 +11,7 @@ const compression = require('compression')
 const helmet = require('helmet')
 const generateSitemap = require('./generateSitemap')
 
-const port = 3001
+const port = process.env.PORT || 3000
 
 const root = dev ? `http://localhost:${port}` : 'https://valentingurkov.herokuapp.com'
 const app = next({ dev })
