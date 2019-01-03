@@ -29,6 +29,7 @@ const ssrCache = new LRUCache({
 const whitelist = [
   `http://localhost:${port}`,
   `https://www.valentingurkov.com:${devSslPort}`,
+  `https://valentingurkov.com:${devSslPort}`,
   'https://cdn.valentingurkov.com',
   'https:valentingurkov.herokuapp.com'
 ]
