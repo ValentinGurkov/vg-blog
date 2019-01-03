@@ -63,7 +63,6 @@ module.exports = withOptimizedImages(
             }
           ]
         },
-        assetPrefix: !dev ? 'https://cdn.valentingurkov.com' : '',
         webpack: (config, { isServer }) => {
           if (!dev) {
             if (!Array.isArray(config.optimization.minimizer)) {
