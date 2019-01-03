@@ -86,12 +86,5 @@ http {
       # static chunk requests build hash, cache for a year or forever if supported
       add_header Cache-Control "public, max-age=31536000, immutable" always;
     }
-
-    # Serve any static assets with NGINX
-    location /static {
-      root /_next/static/;
-      # The static directory doesn't use a BuildID, so we must have a short 1 day cache for now
-      add_header Cache-Control "public, max-age=86400" always;
-    }
 	}
 }
