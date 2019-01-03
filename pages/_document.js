@@ -21,7 +21,7 @@ export default class MyDocument extends Document {
           <meta key="msapplication-config" name="msapplication-config" content="/static/icons/browserconfig.xml" />
           <meta key="theme-color" name="theme-color" content="#ff6c0c" />
           <Icons />
-
+          <link href="https://amp.cloudflare.com" rel="preload" as="script" />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <link href={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} rel="preload" as="script" />
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
