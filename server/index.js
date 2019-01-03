@@ -54,6 +54,8 @@ app
       next()
     }) */
 
+    server.options('*', cors())
+
     server.get('/static', (req, res) => console.log('static'))
 
     server.get('/', (req, res) => renderAndCache(req, res, '/'))
@@ -95,7 +97,8 @@ app
 
     server.get('*', (req, res) => {
       if (req.url.includes('/service-worker.js')) {
-        console.log('request for service worker!!!!!!!!!!')
+        res.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
+        res.set('Content-Type', 'application/javascript')
         const filePath = join(__dirname, '../.next/static', 'service-worker.js')
         app.serveStatic(req, res, filePath)
       } else {
