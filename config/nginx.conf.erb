@@ -89,7 +89,7 @@ http {
 
     # Serve any static assets with NGINX
     location /static {
-      root /var/www/next;
+      root /_next/static/;
       # The static directory doesn't use a BuildID, so we must have a short 1 day cache for now
       add_header Cache-Control "public, max-age=86400" always;
     }
