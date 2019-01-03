@@ -7,7 +7,7 @@ const next = require('next')
 const { join } = require('path')
 const fs = require('fs')
 const LRUCache = require('lru-cache')
-const compression = require('compression')
+//const compression = require('compression')
 const helmet = require('helmet')
 const generateSitemap = require('./generateSitemap')
 
@@ -31,8 +31,15 @@ app
   .prepare()
   .then(() => {
     const server = express()
-    server.use(compression())
+  //  server.use(compression())
     server.use(helmet())
+
+    app.use((req, res, next) => {
+      res.setHeader('Cache-Control', 'public,max-age=31536000,immutable')
+      next()
+    })
+
+    server.get('/static', (req, res) => console.log('static'))
 
     server.get('/', (req, res) => renderAndCache(req, res, '/'))
 
@@ -82,10 +89,6 @@ app
 
     server.listen(port, err => {
       if (err) throw err
-      if (process.env.DYNO) {
-        console.log('This is on Heroku..!!')
-        fs.openSync('/tmp/app-initialized', 'w')
-      }
       console.log(`> Ready on ${root}`)
     })
   })
