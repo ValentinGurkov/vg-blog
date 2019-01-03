@@ -9,31 +9,31 @@ const getIconProps = type =>
       url: 'https://www.facebook.com',
       alt: 'Facebook icon',
       title: 'Follow us on Facebook',
-      src: '/static/social/facebook.svg'
+      src: require('../../static/social/facebook.svg')
     },
     youtube: {
       url: 'https://youtube.com',
       alt: 'YouTube icon',
       title: 'Follow us on YouTube',
-      src: '/static/social/youtube.svg'
+      src: require('../../static/social/youtube.svg')
     },
     gplus: {
       url: 'https://plus.google.com/discover',
       alt: 'Google Plus icon',
       title: 'Follow us on Google Plus',
-      src: '/static/social/googleplus.svg'
+      src: require('../../static/social/googleplus.svg')
     },
     twitter: {
       url: 'https://twitter.com',
       alt: 'Twitter icon',
       title: 'Follow us on Twitter',
-      src: '/static/social/twitter.svg'
+      src: require('../../static/social/twitter.svg')
     },
     instagram: {
       url: 'https://instagram.com',
       alt: 'Instagram icon',
       title: 'Follow us on Instagram',
-      src: '/static/social/instagram.svg'
+      src: require('../../static/social/instagram.svg')
     }
   }[type]);
 

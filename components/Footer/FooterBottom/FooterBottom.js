@@ -6,7 +6,7 @@ import classes from './FooterBottom.scss';
 const FooterBottom = () => (
   <div className={classes.footerBottom}>
     <div className={classes.footerLogo}>
-      <Logo footer src="/static/footer-logo.svg" />
+      <Logo footer src={require('../../../static/footer-logo.svg')} />
     </div>
     <span className={classes.copyright}>&copy; 2018 Valentin Gurkov</span>
     <nav>

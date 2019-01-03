@@ -23,7 +23,7 @@ class Hader extends Component {
     return (
       <header>
         <div className={classes.wrapper}>
-          <Logo src="/static/logo.svg" />
+          <Logo src={require('../../static/logo.svg')} />
           <nav className={desktopNav}>
             <NavigationItems />
           </nav>

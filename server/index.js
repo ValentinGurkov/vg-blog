@@ -5,19 +5,18 @@ if (dev) {
 const express = require('express')
 const next = require('next')
 const { join } = require('path')
-const fs = require('fs')
 const LRUCache = require('lru-cache')
-// const compression = require('compression')
+const compression = require('compression')
 const helmet = require('helmet')
+const cors = require('cors')
 const generateSitemap = require('./generateSitemap')
 
+const devSslPort = parseInt(process.env.SSL_PORT, 10) || 3443
 const port = process.env.PORT || 3000
 
-const root = dev ? `http://localhost:${port}` : 'https://valentingurkov.herokuapp.com'
+const root = dev ? `http://localhost:${port}` : `https://valentingurkov.com:${port}`
 const app = next({ dev })
 const handle = app.getRequestHandler()
-
-require('pretty-error').start()
 
 const ssrCache = new LRUCache({
   length(n, key) {
@@ -27,11 +26,28 @@ const ssrCache = new LRUCache({
   maxAge: 1000 * 60 * 60 // 1hour
 })
 
+const whitelist = [
+  `http://localhost:${port}`,
+  `https://www.valentingurkov.com:${devSslPort}`,
+  'https://cdn.valentingurkov.com',
+  'https:valentingurkov.herokuapp.com'
+]
+const corsOptions = {
+  origin(origin, callback) {
+    if (origin === undefined || whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error(`Not allowed by CORS - origin:${origin}`))
+    }
+  }
+}
+
 app
   .prepare()
   .then(() => {
     const server = express()
-    //  server.use(compression())
+    server.use(cors(corsOptions))
+    server.use(compression())
     server.use(helmet())
 
     /* app.use((req, res, next) => {

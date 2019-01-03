@@ -4,7 +4,7 @@ const fs = require('fs')
 const { getLastModifiedDate } = require('./util')
 
 const SOURCE = process.env.SOURCE || path.join(__dirname, '..', 'pages', '/**/!(_*).js')
-const SITE_ROOT = process.env.SITE_ROOT || 'https://valentingurkov.herokuapp.com'
+const SITE_ROOT = process.env.SITE_ROOT || 'https://valentingurkov.com'
 const appDirectory = fs.realpathSync(process.cwd())
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath)
 const diskPages = glob.sync(SOURCE)
