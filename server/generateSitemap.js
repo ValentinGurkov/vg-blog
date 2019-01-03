@@ -6,7 +6,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const sitemap = sm.createSitemap({
-  hostname: process.env.SITE_ROOT || 'https://valentingurkov.com',
+  hostname: process.env.SITE_ROOT || 'https://www.valentingurkov.com',
   cacheTime: 600000 // 600 sec - cache purge period
 })
 

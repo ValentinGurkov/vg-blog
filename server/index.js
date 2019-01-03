@@ -12,7 +12,7 @@ const cors = require('cors')
 const generateSitemap = require('./generateSitemap')
 
 const port = process.env.PORT || 3000
-const root = dev ? `http://localhost:${port}` : `https://valentingurkov.com:${port}`
+const root = dev ? `http://localhost:${port}` : `https://www.valentingurkov.com:${port}`
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
