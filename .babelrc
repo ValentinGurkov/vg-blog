@@ -1,4 +1,35 @@
 {
-  "presets": ["next/babel"],
+  "env": {
+    "production": {
+      "presets": [
+        [
+          "next/babel",
+          {
+            "plugins": ["styled-jsx-plugin-sass"]
+          }
+        ]
+      ]
+    },
+    "development": {
+      "presets": [
+        [
+          "next/babel",
+          {
+            "plugins": ["styled-jsx-plugin-sass"]
+          }
+        ]
+      ]
+    },
+    "test": {
+      "presets": [
+        [
+          "next/babel",
+          {
+            "plugins": ["styled-jsx/babel-test"]
+          }
+        ]
+      ]
+    }
+  },
   "plugins": [["babel-plugin-root-import"]]
 }

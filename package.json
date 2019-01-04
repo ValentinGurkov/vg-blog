@@ -53,8 +53,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "autoprefixer": "^9.4.4",
     "@babel/core": "^7.2.2",
+    "autoprefixer": "^9.4.4",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
@@ -83,6 +83,7 @@
     "prettier": "^1.15.3",
     "prettier-stylelint": "^0.4.2",
     "react-test-renderer": "^16.7.0",
+    "styled-jsx-plugin-sass": "^1.0.0",
     "stylelint": "^9.9.0",
     "stylelint-config-standard": "^18.2.0"
   }

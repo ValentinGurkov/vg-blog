@@ -35,13 +35,6 @@ module.exports = withOptimizedImages(
               }
             },
             {
-              urlPattern: /^https?.*/,
-              handler: 'networkFirst',
-              options: {
-                cacheName: 'html-cache'
-              }
-            },
-            {
               urlPattern: new RegExp('https://uniblog.cdn.prismic.io/api/v2'),
               handler: 'staleWhileRevalidate',
               options: {
@@ -60,10 +53,31 @@ module.exports = withOptimizedImages(
                   statuses: [0, 200]
                 }
               }
+            },
+            {
+              urlPattern: /^https?.*/,
+              handler: 'networkFirst',
+              options: {
+                cacheName: 'html-cache'
+              }
             }
           ]
         },
-        webpack: (config, { isServer }) => {
+        webpack: (config, { isServer, defaultLoaders }) => {
+          /* config.module.rules.push({
+            test: /\.scss$/,
+            use: [
+              defaultLoaders.babel,
+              {
+                loader: require('styled-jsx/webpack').loader,
+                options: {
+                  type: 'scoped'
+                }
+              },
+              'sass-loader'
+            ]
+          }); */
+
           if (!dev) {
             if (!Array.isArray(config.optimization.minimizer)) {
               config.optimization.minimizer = [];

@@ -49,14 +49,7 @@ app
     server.use(compression())
     server.use(helmet())
 
-    /* app.use((req, res, next) => {
-      res.setHeader('Cache-Control', 'public,max-age=31536000,immutable')
-      next()
-    }) */
-
     server.options('*', cors())
-
-    server.get('/static', (req, res) => console.log('static'))
 
     server.get('/', (req, res) => renderAndCache(req, res, '/'))
 
@@ -94,9 +87,16 @@ app
     }
 
     server.get('/robots.txt', (req, res) => res.status(200).sendFile('robots.txt', robotsOptions))
-
+    server.use(
+      '/static',
+      express.static(join(__dirname, '../static'), {
+        maxAge: '365d',
+        immutable: true
+      })
+    )
     server.get('*', (req, res) => {
       if (req.url.includes('/service-worker.js')) {
+        // Don't cache service worker is a best practice (otherwise clients wont get emergency bug fix)
         res.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
         res.set('Content-Type', 'application/javascript')
         const filePath = join(__dirname, '../.next/static', 'service-worker.js')
