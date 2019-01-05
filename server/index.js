@@ -7,7 +7,6 @@ const next = require('next')
 const { join } = require('path')
 const LRUCache = require('lru-cache')
 const compression = require('compression')
-// const shrinkRay = require('shrink-ray-current')
 const helmet = require('helmet')
 const cors = require('cors')
 const generateSitemap = require('./generateSitemap')
@@ -47,8 +46,8 @@ app
   .then(() => {
     const server = express()
     server.use(cors(corsOptions))
+    // so far during tests the load time is faster with this compared to Cloudflare's Brotli compression
     server.use(compression())
-    // server.use(shrinkRay())
     server.use(helmet())
 
     server.options('*', cors())

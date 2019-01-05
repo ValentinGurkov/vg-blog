@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import Logo from '../Logo';
 
 describe('<Logo/>', () => {
+  console.log('Logo');
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(<Logo src="some-src" />);

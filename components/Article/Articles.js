@@ -6,11 +6,12 @@ import classes from './Articles.scss';
 
 const Articles = props => (
   <div>
-    <ul className={classes.articles}>
+    <ul className="articles">
       {props.posts.map((post, index) => (
         <ArticleThumb key={index} post={post} />
       ))}
     </ul>
+    <style jsx>{classes}</style>
   </div>
 );
 

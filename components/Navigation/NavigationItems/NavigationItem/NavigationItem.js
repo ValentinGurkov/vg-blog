@@ -4,12 +4,13 @@ import Link from 'next/link';
 import classes from './NavigationItem.scss';
 
 const NavigationItem = props => (
-  <li className={classes.menuItem}>
+  <li className="menuItem">
     <Link as={props.as} href={props.to} prefetch>
-      <a className={classes.menuLink} title={props.title}>
+      <a className="menuLink" title={props.title}>
         {props.children}
       </a>
     </Link>
+    <style jsx>{classes}</style>
   </li>
 );
 

@@ -4,36 +4,37 @@ import Logo from '~/components/Logo/Logo';
 import classes from './FooterBottom.scss';
 
 const FooterBottom = () => (
-  <div className={classes.footerBottom}>
-    <div className={classes.footerLogo}>
+  <div className="footerBottom">
+    <div className="footerLogo">
       <Logo footer src={require('../../../static/footer-logo.svg')} />
     </div>
-    <span className={classes.copyright}>&copy; 2018 Valentin Gurkov</span>
+    <span className="copyright">&copy; 2018 Valentin Gurkov</span>
     <nav>
-      <ul className={classes.footerNav}>
-        <li className={classes.footerLink}>
+      <ul className="footerNav">
+        <li className="footerLink">
           <Link prefetch href="/terms" as="terms-and-conditions">
-            <a className={classes.footerLinkItem} title="Terms">
+            <a className="footerLinkItem" title="Terms">
               Terms
             </a>
           </Link>
         </li>
-        <li className={classes.footerLink}>
+        <li className="footerLink">
           <Link prefetch href="/privacy" as="/privacy-policy">
-            <a className={classes.footerLinkItem} title="Privacy and Cookie Policy">
+            <a className="footerLinkItem" title="Privacy and Cookie Policy">
               Privacy & Cookie Policy
             </a>
           </Link>
         </li>
-        <li className={classes.footerLink}>
+        <li className="footerLink">
           <Link prefetch href="/sitemap.xml">
-            <a className={classes.footerLinkItem} title="Site Map">
+            <a className="footerLinkItem" title="Site Map">
               Site Map
             </a>
           </Link>
         </li>
       </ul>
     </nav>
+    <style jsx>{classes}</style>
   </div>
 );
 export default FooterBottom;

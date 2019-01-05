@@ -15,20 +15,14 @@
         [
           "next/babel",
           {
-            "plugins": ["styled-jsx-plugin-sass"]
+            "plugins": ["styled-jsx-plugin-sass"],
+            "sourceMaps": true
           }
         ]
       ]
     },
     "test": {
-      "presets": [
-        [
-          "next/babel",
-          {
-            "plugins": ["styled-jsx/babel-test"]
-          }
-        ]
-      ]
+      "presets": ["next/babel"]
     }
   },
   "plugins": [["babel-plugin-root-import"]]
