@@ -17,7 +17,7 @@ const FeaturedArticle = props => {
           <span className="featured">Featued post</span>
           <span className="date">{date}</span>
         </p>
-        <p className="mediumTitle">{props.post.data.title[0].text}</p>
+        <h1 className="mediumTitle">{props.post.data.title[0].text}</h1>
         <p className="shortDescription">{props.post.data.og_description[0].text}</p>
         <Link prefetch as={linkResolver(props.post)} href={`/blogPost?slug=${props.post.uid}`}>
           <p>
