@@ -1,6 +1,8 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const withOffline = require('next-offline');
 const withOptimizedImages = require('next-optimized-images');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
+const StyledJSXWebpackLoader = require('styled-jsx/webpack').loader;
 const { resolve } = require('path');
 
 const dev = process.env.NODE_ENV !== 'production';
@@ -58,7 +60,7 @@ module.exports = withOptimizedImages(
         use: [
           defaultLoaders.babel,
           {
-            loader: require('styled-jsx/webpack').loader,
+            loader: StyledJSXWebpackLoader,
             options: {
               type: 'scoped'
             }
@@ -107,3 +109,4 @@ module.exports = withOptimizedImages(
     }
   })
 );
+/* eslint-enable import/no-extraneous-dependencies */

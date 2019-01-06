@@ -29,5 +29,5 @@
       "presets": ["next/babel"]
     }
   },
-  "plugins": ["babel-plugin-root-import"]
+  "plugins": [["babel-plugin-root-import"]]
 }
