@@ -12,6 +12,7 @@ export default class MyDocument extends Document {
     return (
       <html lang="en">
         <Head>
+          <meta name="msvalidate.01" content="A01C74C6F553032681F49914887788AA" />
           <meta key="charset" charSet={DEFAULT_SEO.charset} />
           <link key="manifest" rel="manifest" href="/_next/static/manifest.json" />
           <link key="manifest" rel="manifest" href="/_next/static/manifest.json" />
