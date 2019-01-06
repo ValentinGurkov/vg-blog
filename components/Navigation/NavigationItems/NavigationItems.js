@@ -3,7 +3,7 @@ import classes from './NavigationItems.scss';
 import NavigationItem from './NavigationItem/NavigationItem';
 
 const NavigationItems = () => (
-  <ul className={classes.menu}>
+  <ul className="menu">
     <NavigationItem to="/" title="Home">
       Home
     </NavigationItem>
@@ -13,6 +13,7 @@ const NavigationItems = () => (
     <NavigationItem to="/ourMission" as="our-mission" title="Our Mission">
       Our mission
     </NavigationItem>
+    <style jsx>{classes}</style>
   </ul>
 );
 

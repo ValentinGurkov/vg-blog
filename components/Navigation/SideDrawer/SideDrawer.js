@@ -7,17 +7,18 @@ import classes from './SideDrawer.scss';
 const SideDrawer = props => {
   let attachedClasses;
   if (props.open) {
-    attachedClasses = [classes.sideDrawer, classes.open].join(' ');
+    attachedClasses = ['sideDrawer', 'open'].join(' ');
   } else {
-    attachedClasses = [classes.sideDrawer, classes.close].join(' ');
+    attachedClasses = ['sideDrawer', 'close'].join(' ');
   }
   return (
-    <>
+    <React.Fragment>
       <Backdrop show={props.open} clicked={props.closed} />
       <nav className={attachedClasses}>
         <NavigationItems />
       </nav>
-    </>
+      <style jsx>{classes}</style>
+    </React.Fragment>
   );
 };
 

@@ -10,9 +10,10 @@ const newsLetterFormHandler = event => {
 };
 
 const footer = () => (
-  <footer className={classes.footer}>
+  <footer className="footer">
     <FooterTop newsLetterFormHandler={newsLetterFormHandler} />
     <FooterBottom />
+    <style jsx>{classes}</style>
   </footer>
 );
 

@@ -19,10 +19,10 @@ class Hader extends Component {
   };
 
   render() {
-    const desktopNav = [classes.navigation, classes.desktopOnly].join(' ');
+    const desktopNav = ['navigation', 'desktopOnly'].join(' ');
     return (
       <header>
-        <div className={classes.wrapper}>
+        <div className="wrapperNav">
           <Logo src={require('../../static/logo.svg')} />
           <nav className={desktopNav}>
             <NavigationItems />
@@ -30,6 +30,7 @@ class Hader extends Component {
           <DrawerToggle clicked={this.sideDrawerToggledHandler} />
           <SideDrawer open={this.state.showSideDrawer} closed={this.sideDrawerClosedHandler} />
         </div>
+        <style jsx>{classes}</style>
       </header>
     );
   }
