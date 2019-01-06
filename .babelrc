@@ -5,9 +5,7 @@
         [
           "next/babel",
           {
-            "styled-jsx": {
-              "plugins": ["styled-jsx-plugin-sass"]
-            }
+            "plugins": ["styled-jsx-plugin-sass"]
           }
         ]
       ]
@@ -17,16 +15,20 @@
         [
           "next/babel",
           {
-            "styled-jsx": {
-              "plugins": ["styled-jsx-plugin-sass"],
-              "sourceMaps": true
-            }
+            "plugins": ["styled-jsx-plugin-sass"]
           }
         ]
       ]
     },
     "test": {
-      "presets": ["next/babel"]
+      "presets": [
+        [
+          "next/babel",
+          {
+            "plugins": ["styled-jsx/babel-test"]
+          }
+        ]
+      ]
     }
   },
   "plugins": [["babel-plugin-root-import"]]

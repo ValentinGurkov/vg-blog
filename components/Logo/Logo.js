@@ -4,13 +4,12 @@ import PropTypes from 'prop-types';
 import classes from './Logo.scss';
 
 const Logo = props => (
-  <div className={props.footer ? 'footerLogo' : 'logo'}>
+  <div className={props.footer ? classes.footerLogo : classes.logo}>
     <Link prefetch href="/">
       <a title="Home">
         <img width="40px" height="40px" src={props.src} alt="Logo" />
       </a>
     </Link>
-    <style jsx>{classes}</style>
   </div>
 );
 

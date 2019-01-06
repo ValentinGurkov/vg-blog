@@ -1,10 +1,11 @@
 @import '../../scss/variables';
 
-.wrapperNav {
+.wrapper {
   display: grid;
   width: 100%;
   height: 65px;
   padding: 0 15px;
+  box-sizing: border-box;
   background: $paynes-grey;
   margin: 0 auto;
   grid-template-columns: 10% 1fr;
@@ -26,7 +27,7 @@
 }
 
 @media (min-width: 900px) {
-  .wrapperNav {
+  .wrapper {
     max-width: 1650px;
   }
 }

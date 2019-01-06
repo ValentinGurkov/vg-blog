@@ -7,26 +7,23 @@ import classes from './Map.scss';
 export class MapContainer extends Component {
   render() {
     return (
-      <React.Fragment>
-        <Map
-          className="map"
-          google={this.props.google}
-          zoom={15}
-          initialCenter={{
+      <Map
+        className={classes.map}
+        google={this.props.google}
+        zoom={15}
+        initialCenter={{
+          lat: OFFICE_COORDINATES.lat,
+          lng: OFFICE_COORDINATES.lng
+        }}>
+        <Marker
+          title={"VG Blog's Office."}
+          name="Office"
+          position={{
             lat: OFFICE_COORDINATES.lat,
             lng: OFFICE_COORDINATES.lng
-          }}>
-          <Marker
-            title={"VG Blog's Office."}
-            name="Office"
-            position={{
-              lat: OFFICE_COORDINATES.lat,
-              lng: OFFICE_COORDINATES.lng
-            }}
-          />
-        </Map>
-        <style jsx>{classes}</style>
-      </React.Fragment>
+          }}
+        />
+      </Map>
     );
   }
 }
