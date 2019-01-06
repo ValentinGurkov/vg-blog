@@ -40,14 +40,11 @@ const getIconProps = type =>
 const Icon = props => {
   const { url, title, alt, src } = getIconProps(props.type);
   return (
-    <React.Fragment>
-      <Link href={url}>
-        <a title={title} target="_blank" rel="noopener">
-          <img className="socialIcon" src={src} alt={alt} />
-        </a>
-      </Link>
-      <style jsx>{classes}</style>
-    </React.Fragment>
+    <Link href={url}>
+      <a title={title} target="_blank" rel="noopener">
+        <img className={classes.socialIcon} src={src} alt={alt} />
+      </a>
+    </Link>
   );
 };
 

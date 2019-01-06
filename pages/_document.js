@@ -1,7 +1,6 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 import { DEFAULT_SEO } from '../lib/config';
 import { GA_TRACKING_ID } from '../lib/gtag';
-import global from '~/scss/global.scss';
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -41,9 +40,6 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-        <style jsx global>
-          {global}
-        </style>
       </html>
     );
   }

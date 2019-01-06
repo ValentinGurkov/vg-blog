@@ -4,11 +4,10 @@ import PropTypes from 'prop-types';
 import classes from './DrawerToggle.scss';
 
 const DrawerToggle = props => (
-  <div className="drawlerToggle" onClick={props.clicked}>
+  <div className={classes.drawlerToggle} onClick={props.clicked}>
     <span />
     <span />
     <span />
-    <style jsx>{classes}</style>
   </div>
 );
 

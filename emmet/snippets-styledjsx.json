@@ -1,0 +1,7 @@
+{
+  "html": {
+    "snippets": {
+      "style-jsx": "<style jsx>{`\n\t$1\n`}</style>"
+    }
+  }
+}

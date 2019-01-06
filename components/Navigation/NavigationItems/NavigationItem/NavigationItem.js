@@ -4,16 +4,13 @@ import Link from 'next/link';
 import classes from './NavigationItem.scss';
 
 const NavigationItem = props => (
-  <React.Fragment>
-    <li className="menuItem">
-      <Link as={props.as} href={props.to} prefetch>
-        <a className="menuLink" title={props.title}>
-          {props.children}
-        </a>
-      </Link>
-    </li>
-    <style jsx>{classes}</style>
-  </React.Fragment>
+  <li className={classes.menuItem}>
+    <Link as={props.as} href={props.to} prefetch>
+      <a className={classes.menuLink} title={props.title}>
+        {props.children}
+      </a>
+    </Link>
+  </li>
 );
 
 NavigationItem.propTypes = {
