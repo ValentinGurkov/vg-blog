@@ -2,6 +2,7 @@ import React from 'react';
 import App, { Container } from 'next/app';
 import Layout from '~/containers/Layout/Layout';
 import DefaultMeta from '~/components/DefaultMeta/DefaultMeta';
+import global from '~/scss/global.scss';
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -25,6 +26,9 @@ export default class MyApp extends App {
             <Component {...pageProps} />
           </main>
         </Layout>
+        <style jsx global>
+          {global}
+        </style>
       </Container>
     );
   }

@@ -1,7 +1,6 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 import { DEFAULT_SEO } from '../lib/config';
 import { GA_TRACKING_ID } from '../lib/gtag';
-import global from '~/scss/global.scss';
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -27,13 +26,9 @@ export default class MyDocument extends Document {
           <link href={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} rel="preload" as="script" />
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
           <script
+            async
             dangerouslySetInnerHTML={{
-              __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_TRACKING_ID}');
-          `
+              __html: `window.dataLayer=window.dataLayer||[];functiongtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_TRACKING_ID}');`
             }}
           />
         </Head>
@@ -41,9 +36,6 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-        <style jsx global>
-          {global}
-        </style>
       </html>
     );
   }
