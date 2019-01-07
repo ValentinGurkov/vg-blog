@@ -54,7 +54,7 @@
       color: $white;
       -webkit-appearance: none;
       border-radius: 0;
-      line-height: 1;
+      line-height: normal;
 
       &::placeholder {
         font-size: 12px;
