@@ -9,7 +9,7 @@ export const getBlogPostsAPI = async params => {
     // the type of blog_post and order them. Full docs can be found here:
     // https://github.com/prismicio/prismic-javascript#query-the-content
     const response = await API.query(Prismic.Predicates.at('document.type', 'blog_post'), {
-      orderings: '[my.blog_post.date desc]',
+      orderings: '[my.blog_post.date_published desc]',
       ...params
       // params will be extra parameters we can pass through with api calls
       // such as how many documents to return
@@ -24,7 +24,11 @@ export const getBlogPostAPI = async slug => {
   try {
     const API = await Prismic.api(PRISMIC_API_URL);
     // we pass up the slug to request the correct post
-    const response = await API.query(Prismic.Predicates.at('my.blog_post.uid', slug));
+    const response = await API.query(Prismic.Predicates.at('my.blog_post.uid', slug), {
+      orderings: '[my.blog_post.date_published desc]'
+      // params will be extra parameters we can pass through with api calls
+      // such as how many documents to return
+    });
     return response.results[0];
   } catch (error) {
     console.error(error);
