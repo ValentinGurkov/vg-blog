@@ -10,7 +10,10 @@ const FeaturedArticle = props => {
   return (
     <div className="wrapper">
       <Link prefetch as={linkResolver(props.post)} href={`/blogPost?slug=${props.post.uid}`}>
-        <img className="featuredImage" src={props.post.data.images.url} alt={props.post.data.images.alt} />
+        <picture>
+          <source srcSet={props.post.data.images.url} type="image/webp" />
+          <img className="featuredImage" src={props.post.data.images_fallback.url} alt={props.post.data.images.alt} />
+        </picture>
       </Link>
       <div className="articleDescription">
         <p className="smallTitle">
