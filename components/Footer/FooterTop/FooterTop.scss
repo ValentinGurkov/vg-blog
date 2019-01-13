@@ -47,14 +47,14 @@
       border: none;
       background-color: $liver;
       margin-left: 0;
-      width: 255px;
+      width: 260px;
       height: 38px;
       text-indent: 15px;
       outline: none;
       color: $white;
       -webkit-appearance: none;
       border-radius: 0;
-      line-height: normal;
+      line-height: 2.6;
 
       &::placeholder {
         font-size: 12px;
@@ -159,16 +159,11 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 320px) {
   .footerTop {
     .newsLetter {
       .footerInput {
-        width: 260px;
-      }
-
-      .footerButton {
-        width: 80px;
-        text-align: left;
+        width: 210px;
       }
     }
   }
