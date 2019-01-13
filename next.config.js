@@ -91,7 +91,7 @@ module.exports = withOptimizedImages(
             },
             icons: [
               {
-                src: resolve('static/logo.jpg'),
+                src: resolve('static/logo.png'),
                 sizes: [72, 96, 128, 144, 152, 192, 256, 384, 512],
                 destination: '/static'
               },
