@@ -76,16 +76,18 @@ app
       })
     })
 
-    const iconOptions = {
+    const rootFileOptions = {
       root: join(__dirname, '../static')
     }
 
-    server.get('/apple-touch-icon.png', (req, res) => res.status(200).sendFile('apple-touch-icon.png', iconOptions))
+    server.get('/browserconfig.xml', (req, res) => res.status(200).sendFile('browserconfig.xml', rootFileOptions))
 
-    server.get('/favicon.ico', (req, res) => res.status(200).sendFile('favicon.ico', iconOptions))
+    server.get('/apple-touch-icon.png', (req, res) => res.status(200).sendFile('apple-touch-icon.png', rootFileOptions))
+
+    server.get('/favicon.ico', (req, res) => res.status(200).sendFile('favicon.ico', rootFileOptions))
 
     const robotsOptions = {
-      root: join(__dirname, '../static'),
+      ...rootFileOptions,
       headers: {
         'Content-Type': 'text/plain;charset=UTF-8'
       }
