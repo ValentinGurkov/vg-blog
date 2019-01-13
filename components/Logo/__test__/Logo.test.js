@@ -8,13 +8,6 @@ describe('<Logo/>', () => {
     wrapper = shallow(<Logo src="some-src" />);
   });
 
-  it('should have footerLogo class when used in footer', () => {
-    wrapper.setProps({
-      footer: true
-    });
-    expect(wrapper.hasClass('footerLogo')).toEqual(true);
-  });
-
   it('should have image with title and alt', () => {
     const img = wrapper.find('img');
     expect(img).toHaveLength(1);
