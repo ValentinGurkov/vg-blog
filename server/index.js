@@ -75,11 +75,15 @@ app
         res.status(200).send(xml)
       })
     })
+    apple - touch - icon
 
-    const faviconOptions = {
+    const iconOptions = {
       root: join(__dirname, '../static')
     }
-    server.get('/favicon.ico', (req, res) => res.status(200).sendFile('favicon.ico', faviconOptions))
+
+    server.get('/apple-touch-icon.png', (req, res) => res.status(200).sendFile('apple-touch-icon.png', iconOptions))
+
+    server.get('/favicon.ico', (req, res) => res.status(200).sendFile('favicon.ico', iconOptions))
 
     const robotsOptions = {
       root: join(__dirname, '../static'),
