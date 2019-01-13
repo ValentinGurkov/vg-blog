@@ -99,7 +99,7 @@ module.exports = withOptimizedImages(
                 src: resolve('static/apple-touch-icon.png"'),
                 sizes: [180],
                 destination: '/static'
-              }
+              },
               {
                 src: resolve('static/apple-touch-icon-120x120.png"'),
                 sizes: [120],
