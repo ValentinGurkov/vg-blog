@@ -75,7 +75,6 @@ app
         res.status(200).send(xml)
       })
     })
-    apple - touch - icon
 
     const iconOptions = {
       root: join(__dirname, '../static')
