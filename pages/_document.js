@@ -12,9 +12,7 @@ export default class MyDocument extends Document {
     return (
       <html lang="en">
         <Head>
-          <meta name="msvalidate.01" content="A01C74C6F553032681F49914887788AA" />
           <meta key="charset" charSet={DEFAULT_SEO.charset} />
-          <link key="manifest" rel="manifest" href="/_next/static/manifest.json" />
           <link key="manifest" rel="manifest" href="/_next/static/manifest.json" />
           <meta name="robots" content="index,follow" />
           <meta key="viewport" name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,8 +26,7 @@ export default class MyDocument extends Document {
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
           <script
             dangerouslySetInnerHTML={{
-              __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '${GA_TRACKING_ID}');
-          `
+              __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${GA_TRACKING_ID}')`
             }}
           />
         </Head>
