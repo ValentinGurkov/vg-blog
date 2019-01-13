@@ -18,7 +18,7 @@ export default class MyDocument extends Document {
           <meta key="viewport" name="viewport" content="width=device-width, initial-scale=1" />
           <meta key="msapplication-TileColor" name="msapplication-TileColor" content="#da532c" />
           <meta name="msapplication-TileImage" content="/static/icons/mstile-144x144.png" />
-          <meta name="msapplication-config" content="/static/icons/browserconfig.xml" />
+          <meta name="msapplication-config" content="/browserconfig.xml" />
           <meta key="theme-color" name="theme-color" content="#ff6c0c" />
           <Icons />
           <link href="https://amp.cloudflare.com" rel="preload" as="document" />
@@ -60,7 +60,7 @@ const Icons = () => (
     />
     <link key="icon-16x16" rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16x16.png" />
     <link key="mask-icon" rel="mask-icon" href="/static/icons/safari-pinned-tab.svg" color="#414042" />
-    <link key="shortcut icon" rel="shortcut icon" href="/static/icons/favicon.ico" />{' '}
+    <link key="shortcut icon" rel="shortcut icon" href="/favicon.ico" />{' '}
     <meta key="msapplication-TileColor" name="msapplication-TileColor" content="#da532c" />
     <link
       key="apple-touch-icon-144x144"

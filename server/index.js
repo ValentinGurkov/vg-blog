@@ -76,13 +76,17 @@ app
       })
     })
 
+    const iconFileOptions = {
+      root: join(__dirname, '../static/icons')
+    }
+
+    server.get('/browserconfig.xml', (req, res) => res.status(200).sendFile('browserconfig.xml', iconFileOptions))
+
+    server.get('/apple-touch-icon.png', (req, res) => res.status(200).sendFile('apple-touch-icon.png', iconFileOptions))
+
     const rootFileOptions = {
       root: join(__dirname, '../static')
     }
-
-    server.get('/browserconfig.xml', (req, res) => res.status(200).sendFile('browserconfig.xml', rootFileOptions))
-
-    server.get('/apple-touch-icon.png', (req, res) => res.status(200).sendFile('apple-touch-icon.png', rootFileOptions))
 
     server.get('/favicon.ico', (req, res) => res.status(200).sendFile('favicon.ico', rootFileOptions))
 
@@ -94,6 +98,7 @@ app
     }
 
     server.get('/robots.txt', (req, res) => res.status(200).sendFile('robots.txt', robotsOptions))
+
     server.use(
       '/static',
       express.static(join(__dirname, '../static'), {
