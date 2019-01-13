@@ -40,7 +40,7 @@ const BlogPost = props => {
   const post = props.post.data;
   const info = props.post;
   const postUrl = `${ROOT_URL}/blog/\${info.uuid}`;
-  const logoUrl = `${ROOT_URL}/static/og-image.png`;
+  const logoUrl = `${ROOT_URL}/static/og-image.jpg`;
   return (
     <>
       <Head>
