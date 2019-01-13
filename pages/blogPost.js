@@ -52,6 +52,7 @@ const BlogPost = props => {
         <meta key="og:title" property="og:title" content={post.og_title[0].text} />
         <meta key="og:description" property="og:description" content={post.og_description[0].text} />
         <meta key="og:image" property="og:image" content={post.og_image.url} />
+        <meta key="og:image:alt" property="og:image" content={post.og_image.alt} />
       </Head>
       <article>
         <h1>{post.title.length ? post.title[0].text : ''}</h1>
