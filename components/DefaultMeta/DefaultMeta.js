@@ -16,7 +16,7 @@ const DefaultMeta = () => (
     <meta key="og:description" property="og:description" content={DEFAULT_SEO.openGraph.description} />
     <meta key="og:title" property="og:title" content={DEFAULT_SEO.openGraph.title} />
     <meta key="og:image" property="og:image" content={DEFAULT_SEO.openGraph.image} />
-    <meta key="og:image:alt" property="og:image" content={DEFAULT_SEO.openGraph.image_alt} />
+    <meta key="og:image:alt" property="og:image:alt" content={DEFAULT_SEO.openGraph.image_alt} />
     <meta key="og:url" property="og:url" content={DEFAULT_SEO.openGraph.url} />
   </Head>
 );
