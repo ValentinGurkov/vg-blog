@@ -91,8 +91,18 @@ module.exports = withOptimizedImages(
             },
             icons: [
               {
-                src: resolve('static/og-image.png'),
-                sizes: [96, 128, 192, 256, 384, 512],
+                src: resolve('static/logo.jpg'),
+                sizes: [72, 96, 128, 144, 152, 192, 256, 384, 512],
+                destination: '/static'
+              },
+              {
+                src: resolve('static/apple-touch-icon.png"'),
+                sizes: [180],
+                destination: '/static'
+              }
+              {
+                src: resolve('static/apple-touch-icon-120x120.png"'),
+                sizes: [120],
                 destination: '/static'
               }
             ],

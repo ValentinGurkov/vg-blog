@@ -60,7 +60,6 @@ const Icons = () => (
     />
     <link key="icon-16x16" rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16x16.png" />
     <link key="mask-icon" rel="mask-icon" href="/static/icons/safari-pinned-tab.svg" color="#414042" />
-    <link key="shortcut icon" rel="shortcut icon" href="/favicon.ico" />{' '}
     <meta key="msapplication-TileColor" name="msapplication-TileColor" content="#da532c" />
     <link
       key="apple-touch-icon-144x144"
