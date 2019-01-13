@@ -9,6 +9,7 @@
 
   .featuredImage {
     width: 100%;
+    height: auto;
   }
 
   .smallTitle {
@@ -29,11 +30,11 @@
   }
 
   .mediumTitle {
+    margin: 30px 0;
+    font-size: 30px;
     letter-spacing: -0.6px;
-    font-size: 36px;
     line-height: 1.1em;
     text-transform: uppercase;
-    margin: 20px 0 25px;
     padding-left: 30px;
     color: $paynes-grey;
     position: relative;
@@ -92,24 +93,68 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (min-width: 320px) {
   .wrapper {
     padding: 0;
     margin-bottom: 15px;
 
-    .featuredImage {
-      height: auto;
-      width: 375px;
+    picture {
+      max-width: 320px;
     }
 
     .articleDescription {
       padding: 0 15px;
-      max-width: 375px;
+      max-width: 320px;
 
       .mediumTitle {
         margin: 30px 0;
         font-size: 30px;
       }
     }
+  }
+}
+
+@media (min-width: 375px) {
+  .wrapper {
+    picture {
+      max-width: 375px;
+    }
+
+    .articleDescription {
+      max-width: 375px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    margin: 15px 0;
+    justify-content: center;
+
+    picture {
+      max-width: 100%;
+    }
+
+    .articleDescription {
+      max-width: 100%;
+
+      .mediumTitle {
+        margin: 20px 0 25px;
+        font-size: 36px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    grid-template-columns: repeat(auto-fit, 504px);
+  }
+}
+
+@media (min-width: 1366px) {
+  .wrapper {
+    margin: 40px 0;
+    grid-template-columns: repeat(auto-fit, 600px);
   }
 }
