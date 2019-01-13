@@ -7,7 +7,7 @@ import FooterLink from './FooterLink/FooterLink';
 const FooterBottom = () => (
   <div className="footerBottom">
     <div className="footerLogo">
-      <Logo footer src={require('../../../static/footer-logo.svg')} />
+      <Logo src={require('../../../static/footer-logo.svg')} />
     </div>
     <span className="copyright">&copy; 2018 Valentin Gurkov</span>
     <nav>
