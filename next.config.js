@@ -97,14 +97,8 @@ module.exports = withOptimizedImages(
               },
               {
                 src: resolve('static/icons/apple-touch-icon.png'),
-                sizes: [180],
-                destination: '/static',
-                ios: true
-              },
-              {
-                src: resolve('static/icons/apple-touch-icon-120x120.png'),
-                sizes: [120],
-                destination: '/static',
+                sizes: [57, 60, 72, 76, 144, 120, 144, 152, 180],
+                destination: '/static/ios',
                 ios: true
               }
             ],
