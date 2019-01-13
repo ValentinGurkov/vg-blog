@@ -6,8 +6,7 @@ const express = require('express')
 const next = require('next')
 const { join } = require('path')
 const LRUCache = require('lru-cache')
-const compression = require('compression')
-// const shrinkRay = require('shrink-ray-current')
+// const compression = require('compression')
 const helmet = require('helmet')
 const cors = require('cors')
 const generateSitemap = require('./generateSitemap')
@@ -47,20 +46,19 @@ app
   .then(() => {
     const server = express()
     server.use(cors(corsOptions))
-    server.use(compression())
-    // server.use(shrinkRay())
+    // server.use(compression())
     server.use(helmet())
 
     server.options('*', cors())
 
-    server.get('/', (req, res) => renderAndCache(req, res, '/'))
+    // server.get('/', (req, res) => app.render(req, res, '/'))
 
-    server.get('/privacy-policy', (req, res) => renderAndCache(req, res, '/privacy', req.query))
+    server.get('/privacy-policy', (req, res) => app.render(req, res, '/privacy', req.query))
 
     server.get('/blog/:slug', (req, res) => {
       const nextJsPage = '/blogPost'
       const queryParams = { slug: req.params.slug }
-      renderAndCache(req, res, nextJsPage, queryParams)
+      app.render(req, res, nextJsPage, queryParams)
     })
 
     server.get('/sitemap.xml', async (req, res) => {
@@ -128,7 +126,7 @@ app
     throw ex
   })
 
-async function renderAndCache(req, res, pagePath, queryParams) {
+const renderAndCache = async (req, res, pagePath, queryParams) => {
   const key = req.url
 
   // if page is in cache, server from cache
