@@ -7,6 +7,12 @@
   padding: 0 0 40px 0;
 }
 
+@media (min-width: 414px) {
+  .articles {
+    grid-template-columns: repeat(auto-fit, 414px);
+  }
+}
+
 @media (min-width: 768px) {
   .articles {
     justify-content: center;

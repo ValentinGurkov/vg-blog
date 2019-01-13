@@ -126,6 +126,18 @@
   }
 }
 
+@media (min-width: 414px) {
+  .wrapper {
+    picture {
+      max-width: 414px;
+    }
+
+    .articleDescription {
+      max-width: 414px;
+    }
+  }
+}
+
 @media (min-width: 768px) {
   .wrapper {
     margin: 15px 0;

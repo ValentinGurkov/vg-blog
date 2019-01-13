@@ -39,8 +39,8 @@ const addJSONLD = (post, info, postUrl, logoUrl) => ({
 const BlogPost = props => {
   const post = props.post.data;
   const info = props.post;
-  const postUrl = `${ROOT_URL}/blog/\${info.uuid}`;
-  const logoUrl = `${ROOT_URL}/static/og-image.jpg`;
+  const postUrl = `${ROOT_URL}/blog/${info.uuid}`;
+  const logoUrl = `${ROOT_URL}${require('../static/og-image.jpg')}`;
   return (
     <>
       <Head>
@@ -54,11 +54,24 @@ const BlogPost = props => {
         <meta key="og:image" property="og:image" content={post.og_image.url} />
         <meta key="og:image:alt" property="og:image:alt" content={post.og_image.alt} />
       </Head>
-      <article>
+      <article className="blogPost">
         <h1>{post.title.length ? post.title[0].text : ''}</h1>
         {/* Here we pass our rich text field to Prismics RichText renderer, along with our linkResolver */}
         {RichText.render(post.body, linkResolver)}
       </article>
+      <style jsx>{`
+        .blogPost {
+          margin: 20px auto;
+          padding: 0 13px;
+          font-size: 12px;
+          line-height: 1.4;
+          max-width: 1650px;
+        }
+
+        ul {
+          text-align: left;
+        }
+      `}</style>
       <script type="application/ld+json" dangerouslySetInnerHTML={addJSONLD(post, info, postUrl, logoUrl)} />
     </>
   );
