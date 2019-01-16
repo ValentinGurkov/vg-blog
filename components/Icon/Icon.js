@@ -6,7 +6,7 @@ import classes from './Icon.scss';
 const getIconProps = type =>
   ({
     facebook: {
-      url: 'https://www.facebook.com',
+      url: 'https://www.facebook.com/valentingblog',
       alt: 'Facebook icon',
       title: 'Follow us on Facebook',
       src: require('../../static/social/facebook.svg')
@@ -18,7 +18,7 @@ const getIconProps = type =>
       src: require('../../static/social/youtube.svg')
     },
     gplus: {
-      url: 'https://plus.google.com/discover',
+      url: 'https://plus.google.com/b/101578086239762371964/101578086239762371964',
       alt: 'Google Plus icon',
       title: 'Follow us on Google Plus',
       src: require('../../static/social/googleplus.svg')

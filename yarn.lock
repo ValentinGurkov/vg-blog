@@ -3986,6 +3986,11 @@ expect@^23.6.0:
     jest-message-util "^23.4.0"
     jest-regex-util "^23.3.0"
 
+express-seo-breadcrumbs@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/express-seo-breadcrumbs/-/express-seo-breadcrumbs-2.0.2.tgz#53897d440cea9bf29b03b9990a50283b693609e5"
+  integrity sha512-6KXk28zd3yffQ3k+t+DPo1AKof4TOZQfSkp/WZVRLt6U2/Qld+aQEAJ9u/+vGPoCpLuQM1q0iNKknJjdSa8b/Q==
+
 express@^4.16.4:
   version "4.16.4"
   resolved "https://registry.yarnpkg.com/express/-/express-4.16.4.tgz#fddef61926109e24c515ea97fd2f1bdbf62df12e"

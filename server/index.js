@@ -6,7 +6,7 @@ const express = require('express')
 const next = require('next')
 const { join } = require('path')
 const LRUCache = require('lru-cache')
-// const compression = require('compression')
+const compression = require('compression')
 const helmet = require('helmet')
 const cors = require('cors')
 const generateSitemap = require('./generateSitemap')
@@ -46,14 +46,18 @@ app
   .then(() => {
     const server = express()
     server.use(cors(corsOptions))
-    // server.use(compression())
+    server.use(compression())
     server.use(helmet())
 
     server.options('*', cors())
 
     // server.get('/', (req, res) => app.render(req, res, '/'))
 
-    server.get('/privacy-policy', (req, res) => app.render(req, res, '/privacy', req.query))
+    server.get('/privacy-policy', (req, res) => app.render(req, res, '/privacy'))
+
+    server.get('/terms-and-conditions', (req, res) => app.render(req, res, '/terms'))
+
+    server.get('/articles', (req, res) => app.render(req, res, '/articles'))
 
     server.get('/blog/:slug', (req, res) => {
       const nextJsPage = '/blogPost'

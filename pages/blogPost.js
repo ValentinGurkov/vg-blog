@@ -2,11 +2,27 @@ import React from 'react';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 import { RichText } from 'prismic-reactjs';
+import Breadcrumbs from '~/components/Breadcrumbs/Breadcrumbs';
 import { getBlogPostAPI } from '../api';
 import linkResolver from '../lib/prismic';
 import { ROOT_URL } from '../lib/config';
 
-const addJSONLD = (post, info, postUrl, logoUrl) => ({
+const getBreadrumbs = slug => [
+  {
+    url: '/',
+    page: 'Home'
+  },
+  {
+    url: '/articles',
+    page: 'Articles'
+  },
+  {
+    url: `/blog/${slug}`,
+    page: 'Article'
+  }
+];
+
+const addArticleLD = (post, info, postUrl, logoUrl) => ({
   __html: `{
     "@context": "http://schema.org",
     "@type": "BlogPosting",
@@ -36,13 +52,39 @@ const addJSONLD = (post, info, postUrl, logoUrl) => ({
   }`
 });
 
+const addBreadcrumbsLD = slug => ({
+  __html: `{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "${ROOT_URL}/"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Articles",
+      "item":"${ROOT_URL}/articles"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Article",
+      "item":"${ROOT_URL}/blog/${slug}"
+    }]
+  }`
+});
+
 const BlogPost = props => {
   const post = props.post.data;
   const info = props.post;
-  const postUrl = `${ROOT_URL}/blog/${info.uuid}`;
+  const blogSlug = info.uid;
+  const postUrl = `${ROOT_URL}/blog/${blogSlug}`;
   const logoUrl = `${ROOT_URL}${require('../static/og-image.jpg')}`;
+  const breadcrumbs = getBreadrumbs(blogSlug);
   return (
-    <>
+    <React.Fragment>
       <Head>
         <title key="title">{post.og_title[0].text}</title>
         <meta key="description" name="description" content={post.og_description[0].text} />
@@ -54,6 +96,7 @@ const BlogPost = props => {
         <meta key="og:image" property="og:image" content={post.og_image.url} />
         <meta key="og:image:alt" property="og:image:alt" content={post.og_image.alt} />
       </Head>
+      <Breadcrumbs breadcrumbs={breadcrumbs} />
       <article className="blogPost">
         <h1>{post.title.length ? post.title[0].text : ''}</h1>
         {/* Here we pass our rich text field to Prismics RichText renderer, along with our linkResolver */}
@@ -65,23 +108,24 @@ const BlogPost = props => {
           padding: 0 13px;
           font-size: 12px;
           line-height: 1.4;
-          max-width: 1650px;
         }
 
         ul {
           text-align: left;
         }
       `}</style>
-      <script type="application/ld+json" dangerouslySetInnerHTML={addJSONLD(post, info, postUrl, logoUrl)} />
-    </>
+      <script type="application/ld+json" dangerouslySetInnerHTML={addArticleLD(post, info, postUrl, logoUrl)} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={addBreadcrumbsLD(blogSlug)} />
+    </React.Fragment>
   );
 };
 
 BlogPost.getInitialProps = async context => {
-  const { slug } = context.query;
+  const { slug, breadcrumbs } = context.query;
   const response = await getBlogPostAPI(slug);
   return {
-    post: response
+    post: response,
+    breadcrumbs
   };
 };
 
