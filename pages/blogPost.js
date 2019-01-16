@@ -104,14 +104,19 @@ const BlogPost = props => {
       </article>
       <style jsx>{`
         .blogPost {
-          margin: 20px auto;
+          margin: 10px auto 20px;
           padding: 0 13px;
-          font-size: 12px;
           line-height: 1.4;
         }
 
         ul {
           text-align: left;
+        }
+
+        @media (max-width: 768px) {
+          .blogPost {
+            font-size: 14px;
+          }
         }
       `}</style>
       <script type="application/ld+json" dangerouslySetInnerHTML={addArticleLD(post, info, postUrl, logoUrl)} />

@@ -35,7 +35,7 @@ const addBreadcrumbsLD = () => ({
 const privacyPolicy = () => (
   <>
     <Breadcrumbs breadcrumbs={breadcrumbs} />
-    <div>
+    <div className="wrapper">
       <h1>Privacy Policy</h1>
 
       <p>Effective date: November 20, 2018</p>
@@ -256,12 +256,26 @@ const privacyPolicy = () => (
 
         <li>By phone number: +395886524579</li>
         <li>By mail: Anak Krakatau Island, Pulau, South Lampung Regency, Lampung, Indonesia</li>
-        <li>
-          By visiting our office: Anak Krakatau Island, Pulau, South Lampung Regency, Lampung, Indonesia
-          <Map />
-        </li>
+        <li>By visiting our office: Anak Krakatau Island, Pulau, South Lampung Regency, Lampung, Indonesia</li>
       </ul>
     </div>
+    <Map />
+    <style jsx>{`
+      .wrapper {
+        margin: 20px auto;
+        padding: 0 13px;
+        line-height: 1.4;
+      }
+      ul {
+        text-align: left;
+      }
+
+      @media (max-width: 768px) {
+        .wrapper {
+          font-size: 14px;
+        }
+      }
+    `}</style>
     <script type="application/ld+json" dangerouslySetInnerHTML={addBreadcrumbsLD()} />
   </>
 );

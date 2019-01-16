@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import Logo from '~/components/Logo/Logo';
 import classes from './FooterBottom.scss';
 import FooterLink from './FooterLink/FooterLink';

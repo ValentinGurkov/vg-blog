@@ -34,7 +34,7 @@ const addBreadcrumbsLD = () => ({
 const terms = () => (
   <>
     <Breadcrumbs breadcrumbs={breadcrumbs} />
-    <div>
+    <div className="wrapper">
       <h1>Terms and Conditions ("Terms")</h1>
 
       <p>Last updated: November 21, 2018</p>
@@ -105,6 +105,22 @@ const terms = () => (
 
       <p>If you have any questions about these Terms, please contact us.</p>
     </div>
+    <style jsx>{`
+      .wrapper {
+        margin: 20px auto;
+        padding: 0 13px;
+        line-height: 1.4;
+      }
+      ul {
+        text-align: left;
+      }
+
+      @media (max-width: 768px) {
+        .wrapper {
+          font-size: 14px;
+        }
+      }
+    `}</style>
     <script type="application/ld+json" dangerouslySetInnerHTML={addBreadcrumbsLD()} />
   </>
 );

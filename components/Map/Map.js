@@ -17,7 +17,7 @@ export class MapContainer extends Component {
             lng: OFFICE_COORDINATES.lng
           }}>
           <Marker
-            title={"VG Blog's Office."}
+            title={"Valentin Gurkov's Blog Office"}
             name="Office"
             position={{
               lat: OFFICE_COORDINATES.lat,
