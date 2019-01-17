@@ -76,6 +76,25 @@ const addBreadcrumbsLD = slug => ({
   }`
 });
 
+const BlogMeta = props => (
+  <Head>
+    <title key="title">{props.post.og_title[0].text}</title>
+    <meta key="description" name="description" content={props.post.og_description[0].text} />
+    <meta key="keywords" name="keywords" content={props.post.keywords[0].text} />
+    <meta key="og:url" property="og:url" content={props.postUrl} />
+    <meta key="og:type" property="og:type" content="article" />
+    <meta key="og:title" property="og:title" content={props.post.og_title[0].text} />
+    <meta key="og:description" property="og:description" content={props.post.og_description[0].text} />
+    <meta key="og:image" property="og:image" content={props.post.og_image.url} />
+    <meta key="og:image:alt" property="og:image:alt" content={props.post.og_image.alt} />
+  </Head>
+);
+
+BlogMeta.propTypes = {
+  post: PropTypes.object.isRequired,
+  postUrl: PropTypes.string
+};
+
 const BlogPost = props => {
   const post = props.post.data;
   const info = props.post;
@@ -85,17 +104,7 @@ const BlogPost = props => {
   const breadcrumbs = getBreadrumbs(blogSlug);
   return (
     <React.Fragment>
-      <Head>
-        <title key="title">{post.og_title[0].text}</title>
-        <meta key="description" name="description" content={post.og_description[0].text} />
-        <meta key="keywords" name="keywords" content={post.keywords[0].text} />
-        <meta key="og:url" property="og:url" content={postUrl} />
-        <meta key="og:type" property="og:type" content="article" />
-        <meta key="og:title" property="og:title" content={post.og_title[0].text} />
-        <meta key="og:description" property="og:description" content={post.og_description[0].text} />
-        <meta key="og:image" property="og:image" content={post.og_image.url} />
-        <meta key="og:image:alt" property="og:image:alt" content={post.og_image.alt} />
-      </Head>
+      <BlogMeta post={post} />
       <Breadcrumbs breadcrumbs={breadcrumbs} />
       <article className="blogPost">
         <h1>{post.title.length ? post.title[0].text : ''}</h1>
