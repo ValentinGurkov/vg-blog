@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import Header from '../Header/Header';
 import Footer from '~/components/Footer/Footer';
-
+import Spinner from '~/components/UI/Spinner/Spinner';
 import * as gtag from '~/lib/gtag';
 
 Router.events.on('routeChangeComplete', url => gtag.pageview(url));
@@ -30,8 +30,7 @@ export default class Layout extends Component {
     return (
       <>
         <Header />
-        <Loader loading={this.state.loading} />
-        {this.props.children}
+        {this.state.loading ? <Spinner /> : this.props.children}
         <Footer />
       </>
     );
@@ -40,10 +39,4 @@ export default class Layout extends Component {
 
 Layout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired
-};
-
-const Loader = ({ loading }) => <div className={loading ? 'loading-show' : ''} id="loader-bar" />;
-
-Loader.propTypes = {
-  loading: PropTypes.bool
 };

@@ -10,11 +10,17 @@ const FeaturedArticle = props => {
   const blogPostUrl = linkResolver(props.post);
   return (
     <div className="wrapper">
-      <Link prefetch as={blogPostUrl} href={`/blogPost?slug=${props.post.uid}`}>
+      <Link as={blogPostUrl} href={`/blogPost?slug=${props.post.uid}`}>
         <a title={props.post.data.images.alt}>
           <picture>
-            <source srcSet={props.post.data.images.url} type="image/webp" />
-            <img className="featuredImage" src={props.post.data.images_fallback.url} alt={props.post.data.images.alt} />
+            <source media="(min-width: 768px)" srcSet={props.post.data.images.url} type="image/webp" />
+            <source media="(min-width: 768px)" srcSet={props.post.data.images_fallback.url} type="image/jpeg" />
+            <source srcSet={props.post.data.images.mobile.url} type="image/webp" />
+            <img
+              className="featuredImage"
+              src={props.post.data.images_fallback.mobile.url}
+              alt={props.post.data.images.alt}
+            />
           </picture>
         </a>
       </Link>
@@ -25,7 +31,7 @@ const FeaturedArticle = props => {
         </p>
         <h1 className="mediumTitle">{props.post.data.title[0].text}</h1>
         <p className="shortDescription">{props.post.data.og_description[0].text}</p>
-        <Link prefetch as={blogPostUrl} href={`/blogPost?slug=${props.post.uid}`}>
+        <Link as={blogPostUrl} href={`/blogPost?slug=${props.post.uid}`}>
           <a className="readMore" title="Read more">
             <strong>Read more</strong>
           </a>

@@ -21,6 +21,8 @@ export default class MyDocument extends Document {
           <meta name="msapplication-config" content="/browserconfig.xml" />
           <meta key="theme-color" name="theme-color" content="#ff6c0c" />
           <Icons />
+          <link href="https://fonts.googleapis.com/css?family=Open+Sans:400i,400,700" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css?family=Open+Sans:400i,400,700" rel="preload" as="style" />
           <link href="https://amp.cloudflare.com" rel="preload" as="document" />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <link href={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} rel="preload" as="script" />

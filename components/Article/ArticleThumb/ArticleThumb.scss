@@ -4,10 +4,11 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  max-width: 100%;
 
   .articleImage {
     cursor: pointer;
-    max-width: 100%;
+    height: auto;
   }
 
   .smallTitle {
@@ -76,5 +77,33 @@
 @media (max-width: 320px) {
   .article {
     max-width: 320px;
+  }
+
+  a,
+  picture,
+  img {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 375px) {
+  .article {
+    max-width: 375px;
+  }
+
+  a,
+  picture,
+  img {
+    max-width: 375px;
+  }
+}
+
+@media (min-width: 393px) {
+  .wrapper {
+    a,
+    picture,
+    img {
+      max-width: 393px;
+    }
   }
 }

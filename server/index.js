@@ -8,7 +8,7 @@ const { join } = require('path')
 const LRUCache = require('lru-cache')
 const compression = require('compression')
 const helmet = require('helmet')
-const cors = require('cors')
+// const cors = require('cors')
 const generateSitemap = require('./generateSitemap')
 
 const port = process.env.PORT || 3000
@@ -45,13 +45,11 @@ app
   .prepare()
   .then(() => {
     const server = express()
-    server.use(cors(corsOptions))
+    // server.use(cors(corsOptions))
     server.use(compression())
     server.use(helmet())
 
-    server.options('*', cors())
-
-    // server.get('/', (req, res) => app.render(req, res, '/'))
+    // server.options('*', cors())
 
     server.get('/privacy-policy', (req, res) => app.render(req, res, '/privacy'))
 

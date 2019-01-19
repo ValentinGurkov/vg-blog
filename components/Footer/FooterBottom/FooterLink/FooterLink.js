@@ -35,7 +35,7 @@ const FooterLink = props => {
   const { href, title, text } = getContactdata(props.type);
   return (
     <li className="footerLink">
-      <Link prefetch href={href} as={props.as}>
+      <Link href={href} as={props.as}>
         <a className="footerLinkItem" title={title}>
           {text}
         </a>

@@ -7,7 +7,7 @@ const Logo = props => {
   const src = props.footer ? require('../../static/footer-logo.svg') : require('../../static/logo.svg');
   return (
     <div className="logo">
-      <Link prefetch href="/">
+      <Link href="/">
         <a title="Home">
           <img width="40px" height="40px" src={src} alt="Logo" />
         </a>

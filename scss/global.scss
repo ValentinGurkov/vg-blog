@@ -1,20 +1,6 @@
 /* @styled-jsx=global */
 @import 'normalize';
 
-@font-face {
-  font-family: 'Open Sans';
-  src: url('/static/fonts/OpenSans-Regular.ttf');
-  font-weight: normal;
-  font-style: initial;
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  src: url('/static/fonts/OpenSans-Bold.ttf');
-  font-weight: bold;
-  font-style: normal;
-}
-
 body {
   font-family:
     'Open Sans',

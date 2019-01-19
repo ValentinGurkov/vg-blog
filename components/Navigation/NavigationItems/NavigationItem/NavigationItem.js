@@ -6,7 +6,7 @@ import classes from './NavigationItem.scss';
 const NavigationItem = props => (
   <React.Fragment>
     <li className="menuItem">
-      <Link as={props.as} href={props.to} prefetch>
+      <Link as={props.as} href={props.to}>
         <a className="menuLink" title={props.title}>
           {props.children}
         </a>

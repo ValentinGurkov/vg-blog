@@ -9,6 +9,7 @@ const dev = process.env.NODE_ENV !== 'production';
 
 module.exports = withOptimizedImages(
   withOffline({
+    dontAutoRegisterSw: true,
     workboxOpts: {
       swDest: 'static/service-worker.js',
       clientsClaim: true,
@@ -18,13 +19,6 @@ module.exports = withOptimizedImages(
         '.next': '/_next'
       },
       runtimeCaching: [
-        {
-          urlPattern: '/',
-          handler: 'networkFirst',
-          options: {
-            cacheName: 'html-cache'
-          }
-        },
         {
           urlPattern: new RegExp('https://uniblog.cdn.prismic.io/api/v2'),
           handler: 'staleWhileRevalidate',
@@ -36,7 +30,7 @@ module.exports = withOptimizedImages(
           }
         },
         {
-          urlPattern: /.*\.(?:png|jpg|jpeg|svg|gif)/,
+          urlPattern: /.*\.(?:png|jpg|jpeg|svg|gif|webp)/,
           handler: 'cacheFirst',
           options: {
             cacheName: 'image-cache',

@@ -8,7 +8,6 @@
   padding: 40px 0;
 
   .featuredImage {
-    width: 100%;
     height: auto;
   }
 
@@ -41,7 +40,7 @@
     text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
     text-align: start;
     margin-left: 35px;
-    font-weight: unset;
+    font-weight: 400;
 
     &::before {
       content: '';
@@ -98,7 +97,9 @@
     padding: 0;
     margin-bottom: 15px;
 
-    picture {
+    a,
+    picture,
+    img {
       max-width: 320px;
     }
 
@@ -116,7 +117,9 @@
 
 @media (min-width: 375px) {
   .wrapper {
-    picture {
+    a,
+    picture,
+    img {
       max-width: 375px;
     }
 
@@ -128,7 +131,9 @@
 
 @media (min-width: 414px) {
   .wrapper {
-    picture {
+    a,
+    picture,
+    img {
       max-width: 414px;
     }
 
@@ -143,8 +148,10 @@
     margin: 15px 0;
     justify-content: center;
 
-    picture {
-      max-width: 100%;
+    a,
+    picture,
+    img {
+      max-width: 610px;
     }
 
     .articleDescription {
