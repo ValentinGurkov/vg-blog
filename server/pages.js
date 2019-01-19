@@ -36,7 +36,7 @@ const transformUlr = page => {
   return { page, priority, lastMod }
 }
 
-module.exports = sitemap => {
+module.exports = (sitemap, images) => {
   diskPages.forEach(diskPage => {
     if (diskPage.match(/.*\/blogPost.js$/)) {
       return
@@ -44,11 +44,20 @@ module.exports = sitemap => {
 
     const { page, priority, lastMod } = transformUlr(diskPage)
 
-    sitemap.add({
+    const sitemapObj = {
       url: page,
       lastmodISO: lastMod,
       changefreq: 'always',
       priority
-    })
+    }
+
+    if (page.match(/.*\/articles$/)) {
+      sitemapObj.img = images
+    } else if (page.match(/.*\/$/)) {
+      const [img] = images
+      sitemapObj.img = img
+    }
+
+    sitemap.add(sitemapObj)
   })
 }

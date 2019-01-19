@@ -9,7 +9,8 @@ const getPosts = async currPage => {
     // we pass up the slug to request the correct post
     const response = await API.query(Prismic.Predicates.at('document.type', 'blog_post'), {
       pageSize: 100,
-      page: currPage
+      page: currPage,
+      orderings: '[my.blog_post.date_published desc]'
     })
     const { page, results_size, results } = response
     return { page, results_size, results }

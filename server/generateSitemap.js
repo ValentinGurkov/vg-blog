@@ -14,19 +14,34 @@ const setup = async () => {
   const posts = await require('./posts')
   let post
   let modDate
+  const images = []
+  let image
   for (let i = 0; i < posts.length; i += 1) {
     post = posts[i]
+    image = post.data.blog_post.images.value.main
+    images.push({
+      url: image.url,
+      caption: image.alt,
+      title: image.alt
+    })
     modDate = new Date(post.last_publication_date)
     modDate = getLastModifiedDate(modDate)
     sitemap.add({
       url: `/blog/${post.uid}`,
+      img: [
+        {
+          url: image.url,
+          caption: image.alt,
+          title: image.alt
+        }
+      ],
       lastmodISO: modDate,
       changefreq: 'daily',
       priority: 0.9
     })
   }
 
-  require('./pages')(sitemap)
+  require('./pages')(sitemap, images)
 
   return sitemap
 }
