@@ -2,7 +2,7 @@ import React from 'react';
 
 const Spinner = () => (
   <React.Fragment>
-    <div className="loader" />;
+    <div className="loader" />
     <style jsx>{`
       .loader {
         font-size: 10px;
