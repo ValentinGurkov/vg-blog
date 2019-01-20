@@ -5,6 +5,7 @@ import Head from 'next/head';
 const DefaultMeta = () => (
   <Head>
     <title key="title">{DEFAULT_SEO.title}</title>
+    <link key="canonical" rel="canonical" href={DEFAULT_SEO.canonical} />
     <meta key="description" name="description" content={DEFAULT_SEO.description} />
     <meta key="keywods" name="keywods" content={DEFAULT_SEO.keywords} />
     <meta key="twitter:card" name="twitter:card" content={DEFAULT_SEO.twitter.cardType} />

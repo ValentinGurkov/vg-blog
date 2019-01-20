@@ -1,6 +1,7 @@
 import React from 'react';
+import Head from 'next/head';
 import Breadcrumbs from '~/components/Breadcrumbs/Breadcrumbs';
-import { ROOT_URL } from '../lib/config';
+import { ROOT_URL, DEFAULT_SEO } from '../lib/config';
 
 const breadcrumbs = [
   {
@@ -33,6 +34,12 @@ const addBreadcrumbsLD = () => ({
 
 const terms = () => (
   <>
+    <Head>
+      <title key="title">{`${DEFAULT_SEO.title} | Terms and Conditions`}</title>
+      <link key="canonical" rel="canonical" href={`${DEFAULT_SEO.canonical}/terms-and-conditions`} />
+      <meta key="description" name="description" content="Valentin Gurkov's Blog terms and coniditons page" />
+      <meta key="keywods" name="keywods" content={`${DEFAULT_SEO.keywords}, terms and conditions`} />
+    </Head>
     <Breadcrumbs breadcrumbs={breadcrumbs} />
     <div className="wrapper">
       <h1>Terms and Conditions ("Terms")</h1>

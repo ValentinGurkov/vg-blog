@@ -79,6 +79,7 @@ const addBreadcrumbsLD = (slug, article) => ({
 const BlogMeta = props => (
   <Head>
     <title key="title">{props.post.og_title[0].text}</title>
+    <link key="canonical" rel="canonical" href={props.postUrl} />
     <meta key="description" name="description" content={props.post.og_description[0].text} />
     <meta key="keywords" name="keywords" content={props.post.keywords[0].text} />
     <meta key="og:url" property="og:url" content={props.postUrl} />
@@ -92,7 +93,7 @@ const BlogMeta = props => (
 
 BlogMeta.propTypes = {
   post: PropTypes.object.isRequired,
-  postUrl: PropTypes.string
+  postUrl: PropTypes.string.isRequired
 };
 
 const BlogPost = props => {
@@ -104,7 +105,7 @@ const BlogPost = props => {
   const breadcrumbs = getBreadrumbs(blogSlug, post.title.length ? post.title[0].text : 'Article');
   return (
     <React.Fragment>
-      <BlogMeta post={post} />
+      <BlogMeta post={post} postUrl={postUrl} />
       <Breadcrumbs breadcrumbs={breadcrumbs} />
       <article className="blogPost">
         <h1>{post.title.length ? post.title[0].text : ''}</h1>

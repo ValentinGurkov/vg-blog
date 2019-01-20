@@ -1,7 +1,8 @@
 import React from 'react';
+import Head from 'next/head';
 import Map from '../components/Map/Map';
 import Breadcrumbs from '~/components/Breadcrumbs/Breadcrumbs';
-import { ROOT_URL } from '../lib/config';
+import { ROOT_URL, DEFAULT_SEO } from '../lib/config';
 
 const breadcrumbs = [
   {
@@ -34,6 +35,12 @@ const addBreadcrumbsLD = () => ({
 
 const privacyPolicy = () => (
   <>
+    <Head>
+      <title key="title">{`${DEFAULT_SEO.title} | Privacy Policy`}</title>
+      <link key="canonical" rel="canonical" href={`${DEFAULT_SEO.canonical}/privacy-policy`} />
+      <meta key="description" name="description" content="Valentin Gurkov's Blog privacy policy page" />
+      <meta key="keywods" name="keywods" content={`${DEFAULT_SEO.keywords}, privacy policy`} />
+    </Head>
     <Breadcrumbs breadcrumbs={breadcrumbs} />
     <div className="wrapper">
       <h1>Privacy Policy</h1>

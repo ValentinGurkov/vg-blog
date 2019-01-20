@@ -1,9 +1,10 @@
 import React from 'react';
+import Head from 'next/head';
 import PropTypes from 'prop-types';
 import Articles from '../components/Article/Articles';
 import Breadcrumbs from '~/components/Breadcrumbs/Breadcrumbs';
 import { getBlogPostsAPI } from '../api';
-import { ROOT_URL } from '../lib/config';
+import { ROOT_URL, DEFAULT_SEO } from '../lib/config';
 
 const breadcrumbs = [
   {
@@ -36,6 +37,11 @@ const addBreadcrumbsLD = () => ({
 
 const Index = ({ posts = [] }) => (
   <>
+    <Head>
+      <title key="title">{`${DEFAULT_SEO.title} | Articles`}</title>
+      <link key="canonical" rel="canonical" href={`${DEFAULT_SEO.canonical}/articles`} />
+      <meta key="description" name="description" content="Valentin Gurkov's Blog articles page. View all of our articles" />
+    </Head>
     <Breadcrumbs breadcrumbs={breadcrumbs} />
     <Articles posts={posts} />
     <script type="application/ld+json" dangerouslySetInnerHTML={addBreadcrumbsLD()} />
