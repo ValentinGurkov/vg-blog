@@ -14,7 +14,6 @@ export default class MyDocument extends Document {
         <Head>
           <meta key="charset" charSet={DEFAULT_SEO.charset} />
           <link key="manifest" rel="manifest" type="application/manifest+json" href="/_next/static/manifest.json" />
-          <meta name="robots" content="index,follow" />
           <meta key="viewport" name="viewport" content="width=device-width, initial-scale=1" />
           <meta key="msapplication-TileColor" name="msapplication-TileColor" content="#da532c" />
           <meta name="msapplication-TileImage" content="/static/icons/mstile-144x144.png" />

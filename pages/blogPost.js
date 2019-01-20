@@ -110,6 +110,7 @@ const BlogPost = props => {
         <h1>{post.title.length ? post.title[0].text : ''}</h1>
         {/* Here we pass our rich text field to Prismics RichText renderer, along with our linkResolver */}
         {RichText.render(post.body, linkResolver)}
+        {post.body1[0] && post.body1[0].primary.text ? RichText.render(post.body1[0].primary.text, linkResolver) : null}
       </article>
       <style jsx>{`
         .blogPost {
@@ -118,8 +119,14 @@ const BlogPost = props => {
           line-height: 1.4;
         }
 
-        ul {
+        ul,
+        .left-align {
           text-align: left;
+        }
+
+        .link {
+          text-decoration: none;
+          outline: none;
         }
 
         @media (max-width: 768px) {
