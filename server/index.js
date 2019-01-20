@@ -45,15 +45,17 @@ app
   .prepare()
   .then(() => {
     const server = express()
-    // server.use(cors(corsOptions))
+    server.use(cors(corsOptions))
     server.use(compression())
     server.use(helmet())
 
-    // server.options('*', cors())
+    server.options('*', cors())
 
     server.get('/privacy-policy', (req, res) => app.render(req, res, '/privacy'))
 
     server.get('/terms-and-conditions', (req, res) => app.render(req, res, '/terms'))
+
+    server.get('/our-mission', (req, res) => app.render(req, res, '/ourMission'))
 
     server.get('/articles', (req, res) => app.render(req, res, '/articles'))
 
