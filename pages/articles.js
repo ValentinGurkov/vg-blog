@@ -40,7 +40,11 @@ const Index = ({ posts = [] }) => (
     <Head>
       <title key="title">{`${DEFAULT_SEO.title} | Articles`}</title>
       <link key="canonical" rel="canonical" href={`${DEFAULT_SEO.canonical}/articles`} />
-      <meta key="description" name="description" content="Valentin Gurkov's Blog articles page. View all of our articles" />
+      <meta
+        key="description"
+        name="description"
+        content="Valentin Gurkov's Blog articles page. View all of our articles"
+      />
     </Head>
     <Breadcrumbs breadcrumbs={breadcrumbs} />
     <Articles posts={posts} />

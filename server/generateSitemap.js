@@ -27,7 +27,7 @@ const setup = async () => {
     modDate = new Date(post.last_publication_date)
     modDate = getLastModifiedDate(modDate)
     sitemap.add({
-      url: `/blog/${post.uid}`,
+      url: `/articles/${post.uid}`,
       img: [
         {
           url: image.url,

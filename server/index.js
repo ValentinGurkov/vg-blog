@@ -59,7 +59,7 @@ app
 
     server.get('/articles', (req, res) => app.render(req, res, '/articles'))
 
-    server.get('/blog/:slug', (req, res) => {
+    server.get('/articles/:slug', (req, res) => {
       const nextJsPage = '/blogPost'
       const queryParams = { slug: req.params.slug }
       app.render(req, res, nextJsPage, queryParams)

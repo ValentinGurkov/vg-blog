@@ -17,7 +17,7 @@ const getBreadrumbs = (slug, articleName) => [
     page: 'Articles'
   },
   {
-    url: `/blog/${slug}`,
+    url: `/articles/${slug}`,
     page: articleName
   }
 ];
@@ -100,7 +100,7 @@ const BlogPost = props => {
   const post = props.post.data;
   const info = props.post;
   const blogSlug = info.uid;
-  const postUrl = `${ROOT_URL}/blog/${blogSlug}`;
+  const postUrl = `${ROOT_URL}/articles/${blogSlug}`;
   const logoUrl = `${ROOT_URL}${require('../static/og-image.jpg')}`;
   const breadcrumbs = getBreadrumbs(blogSlug, post.title.length ? post.title[0].text : 'Article');
   return (
