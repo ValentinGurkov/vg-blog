@@ -7,7 +7,7 @@ import { getBlogPostAPI } from '../api';
 import linkResolver from '../lib/prismic';
 import { ROOT_URL } from '../lib/config';
 
-const getBreadrumbs = slug => [
+const getBreadrumbs = (slug, articleName) => [
   {
     url: '/',
     page: 'Home'
@@ -18,7 +18,7 @@ const getBreadrumbs = slug => [
   },
   {
     url: `/blog/${slug}`,
-    page: 'Article'
+    page: articleName
   }
 ];
 
@@ -52,7 +52,7 @@ const addArticleLD = (post, info, postUrl, logoUrl) => ({
   }`
 });
 
-const addBreadcrumbsLD = slug => ({
+const addBreadcrumbsLD = (slug, article) => ({
   __html: `{
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -70,7 +70,7 @@ const addBreadcrumbsLD = slug => ({
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Article",
+      "name": "${article}",
       "item":"${ROOT_URL}/blog/${slug}"
     }]
   }`
@@ -101,7 +101,7 @@ const BlogPost = props => {
   const blogSlug = info.uid;
   const postUrl = `${ROOT_URL}/blog/${blogSlug}`;
   const logoUrl = `${ROOT_URL}${require('../static/og-image.jpg')}`;
-  const breadcrumbs = getBreadrumbs(blogSlug);
+  const breadcrumbs = getBreadrumbs(blogSlug, post.title.length ? post.title[0].text : 'Article');
   return (
     <React.Fragment>
       <BlogMeta post={post} />
@@ -129,7 +129,10 @@ const BlogPost = props => {
         }
       `}</style>
       <script type="application/ld+json" dangerouslySetInnerHTML={addArticleLD(post, info, postUrl, logoUrl)} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={addBreadcrumbsLD(blogSlug)} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={addBreadcrumbsLD(blogSlug, post.title.length ? post.title[0].text : 'Article')}
+      />
     </React.Fragment>
   );
 };

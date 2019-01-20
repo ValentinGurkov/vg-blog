@@ -5,6 +5,7 @@
   text-align: center;
   margin: 0;
   padding: 0 0 40px 0;
+  margin-bottom: 10px;
 }
 
 @media (min-width: 414px) {
@@ -16,6 +17,7 @@
 @media (min-width: 768px) {
   .articles {
     justify-content: center;
+    grid-template-columns: repeat(auto-fit, 375px);
   }
 }
 

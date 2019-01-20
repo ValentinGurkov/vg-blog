@@ -74,7 +74,7 @@
   }
 }
 
-@media (max-width: 320px) {
+@media (min-width: 320px) {
   .article {
     max-width: 320px;
   }
@@ -86,7 +86,7 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (min-width: 375px) {
   .article {
     max-width: 375px;
   }
@@ -94,16 +94,14 @@
   a,
   picture,
   img {
-    max-width: 375px;
+    max-width: 335px;
   }
 }
 
-@media (min-width: 393px) {
-  .wrapper {
-    a,
-    picture,
-    img {
-      max-width: 393px;
-    }
+@media (min-width: 1366px) {
+  a,
+  picture,
+  img {
+    max-width: 393px;
   }
 }

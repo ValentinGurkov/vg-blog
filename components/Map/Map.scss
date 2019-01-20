@@ -3,5 +3,36 @@
   margin-top: 25px;
   margin-bottom: 0;
   height: 400px !important;
+  max-width: 320px;
   padding: 0;
+}
+
+@media (min-width: 375px) {
+  .map {
+    max-width: 375px;
+  }
+}
+
+@media (min-width: 414px) {
+  .map {
+    max-width: 414px;
+  }
+}
+
+@media (min-width: 768px) {
+  .map {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .map {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .map {
+    max-width: 1650px;
+  }
 }
