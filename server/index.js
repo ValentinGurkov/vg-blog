@@ -8,7 +8,7 @@ const { join } = require('path')
 const LRUCache = require('lru-cache')
 const compression = require('compression')
 const helmet = require('helmet')
-// const cors = require('cors')
+const cors = require('cors')
 const generateSitemap = require('./generateSitemap')
 
 const port = process.env.PORT || 3000
