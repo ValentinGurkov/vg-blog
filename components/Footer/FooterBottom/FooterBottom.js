@@ -11,7 +11,7 @@ const FooterBottom = () => (
     <span className="copyright">&copy; 2018 Valentin Gurkov</span>
     <nav>
       <ul className="footerNav">
-        <FooterLink type="terms" as="terms-and-conditions" />
+        <FooterLink type="terms" as="/terms-and-conditions" />
         <FooterLink type="privacy" as="/privacy-policy" />
         <FooterLink type="sitemap" />
       </ul>
