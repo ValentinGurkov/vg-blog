@@ -1,6 +1,7 @@
 import React from 'react';
+import Head from 'next/head';
 import Breadcrumbs from '~/components/Breadcrumbs/Breadcrumbs';
-import { ROOT_URL } from '../lib/config';
+import { ROOT_URL, DEFAULT_SEO } from '../lib/config';
 
 const breadcrumbs = [
   {
@@ -33,6 +34,12 @@ const addBreadcrumbsLD = () => ({
 
 const ourMission = () => (
   <>
+    <Head>
+      <title key="title">{`Our Mission | ${DEFAULT_SEO.title}`}</title>
+      <link key="canonical" rel="canonical" href={`${DEFAULT_SEO.canonical}/our-mission`} />
+      <meta key="description" name="description" content="Valentin Gurkov's Blog our mission page" />
+      <meta key="keywords" name="keywords" content={`${DEFAULT_SEO.keywords}, our mission`} />
+    </Head>
     <Breadcrumbs breadcrumbs={breadcrumbs} />
     <div>This page is under construction. Check back soon!</div>
     <script type="application/ld+json" dangerouslySetInnerHTML={addBreadcrumbsLD()} />
