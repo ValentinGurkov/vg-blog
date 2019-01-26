@@ -39,7 +39,7 @@ const privacyPolicy = () => (
       <title key="title">{`Privacy Policy | ${DEFAULT_SEO.title}`}</title>
       <link key="canonical" rel="canonical" href={`${DEFAULT_SEO.canonical}/privacy-policy`} />
       <meta key="description" name="description" content="Valentin Gurkov's Blog privacy policy page" />
-      <meta key="keywods" name="keywods" content={`${DEFAULT_SEO.keywords}, privacy policy`} />
+      <meta key="keywords" name="keywords" content={`${DEFAULT_SEO.keywords}, privacy policy`} />
     </Head>
     <Breadcrumbs breadcrumbs={breadcrumbs} />
     <div className="wrapper">

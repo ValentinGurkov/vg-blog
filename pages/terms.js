@@ -38,7 +38,7 @@ const terms = () => (
       <title key="title">{`Terms and Conditions | ${DEFAULT_SEO.title}`}</title>
       <link key="canonical" rel="canonical" href={`${DEFAULT_SEO.canonical}/terms-and-conditions`} />
       <meta key="description" name="description" content="Valentin Gurkov's Blog terms and coniditons page" />
-      <meta key="keywods" name="keywods" content={`${DEFAULT_SEO.keywords}, terms and conditions`} />
+      <meta key="keywords" name="keywords" content={`${DEFAULT_SEO.keywords}, terms and conditions`} />
     </Head>
     <Breadcrumbs breadcrumbs={breadcrumbs} />
     <div className="wrapper">
