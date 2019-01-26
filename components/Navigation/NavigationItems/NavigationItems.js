@@ -10,7 +10,7 @@ const NavigationItems = () => (
     <NavigationItem to="/articles" title="Articles">
       Articles
     </NavigationItem>
-    <NavigationItem to="/ourMission" as="our-mission" title="Our Mission">
+    <NavigationItem to="/ourMission" as="/our-mission" title="Our Mission">
       Our mission
     </NavigationItem>
     <style jsx>{classes}</style>
