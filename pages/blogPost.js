@@ -31,6 +31,7 @@ const addArticleLD = (post, info, postUrl, logoUrl) => ({
       "@id": "${postUrl}"
     },
     "headline": "${post.og_title[0].text}",
+    "thumbnailUrl": "${post.og_image.url}",
     "image": [
       "${post.og_image.url}"
     ],

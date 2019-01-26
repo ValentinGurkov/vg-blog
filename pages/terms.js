@@ -35,7 +35,7 @@ const addBreadcrumbsLD = () => ({
 const terms = () => (
   <>
     <Head>
-      <title key="title">{`${DEFAULT_SEO.title} | Terms and Conditions`}</title>
+      <title key="title">{`Terms and Conditions | ${DEFAULT_SEO.title}`}</title>
       <link key="canonical" rel="canonical" href={`${DEFAULT_SEO.canonical}/terms-and-conditions`} />
       <meta key="description" name="description" content="Valentin Gurkov's Blog terms and coniditons page" />
       <meta key="keywods" name="keywods" content={`${DEFAULT_SEO.keywords}, terms and conditions`} />

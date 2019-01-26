@@ -8,8 +8,8 @@ const Breadcrumbs = props => (
     {props.breadcrumbs.map((crumb, index) => (
       <span key={index} className="breadcrumbElement">
         <Link href={crumb.url}>
-          <a itemProp="item" title={`Go to ${crumb.page}`}>
-            <span itemProp="name">{crumb.page}</span>
+          <a title={`Go to ${crumb.page}`}>
+            <span>{crumb.page}</span>
           </a>
         </Link>
       </span>

@@ -38,7 +38,7 @@ const addBreadcrumbsLD = () => ({
 const Index = ({ posts = [] }) => (
   <>
     <Head>
-      <title key="title">{`${DEFAULT_SEO.title} | Articles`}</title>
+      <title key="title">{`Articles | ${DEFAULT_SEO.title}`}</title>
       <link key="canonical" rel="canonical" href={`${DEFAULT_SEO.canonical}/articles`} />
       <meta
         key="description"
