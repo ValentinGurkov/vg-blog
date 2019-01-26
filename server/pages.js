@@ -24,6 +24,10 @@ const transformUlr = page => {
     page = page.replace(/(.*)privacy$/, '$1privacy-policy')
   }
 
+  if (page.match(/.*\/terms$/)) {
+    page = page.replace(/(.*)terms$/, '$1terms-and-conditions')
+  }
+
   if (page.match(/.*\/ourMission$/)) {
     page = page.replace(/(.*)ourMission$/, '$1our-mission')
   }
