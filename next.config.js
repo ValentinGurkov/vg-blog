@@ -69,7 +69,7 @@ module.exports = withOptimizedImages(
             filename: 'static/manifest.json',
             name: "Valentin Gurkov's Blog",
             short_name: 'VG Blog',
-            description: 'Making good health and lifestyle choices has never been easier!',
+            description: 'Making good health and lifestyle choices has never been easier.',
             background_color: '#414042',
             theme_color: '#ff6c0c',
             display: 'standalone',
