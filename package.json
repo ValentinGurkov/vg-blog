@@ -33,7 +33,7 @@
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "sitemap": "^2.1.0",
-    "next-offline": "^3.3.5",
+    "next-offline": "^3.3.6",
     "next-optimized-images": "^2.3.3",
     "webpack-pwa-manifest": "^4.0.0"
   },
