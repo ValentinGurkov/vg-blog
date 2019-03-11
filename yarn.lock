@@ -7364,10 +7364,10 @@ next-offline@^3.3.6:
     webpack "^4.19.1"
     workbox-webpack-plugin "3.6.3"
 
-next-optimized-images@^2.3.3:
-  version "2.3.3"
-  resolved "https://registry.yarnpkg.com/next-optimized-images/-/next-optimized-images-2.3.3.tgz#0eafc503450f103c72c4923d53f9c239fd0be6cb"
-  integrity sha512-R9ROUUg0a8o5bTRJ1ti2Y/OzV+7BTG7uAtmY7934RrdF+gM2zxjvBpPpDPT6OU2DIs5/mykMa03/94y2O9LLHA==
+next-optimized-images@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/next-optimized-images/-/next-optimized-images-2.4.0.tgz#b485297e9d6e0836a102a7d22c3d3c9fb135a683"
+  integrity sha512-5y5FFcpwHcBkrBF1l90wTjs80UGalIYH6BBq6I54zAFtFaJB4btCuTrgVXfmm+OI5ayXLI7mqmPWbXz9oxlKTA==
   dependencies:
     chalk "^2.4.1"
     figures "^2.0.0"
@@ -8914,11 +8914,6 @@ react-is@^16.3.2, react-is@^16.7.0, react-is@^16.8.1:
   version "16.8.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.1.tgz#a80141e246eb894824fb4f2901c0c50ef31d4cdb"
   integrity sha512-ioMCzVDWvCvKD8eeT+iukyWrBGrA3DiFYkXfBsVYIRdaREZuBjENG+KjrikavCLasozqRWTwFUagU/O4vPpRMA==
-
-react-is@^16.8.4:
-  version "16.8.4"
-  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.4.tgz#90f336a68c3a29a096a3d648ab80e87ec61482a2"
-  integrity sha512-PVadd+WaUDOAciICm/J1waJaSvgq+4rHE/K70j0PFqKhkTBsPv/82UGQJNXAngz1fOQLLxI6z1sEDmJDQhCTAA==
 
 react-is@^16.8.4:
   version "16.8.4"
