@@ -34,7 +34,7 @@
     "react-dom": "^16.8.4",
     "sitemap": "^2.1.0",
     "next-offline": "^3.3.6",
-    "next-optimized-images": "^2.3.3",
+    "next-optimized-images": "^2.4.0",
     "webpack-pwa-manifest": "^4.0.0"
   },
   "browserslist": [
