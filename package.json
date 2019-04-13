@@ -33,7 +33,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "sitemap": "^2.1.0",
-    "next-offline": "^3.3.7",
+    "next-offline": "^3.3.8",
     "next-optimized-images": "^2.4.0",
     "webpack-pwa-manifest": "^4.0.0"
   },
@@ -76,7 +76,7 @@
     "react-test-renderer": "^16.8.6",
     "sass-loader": "^7.1.0",
     "styled-jsx-plugin-sass": "^1.0.0",
-    "stylelint": "^9.10.1",
+    "stylelint": "^10.0.0",
     "stylelint-config-standard": "^18.2.0",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-optipng": "^6.0.0",
