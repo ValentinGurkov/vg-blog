@@ -32,7 +32,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "sitemap": "^2.1.0",
+    "sitemap": "^2.2.0",
     "next-offline": "^3.3.8",
     "next-optimized-images": "^2.5.0",
     "webpack-pwa-manifest": "^4.0.0"
