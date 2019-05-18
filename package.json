@@ -15,7 +15,7 @@
     "test:win": "set NODE_ENV=test& jest"
   },
   "dependencies": {
-    "babel-plugin-root-import": "^6.1.0",
+    "babel-plugin-root-import": "^6.2.0",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
@@ -50,7 +50,7 @@
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.8.0",
     "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.12.1",
+    "enzyme-adapter-react-16": "^1.13.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.2.0",
