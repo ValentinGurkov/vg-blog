@@ -31,16 +31,6 @@
       display: inline-grid;
       grid-gap: 2em;
       grid-template-columns: repeat(3, 1fr);
-
-      .footerLink {
-        list-style: none;
-
-        .footerLinkItem {
-          text-decoration: none;
-          border: none;
-          color: inherit;
-        }
-      }
     }
   }
 }

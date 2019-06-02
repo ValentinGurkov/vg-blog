@@ -15,13 +15,13 @@ module.exports = withOptimizedImages(
       clientsClaim: true,
       skipWaiting: true,
       globPatterns: ['.next/static/*', '.next/static/commons/*'],
-      modifyUrlPrefix: {
+      modifyURLPrefix: {
         '.next': '/_next'
       },
       runtimeCaching: [
         {
           urlPattern: new RegExp('https://uniblog.cdn.prismic.io/api/v2'),
-          handler: 'staleWhileRevalidate',
+          handler: 'StaleWhileRevalidate',
           options: {
             cacheName: 'api-cache',
             cacheableResponse: {
@@ -31,7 +31,7 @@ module.exports = withOptimizedImages(
         },
         {
           urlPattern: /.*\.(?:png|jpg|jpeg|svg|gif|webp)/,
-          handler: 'cacheFirst',
+          handler: 'CacheFirst',
           options: {
             cacheName: 'image-cache',
             cacheableResponse: {
@@ -41,13 +41,14 @@ module.exports = withOptimizedImages(
         },
         {
           urlPattern: /^https?.*/,
-          handler: 'networkFirst',
+          handler: 'NetworkFirst',
           options: {
             cacheName: 'html-cache'
           }
         }
       ]
     },
+    optimizeImagesInDev: true,
     webpack: (config, { isServer, defaultLoaders }) => {
       config.module.rules.push({
         test: /\.scss$/,

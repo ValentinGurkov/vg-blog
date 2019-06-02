@@ -1,11 +1,11 @@
 const dev = process.env.NODE_ENV !== 'production'
 if (dev) {
-  require('dotenv').load()
+  require('dotenv').config()
 }
 const express = require('express')
 const next = require('next')
 const { join } = require('path')
-const LRUCache = require('lru-cache')
+const CacheableResponse = require('cacheable-response')
 const compression = require('compression')
 const helmet = require('helmet')
 const cors = require('cors')
@@ -14,14 +14,13 @@ const generateSitemap = require('./generateSitemap')
 const port = process.env.PORT || 3000
 const root = dev ? `http://localhost:${port}` : `https://www.valentingurkov.com:${port}`
 const app = next({ dev })
-const handle = app.getRequestHandler()
 
-const ssrCache = new LRUCache({
-  length(n, key) {
-    return n.toString().length + key.toString().length
-  },
-  max: 100 * 1000 * 1000, // 100MB cache soft limit
-  maxAge: 1000 * 60 * 60 // 1hour
+const ssrCache = CacheableResponse({
+  ttl: dev ? 0 : 1000 * 60 * 60, // 1hour
+  get: async ({ req, res, pagePath, queryParams }) => ({
+    data: await app.renderToHTML(req, res, pagePath, queryParams)
+  }),
+  send: ({ data, res }) => res.send(data)
 })
 
 const whitelist = [
@@ -62,7 +61,7 @@ app
     server.get('/articles/:slug', (req, res) => {
       const nextJsPage = '/blogPost'
       const queryParams = { slug: req.params.slug }
-      app.render(req, res, nextJsPage, queryParams)
+      ssrCache({ req, res, pagePath: nextJsPage, queryParams })
     })
 
     server.get('/sitemap.xml', async (req, res) => {
@@ -116,7 +115,7 @@ app
         const filePath = join(__dirname, '../.next/static', 'service-worker.js')
         app.serveStatic(req, res, filePath)
       } else {
-        handle(req, res, req.url)
+        ssrCache({ req, res, pagePath: req.url })
       }
     })
 
@@ -129,32 +128,3 @@ app
     console.error(ex.stack)
     throw ex
   })
-
-const renderAndCache = async (req, res, pagePath, queryParams) => {
-  const key = req.url
-
-  // if page is in cache, server from cache
-  if (ssrCache.has(key)) {
-    res.setHeader('x-cache', 'HIT')
-    res.send(ssrCache.get(key))
-    return
-  }
-
-  try {
-    // if not in cache, render the page into HTML
-    const html = await app.renderToHTML(req, res, pagePath, queryParams)
-
-    // if something wrong with the request or we're in development mode, let's skip the cache
-    if (dev || res.statusCode !== 200) {
-      res.send(html)
-      return
-    }
-
-    ssrCache.set(key, html)
-
-    res.setHeader('x-cache', 'MISS')
-    res.send(html)
-  } catch (err) {
-    app.renderError(err, req, res, pagePath, queryParams)
-  }
-}

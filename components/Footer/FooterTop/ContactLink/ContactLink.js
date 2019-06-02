@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
+import classes from './ContactLink.scss';
 
 const getContactdata = type => {
   let href = null;
@@ -32,6 +33,7 @@ const ContactLink = props => {
       <Link href={href}>
         <a title={title}>{text}</a>
       </Link>
+      <style jsx>{classes}</style>
     </li>
   );
 };

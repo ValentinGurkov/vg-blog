@@ -1,0 +1,15 @@
+@import '../../../../scss/variables';
+
+.contactLink {
+  list-style: none;
+
+  a {
+    color: $nobel;
+    text-decoration: none;
+    outline: none;
+  }
+
+  p {
+    margin: 0;
+  }
+}

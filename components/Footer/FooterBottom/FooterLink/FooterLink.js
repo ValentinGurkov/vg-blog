@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
+import classes from './FooterLink.scss';
 
 const getContactdata = type => {
   let href = null;
@@ -40,6 +41,7 @@ const FooterLink = props => {
           {text}
         </a>
       </Link>
+      <style jsx>{classes}</style>
     </li>
   );
 };
