@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "babel-plugin-root-import": "^6.2.0",
-    "cacheable-response": "^1.6.7",
+    "cacheable-response": "^1.6.10",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
