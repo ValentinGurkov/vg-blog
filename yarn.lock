@@ -2415,10 +2415,10 @@ cacheable-request@^2.1.1:
     normalize-url "2.0.1"
     responselike "1.0.2"
 
-cacheable-response@^1.6.7:
-  version "1.6.7"
-  resolved "https://registry.yarnpkg.com/cacheable-response/-/cacheable-response-1.6.7.tgz#c88c7989430b3e1b5ee6de6bcf15319150e64670"
-  integrity sha512-XPyK0T7mvc7J2ORp030SUnteli9nCJk+woil7RjshOacbiWknK5z/47Rf8jYJdFCIQVAuvBIXe6faH9Q8Tq6cA==
+cacheable-response@^1.6.11:
+  version "1.6.11"
+  resolved "https://registry.yarnpkg.com/cacheable-response/-/cacheable-response-1.6.11.tgz#10d1fd57fca7dc95aefe0d801f60248274bb4859"
+  integrity sha512-wdqc10Wbl7yaTbGzNchlm3hYigh6zIJecZORRsobduwB/6/uBbzX4pPEP2VPhPjadBa+RGb638UoxkZK/8LW5g==
   dependencies:
     compress-brotli "~1.0.5"
     debug-logfmt "~1.0.2"
