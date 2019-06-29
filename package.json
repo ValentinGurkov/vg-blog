@@ -27,7 +27,7 @@
     "moment": "^2.24.0",
     "next": "^8.1.0",
     "next-offline": "^4.0.2",
-    "next-optimized-images": "^2.5.1",
+    "next-optimized-images": "^2.5.3",
     "pretty-error": "^2.1.1",
     "prismic-javascript": "^2.0.3",
     "prismic-reactjs": "^1.0.0",
