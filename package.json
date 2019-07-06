@@ -34,7 +34,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "sitemap": "^2.2.0",
+    "sitemap": "^3.0.0",
     "webpack-pwa-manifest": "^4.0.0"
   },
   "browserslist": [
@@ -45,7 +45,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@babel/core": "^7.4.5",
+    "@babel/core": "^7.5.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.2",
     "babel-jest": "^24.8.0",
@@ -60,7 +60,7 @@
     "eslint-import-resolver-babel-plugin-root-import": "^1.1.1",
     "eslint-plugin-flowtype": "^3.11.1",
     "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-jest": "^22.7.1",
+    "eslint-plugin-jest": "^22.7.2",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-prettier": "^3.1.0",
