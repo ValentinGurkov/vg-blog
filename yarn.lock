@@ -1878,10 +1878,10 @@ babel-plugin-react-require@3.0.0:
   resolved "https://registry.yarnpkg.com/babel-plugin-react-require/-/babel-plugin-react-require-3.0.0.tgz#2e4e7b4496b93a654a1c80042276de4e4eeb20e3"
   integrity sha1-Lk57RJa5OmVKHIAEInbeTk7rIOM=
 
-babel-plugin-root-import@^6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-root-import/-/babel-plugin-root-import-6.2.0.tgz#5a5cbcefbd67506738679ed6f899c013142bcd49"
-  integrity sha512-Tsq1pfSRn2XkNOrMXOYoTAxYddvWC21850h8Cj6xozccwr50WQu+GrzrHmr9RAmHCaLVUOfFYe3cshpQbDmf4w==
+babel-plugin-root-import@^6.3.0:
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-root-import/-/babel-plugin-root-import-6.3.0.tgz#cf51669eb9b2c45789fe47bdaddfcec2e4e3bd1f"
+  integrity sha512-F8xCST6o6zvfvDQRHqwAHL9ia4b8wmdDMgbGiQ+tncEcP3aSi7tTJIqeI/0hqt++aoZtCpQzsLN8QVU/CBRD/A==
   dependencies:
     slash "^1.0.0"
 
