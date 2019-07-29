@@ -3928,10 +3928,10 @@ eslint-plugin-es@^1.4.0:
     eslint-utils "^1.3.0"
     regexpp "^2.0.1"
 
-eslint-plugin-flowtype@^3.12.1:
-  version "3.12.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-3.12.1.tgz#b673c716b578c9aa66887feef3bc146f8cbe1c21"
-  integrity sha512-NZqf5iRgsfHOC31HQdtX2pvzCi0n/j9pB+L7Cf9QtuYxpx0i2wObT+R3rPKhQK4KtEDzGuzPYVf75j4eg+s9ZQ==
+eslint-plugin-flowtype@^3.12.2:
+  version "3.12.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-3.12.2.tgz#f02fb8a4e20993bff860292bdd39b93d511d7326"
+  integrity sha512-Fky+noPK7WPEAuclGRBsRHNukmSc9h2cUMpht9+tVd30YoJwz3xK7ma1QQ69wIjVTbk2N0sA6QjEo2DlIf9LlA==
   dependencies:
     lodash "^4.17.11"
 
@@ -6991,12 +6991,7 @@ lodash.unescape@4.0.1:
   resolved "https://registry.yarnpkg.com/lodash.unescape/-/lodash.unescape-4.0.1.tgz#bf2249886ce514cda112fae9218cdc065211fc9c"
   integrity sha1-vyJJiGzlFM2hEvrpIYzcBlIR/Jw=
 
-lodash@^4.0.0, lodash@^4.15.0, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.4, lodash@^4.17.5, lodash@~4.17.10:
-  version "4.17.14"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.14.tgz#9ce487ae66c96254fe20b599f21b6816028078ba"
-  integrity sha512-mmKYbW3GLuJeX+iGP+Y7Gp1AiGHGbXHCOh/jZmrawMmsE7MS4znI3RL2FsjbqOyMayHInjOeykW7PEajUk1/xw==
-
-lodash@^4.17.12, lodash@^4.17.14:
+lodash@^4.0.0, lodash@^4.15.0, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.4, lodash@^4.17.5, lodash@~4.17.10:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
