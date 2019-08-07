@@ -12,7 +12,13 @@
     "lint:css": "stylelint --fix containers/**/*.scss components/**/*.scss",
     "lint": "yarn lint:js && yarn lint:css",
     "test": "NODE_ENV=test jest",
-    "test:win": "set NODE_ENV=test& jest"
+    "test:win": "set NODE_ENV=test& jest",
+    "analyze": "BUNDLE_ANALYZE=both next build",
+    "analyze:server": "BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "BUNDLE_ANALYZE=browser next build",
+    "analyze:win": "set BUNDLE_ANALYZE=both& next build",
+    "analyze:win:server": "set BUNDLE_ANALYZE=server&  next build",
+    "analyze:win:browser": "set BUNDLE_ANALYZE=browser&  next build"
   },
   "dependencies": {
     "babel-plugin-root-import": "^6.4.1",
@@ -24,7 +30,6 @@
     "glob": "^7.1.4",
     "google-maps-react": "^2.0.2",
     "helmet": "^3.20.0",
-    "moment": "^2.24.0",
     "next": "^9.0.2",
     "next-offline": "^4.0.2",
     "next-optimized-images": "^2.5.3",
@@ -46,11 +51,12 @@
   ],
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "@zeit/next-bundle-analyzer": "^0.1.2",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.2",
     "babel-jest": "^24.8.0",
     "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-adapter-react-16": "^1.1z4.0",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-prettier": "^6.0.0",
@@ -81,5 +87,20 @@
     "styled-jsx-plugin-sass": "^1.0.0",
     "stylelint": "^10.1.0",
     "stylelint-config-standard": "^18.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.scss": [
+      "stylelint --fix",
+      "git add"
+    ]
   }
 }

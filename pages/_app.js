@@ -1,12 +1,12 @@
 import React from 'react';
 import App, { Container } from 'next/app';
+import { register, unregister } from 'next-offline/runtime';
 import Layout from '~/containers/Layout/Layout';
 import DefaultMeta from '~/components/DefaultMeta/DefaultMeta';
 import global from '~/scss/global.scss';
-import { register, unregister } from 'next-offline/runtime';
 
 export default class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
+  /* static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
 
     if (Component.getInitialProps) {
@@ -14,7 +14,7 @@ export default class MyApp extends App {
     }
 
     return { pageProps };
-  }
+  } */
 
   componentDidMount() {
     register();
