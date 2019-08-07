@@ -21,6 +21,7 @@
     "analyze:win:browser": "set BUNDLE_ANALYZE=browser& next build"
   },
   "dependencies": {
+    "@zeit/next-bundle-analyzer": "^0.1.2",
     "babel-plugin-root-import": "^6.4.1",
     "cacheable-response": "^1.6.12",
     "compression": "^1.7.4",
@@ -51,7 +52,6 @@
   ],
   "devDependencies": {
     "@babel/core": "^7.5.5",
-    "@zeit/next-bundle-analyzer": "^0.1.2",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.2",
     "babel-jest": "^24.8.0",
