@@ -8,6 +8,47 @@ const { resolve } = require('path');
 
 const dev = process.env.NODE_ENV !== 'production';
 
+const workboxOpts = {
+  dontAutoRegisterSw: true,
+  workboxOpts: {
+    swDest: 'static/service-worker.js',
+    clientsClaim: true,
+    skipWaiting: true,
+    globPatterns: ['.next/static/*', '.next/static/commons/*'],
+    modifyURLPrefix: {
+      '.next': '/_next'
+    },
+    runtimeCaching: [
+      {
+        urlPattern: new RegExp('https://uniblog.cdn.prismic.io/api/v2'),
+        handler: 'StaleWhileRevalidate',
+        options: {
+          cacheName: 'api-cache',
+          cacheableResponse: {
+            statuses: [200]
+          }
+        }
+      },
+      {
+        urlPattern: /.*\.(?:png|jpg|jpeg|svg|gif|webp)/,
+        handler: 'CacheFirst',
+        options: {
+          cacheName: 'image-cache',
+          cacheableResponse: {
+            statuses: [0, 200]
+          }
+        }
+      },
+      {
+        urlPattern: /^https?.*/,
+        handler: 'NetworkFirst',
+        options: {
+          cacheName: 'html-cache'
+        }
+      }
+    ]
+  }
+};
 const analyzeBundles = {
   analyzeServer: ['server', 'both'].includes(process.env.BUNDLE_ANALYZE),
   analyzeBrowser: ['browser', 'both'].includes(process.env.BUNDLE_ANALYZE),
@@ -26,45 +67,7 @@ const analyzeBundles = {
 module.exports = withBundleAnalyzer(
   withOptimizedImages(
     withOffline({
-      dontAutoRegisterSw: true,
-      workboxOpts: {
-        swDest: 'static/service-worker.js',
-        clientsClaim: true,
-        skipWaiting: true,
-        globPatterns: ['.next/static/*', '.next/static/commons/*'],
-        modifyURLPrefix: {
-          '.next': '/_next'
-        },
-        runtimeCaching: [
-          {
-            urlPattern: new RegExp('https://uniblog.cdn.prismic.io/api/v2'),
-            handler: 'StaleWhileRevalidate',
-            options: {
-              cacheName: 'api-cache',
-              cacheableResponse: {
-                statuses: [200]
-              }
-            }
-          },
-          {
-            urlPattern: /.*\.(?:png|jpg|jpeg|svg|gif|webp)/,
-            handler: 'CacheFirst',
-            options: {
-              cacheName: 'image-cache',
-              cacheableResponse: {
-                statuses: [0, 200]
-              }
-            }
-          },
-          {
-            urlPattern: /^https?.*/,
-            handler: 'NetworkFirst',
-            options: {
-              cacheName: 'html-cache'
-            }
-          }
-        ]
-      },
+      ...workboxOpts,
       optimizeImagesInDev: true,
       ...analyzeBundles,
       webpack: (config, { isServer, defaultLoaders }) => {

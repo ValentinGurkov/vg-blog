@@ -25,7 +25,9 @@ export class MapContainer extends Component {
             }}
           />
         </Map>
-        <style jsx global>{classes}</style>
+        <style jsx global>
+          {classes}
+        </style>
       </React.Fragment>
     );
   }

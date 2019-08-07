@@ -1,7 +1,7 @@
 {
   "license": "MIT",
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "scripts": {
     "dev": "node server/",
@@ -17,8 +17,8 @@
     "analyze:server": "BUNDLE_ANALYZE=server next build",
     "analyze:browser": "BUNDLE_ANALYZE=browser next build",
     "analyze:win": "set BUNDLE_ANALYZE=both& next build",
-    "analyze:win:server": "set BUNDLE_ANALYZE=server&  next build",
-    "analyze:win:browser": "set BUNDLE_ANALYZE=browser&  next build"
+    "analyze:win:server": "set BUNDLE_ANALYZE=server& next build",
+    "analyze:win:browser": "set BUNDLE_ANALYZE=browser& next build"
   },
   "dependencies": {
     "babel-plugin-root-import": "^6.4.1",
