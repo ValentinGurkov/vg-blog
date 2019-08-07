@@ -3818,10 +3818,20 @@ es-to-primitive@^1.2.0:
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
 
+es6-object-assign@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/es6-object-assign/-/es6-object-assign-1.1.0.tgz#c2c3582656247c39ea107cb1e6652b6f9f24523c"
+  integrity sha1-wsNYJlYkfDnqEHyx5mUrb58kUjw=
+
 es6-promise@^3.0.2:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-3.3.1.tgz#a08cdde84ccdbf34d027a1451bc91d4bcd28a613"
   integrity sha1-oIzd6EzNvzTQJ6FFG8kdS80ophM=
+
+es6-promise@^4.2.8:
+  version "4.2.8"
+  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.8.tgz#4eb21594c972bc40553d276e510539143db53e0a"
+  integrity sha512-HJDGx5daxeIvxdBxvG2cb9g4tEvwIk3i8+nhX0yGrYmZUzbkdg8QbDevheDB8gd0//uPj4c1EQua8Q+MViT0/w==
 
 escape-html@~1.0.3:
   version "1.0.3"
@@ -8904,19 +8914,21 @@ prismic-javascript@^2.1.1:
     cross-fetch "^2.2.3"
     promise-polyfill "8.0.0"
 
-prismic-reactjs@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/prismic-reactjs/-/prismic-reactjs-1.0.0.tgz#e494d307fe52f317e5267141e6eebfabfc49f77c"
-  integrity sha512-PjMN8tyNYi/J72oytZLvTShDN6NN959f4UveBbBSNwxk45gVRJcp5XSEd/OHT7EtC3Qhwi63Quk+6bRXohpDHQ==
+prismic-reactjs@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/prismic-reactjs/-/prismic-reactjs-1.0.1.tgz#8d06420e0b7a5e2086f717187832cd369712a22b"
+  integrity sha512-XyG3obBjF4bH5nW1cRPVnZPcHs3KymiS8T0Y7+wb5bCxNXAiazLAkf3YWDkZXYgXkVUyRz084l4kETDJ39CyiA==
   dependencies:
+    es6-object-assign "^1.1.0"
+    es6-promise "^4.2.8"
     prismic-helpers "^1.0.0"
-    prismic-richtext "^1.0.1"
+    prismic-richtext "^1.0.3"
     prop-types "^15.7.2"
 
-prismic-richtext@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/prismic-richtext/-/prismic-richtext-1.0.1.tgz#896aaa589d2d6e33762d7fe8499c21952f27dc52"
-  integrity sha512-OfRpB2lXhJNv9YAcRnyR+IqY4v2C7HxtChE6ErdlwgfhexaKqdfY6Ti4Oyr2WHFbcnjy+BI0Mf2cWQvClvjOmA==
+prismic-richtext@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/prismic-richtext/-/prismic-richtext-1.0.3.tgz#ce8c8c18d65b01f1036f222b993ad2de700199fe"
+  integrity sha512-ZM45dVPL713+oDpt8ysWRY2pw3esBxRrqBlUO+q/T0WK0SNVSq29tQYhVdIALd8hRfF7X1lfpW0Q0YymEdh0AA==
   dependencies:
     ramda "^0.26.1"
     uuid "^3.3.2"
