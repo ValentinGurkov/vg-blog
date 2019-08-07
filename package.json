@@ -1,5 +1,13 @@
 {
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ValentinGurkov/vg-blog.git"
+  },
+  "bugs": "https://github.com/ValentinGurkov/vg-blog/issues",
+  "authors": [
+    "Valentin Gurkov"
+  ],
   "engines": {
     "node": ">=12"
   },

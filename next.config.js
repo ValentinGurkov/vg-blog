@@ -64,6 +64,41 @@ const analyzeBundles = {
   }
 };
 
+const manifestConfig = {
+  filename: 'static/manifest.json',
+  name: "Valentin Gurkov's Blog",
+  short_name: 'VG Blog',
+  description: 'Making good health and lifestyle choices has never been easier.',
+  background_color: '#414042',
+  theme_color: '#ff6c0c',
+  display: 'standalone',
+  orientation: 'portrait',
+  fingerprints: false,
+  inject: false,
+  start_url: '/',
+  lang: 'en',
+  dir: 'ltr',
+  ios: {
+    'apple-mobile-web-app-title': 'VG Blog',
+    'apple-mobile-web-app-status-bar-style': '#ff6c0'
+  },
+  icons: [
+    {
+      src: resolve('static/logo.png'),
+      sizes: [72, 96, 128, 144, 152, 192, 256, 384, 512],
+      destination: '/static'
+    },
+    {
+      src: resolve('static/icons/apple-touch-icon.png'),
+      sizes: [57, 60, 72, 76, 120, 144, 152, 180],
+      destination: '/static/ios',
+      ios: true
+    }
+  ],
+  includeDirectory: true,
+  publicPath: '..'
+};
+
 module.exports = withBundleAnalyzer(
   withOptimizedImages(
     withOffline({
@@ -86,42 +121,7 @@ module.exports = withBundleAnalyzer(
         });
 
         if (!dev && !isServer) {
-          config.plugins.push(
-            new WebpackPwaManifest({
-              filename: 'static/manifest.json',
-              name: "Valentin Gurkov's Blog",
-              short_name: 'VG Blog',
-              description: 'Making good health and lifestyle choices has never been easier.',
-              background_color: '#414042',
-              theme_color: '#ff6c0c',
-              display: 'standalone',
-              orientation: 'portrait',
-              fingerprints: false,
-              inject: false,
-              start_url: '/',
-              lang: 'en',
-              dir: 'ltr',
-              ios: {
-                'apple-mobile-web-app-title': 'VG Blog',
-                'apple-mobile-web-app-status-bar-style': '#ff6c0'
-              },
-              icons: [
-                {
-                  src: resolve('static/logo.png'),
-                  sizes: [72, 96, 128, 144, 152, 192, 256, 384, 512],
-                  destination: '/static'
-                },
-                {
-                  src: resolve('static/icons/apple-touch-icon.png'),
-                  sizes: [57, 60, 72, 76, 144, 120, 144, 152, 180],
-                  destination: '/static/ios',
-                  ios: true
-                }
-              ],
-              includeDirectory: true,
-              publicPath: '..'
-            })
-          );
+          config.plugins.push(new WebpackPwaManifest(manifestConfig));
         }
         // Fixes npm packages that depend on `fs` module
         config.node = {

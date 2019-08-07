@@ -14,6 +14,7 @@ const generateSitemap = require('./generateSitemap')
 const port = process.env.PORT || 3000
 const root = dev ? `http://localhost:${port}` : `https://www.valentingurkov.com:${port}`
 const app = next({ dev })
+const handle = app.getRequestHandler()
 
 const ssrCache = CacheableResponse({
   ttl: dev ? 0 : 1000 * 60 * 60, // 1hour
@@ -114,6 +115,9 @@ app
         res.set('Content-Type', 'application/javascript')
         const filePath = join(__dirname, '../.next/static', 'service-worker.js')
         app.serveStatic(req, res, filePath)
+      }
+      if (req.url.includes('manifest')) {
+        handle(req, res, req.url)
       } else {
         ssrCache({ req, res, pagePath: req.url })
       }
