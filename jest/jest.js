@@ -9,4 +9,5 @@ const mockedNextRouter = {
   push: () => {},
   prefetch: () => {}
 };
+
 NextRouter.router = mockedNextRouter;
