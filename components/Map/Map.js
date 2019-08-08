@@ -39,4 +39,4 @@ MapContainer.propTypes = {
 
 export default GoogleApiWrapper({
   apiKey: GOOGLE_API_KEY
-})(MapContainer);
+})(React.memo(MapContainer));

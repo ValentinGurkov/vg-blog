@@ -14,4 +14,4 @@ Backdrop.propTypes = {
   show: PropTypes.bool.isRequired,
   clicked: PropTypes.func.isRequired
 };
-export default Backdrop;
+export default React.memo(Backdrop);

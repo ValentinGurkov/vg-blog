@@ -44,4 +44,4 @@ FooterTop.propTypes = {
   newsLetterFormHandler: PropTypes.func.isRequired
 };
 
-export default FooterTop;
+export default React.memo(FooterTop);

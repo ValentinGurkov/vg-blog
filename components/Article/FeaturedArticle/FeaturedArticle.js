@@ -46,4 +46,4 @@ FeaturedArticle.propTypes = {
   post: PropTypes.object.isRequired
 };
 
-export default FeaturedArticle;
+export default React.memo(FeaturedArticle);
