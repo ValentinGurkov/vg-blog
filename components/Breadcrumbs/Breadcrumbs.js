@@ -22,4 +22,4 @@ Breadcrumbs.propTypes = {
   breadcrumbs: PropTypes.array.isRequired
 };
 
-export default Breadcrumbs;
+export default React.memo(Breadcrumbs);

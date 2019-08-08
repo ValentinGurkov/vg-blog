@@ -51,4 +51,4 @@ FooterLink.propTypes = {
   as: PropTypes.string
 };
 
-export default FooterLink;
+export default React.memo(FooterLink);

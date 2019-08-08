@@ -19,4 +19,4 @@ Articles.propTypes = {
   posts: PropTypes.array.isRequired
 };
 
-export default Articles;
+export default React.memo(Articles);

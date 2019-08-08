@@ -53,4 +53,4 @@ ArticleThumb.propTypes = {
   post: PropTypes.object.isRequired
 };
 
-export default ArticleThumb;
+export default React.memo(ArticleThumb);

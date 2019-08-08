@@ -27,4 +27,4 @@ SideDrawer.propTypes = {
   closed: PropTypes.func.isRequired
 };
 
-export default SideDrawer;
+export default React.memo(SideDrawer);

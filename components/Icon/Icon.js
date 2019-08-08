@@ -54,4 +54,4 @@ const Icon = props => {
 Icon.propTypes = {
   type: PropTypes.string.isRequired
 };
-export default Icon;
+export default React.memo(Icon);

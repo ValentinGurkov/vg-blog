@@ -16,4 +16,4 @@ DrawerToggle.propTypes = {
   clicked: PropTypes.func.isRequired
 };
 
-export default DrawerToggle;
+export default React.memo(DrawerToggle);

@@ -23,4 +23,4 @@ NavigationItem.propTypes = {
   children: PropTypes.string.isRequired
 };
 
-export default NavigationItem;
+export default React.memo(NavigationItem);

@@ -21,4 +21,4 @@ Logo.propTypes = {
   footer: PropTypes.bool
 };
 
-export default Logo;
+export default React.memo(Logo);

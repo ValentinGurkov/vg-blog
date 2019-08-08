@@ -125,7 +125,7 @@ app
 
     server.listen(port, err => {
       if (err) throw err
-      console.log(`> Ready on ${root}`)
+      console.log(`Ready on ${root}`)
     })
   })
   .catch(ex => {
