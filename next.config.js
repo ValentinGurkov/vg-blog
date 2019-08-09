@@ -14,7 +14,6 @@ const workboxOpts = {
     swDest: 'static/service-worker.js',
     clientsClaim: true,
     skipWaiting: true,
-    globPatterns: ['.next/static/*', '.next/static/commons/*'],
     modifyURLPrefix: {
       '.next': '/_next'
     },
@@ -49,6 +48,7 @@ const workboxOpts = {
     ]
   }
 };
+
 const analyzeBundles = {
   analyzeServer: ['server', 'both'].includes(process.env.BUNDLE_ANALYZE),
   analyzeBrowser: ['browser', 'both'].includes(process.env.BUNDLE_ANALYZE),
@@ -91,7 +91,7 @@ const manifestConfig = {
     {
       src: resolve('static/icons/apple-touch-icon.png'),
       sizes: [57, 60, 72, 76, 120, 144, 152, 180],
-      destination: '/static/ios',
+      destination: '/static',
       ios: true
     }
   ],
