@@ -14,6 +14,7 @@ const workboxOpts = {
     swDest: 'static/service-worker.js',
     clientsClaim: true,
     skipWaiting: true,
+    globPatterns: ['.next/static/*', '.next/static/commons/*'],
     modifyURLPrefix: {
       '.next': '/_next'
     },
@@ -47,6 +48,10 @@ const workboxOpts = {
       }
     ]
   }
+};
+
+const optimizedImages = {
+  optimizeImagesInDev: true
 };
 
 const analyzeBundles = {
@@ -99,12 +104,19 @@ const manifestConfig = {
   publicPath: '..'
 };
 
+const granularChunks = {
+  experimental: {
+    granularChunks: true
+  }
+};
+
 module.exports = withBundleAnalyzer(
   withOptimizedImages(
     withOffline({
       ...workboxOpts,
-      optimizeImagesInDev: true,
+      ...optimizedImages,
       ...analyzeBundles,
+      ...granularChunks,
       webpack: (config, { isServer, defaultLoaders }) => {
         config.module.rules.push({
           test: /\.scss$/,
