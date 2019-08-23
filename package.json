@@ -69,7 +69,7 @@
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-prettier": "^6.1.0",
     "eslint-config-react-app": "^3.0.8",
-    "eslint-config-standard": "^14.0.0",
+    "eslint-config-standard": "^14.0.1",
     "eslint-config-standard-jsx": "^7.0.0",
     "eslint-import-resolver-babel-plugin-root-import": "^1.1.1",
     "eslint-plugin-flowtype": "^4.2.0",
