@@ -5,13 +5,13 @@ import classes from './Backdrop.scss';
 
 const Backdrop = props =>
   props.show ? (
-    <React.Fragment>
-      <div className="backdrop" onClick={props.clicked} /> <style jsx>{classes}</style>
-    </React.Fragment>
+    <>
+      <div className="backdrop" onClick={props.handleClicked} /> <style jsx>{classes}</style>
+    </>
   ) : null;
 
 Backdrop.propTypes = {
   show: PropTypes.bool.isRequired,
-  clicked: PropTypes.func.isRequired
+  handleClicked: PropTypes.func.isRequired
 };
 export default React.memo(Backdrop);

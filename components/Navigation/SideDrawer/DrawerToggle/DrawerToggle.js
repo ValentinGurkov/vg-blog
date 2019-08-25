@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import classes from './DrawerToggle.scss';
 
 const DrawerToggle = props => (
-  <div className="drawlerToggle" onClick={props.clicked}>
+  <div className="drawlerToggle" onClick={props.handleClicked}>
     <span />
     <span />
     <span />
@@ -13,7 +13,7 @@ const DrawerToggle = props => (
 );
 
 DrawerToggle.propTypes = {
-  clicked: PropTypes.func.isRequired
+  handleClicked: PropTypes.func.isRequired
 };
 
 export default React.memo(DrawerToggle);

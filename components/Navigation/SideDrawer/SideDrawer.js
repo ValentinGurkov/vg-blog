@@ -12,13 +12,13 @@ const SideDrawer = props => {
     attachedClasses = ['sideDrawer', 'close'].join(' ');
   }
   return (
-    <React.Fragment>
-      <Backdrop show={props.open} clicked={props.closed} />
+    <>
+      <Backdrop show={props.open} handleClicked={props.closed} />
       <nav className={attachedClasses}>
         <NavigationItems />
       </nav>
       <style jsx>{classes}</style>
-    </React.Fragment>
+    </>
   );
 };
 

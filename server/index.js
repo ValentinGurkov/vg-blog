@@ -78,15 +78,14 @@ app
 
     server.get('/sitemap.xml', async (req, res) => {
       const sitemap = await generateSitemap()
-      sitemap.toXML((err, xml) => {
-        if (err) {
-          res.status(500).end()
-          return
-        }
-
-        res.header('Content-Type', 'application/xml;charset=UTF-8')
+      try {
+        const xml = sitemap.toXML()
+        res.header('Content-Type', 'application/xml')
         res.status(200).send(xml)
-      })
+      } catch (e) {
+        console.error(e)
+        res.status(500).end()
+      }
     })
 
     const iconFileOptions = {

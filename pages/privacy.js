@@ -272,22 +272,24 @@ const privacyPolicy = () => (
       </ul>
     </div>
     <DynamicMap />
-    <style jsx>{`
-      .wrapper {
-        margin: 20px auto;
-        padding: 0 13px;
-        line-height: 1.4;
-      }
-      ul {
-        text-align: left;
-      }
-
-      @media (max-width: 768px) {
+    <style jsx>
+      {`
         .wrapper {
-          font-size: 14px;
+          margin: 20px auto;
+          padding: 0 13px;
+          line-height: 1.4;
         }
-      }
-    `}</style>
+        ul {
+          text-align: left;
+        }
+
+        @media (max-width: 768px) {
+          .wrapper {
+            font-size: 14px;
+          }
+        }
+      `}
+    </style>
     <script type="application/ld+json" dangerouslySetInnerHTML={addBreadcrumbsLD()} />
   </>
 );

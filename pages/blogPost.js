@@ -105,7 +105,7 @@ const BlogPost = props => {
   const logoUrl = `${ROOT_URL}${require('../static/og-image.jpg')}`;
   const breadcrumbs = getBreadrumbs(blogSlug, post.title.length ? post.title[0].text : 'Article');
   return (
-    <React.Fragment>
+    <>
       <BlogMeta post={post} postUrl={postUrl} />
       <Breadcrumbs breadcrumbs={breadcrumbs} />
       <article className="blogPost">
@@ -114,35 +114,37 @@ const BlogPost = props => {
         {RichText.render(post.body, linkResolver)}
         {post.body1[0] && post.body1[0].primary.text ? RichText.render(post.body1[0].primary.text, linkResolver) : null}
       </article>
-      <style jsx>{`
-        .blogPost {
-          margin: 10px auto 20px;
-          padding: 0 13px;
-          line-height: 1.4;
-        }
-
-        ul,
-        .left-align {
-          text-align: left;
-        }
-
-        .link {
-          text-decoration: none;
-          outline: none;
-        }
-
-        @media (max-width: 768px) {
+      <style jsx>
+        {`
           .blogPost {
-            font-size: 14px;
+            margin: 10px auto 20px;
+            padding: 0 13px;
+            line-height: 1.4;
           }
-        }
-      `}</style>
+
+          ul,
+          .left-align {
+            text-align: left;
+          }
+
+          .link {
+            text-decoration: none;
+            outline: none;
+          }
+
+          @media (max-width: 768px) {
+            .blogPost {
+              font-size: 14px;
+            }
+          }
+        `}
+      </style>
       <script type="application/ld+json" dangerouslySetInnerHTML={addArticleLD(post, info, postUrl, logoUrl)} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={addBreadcrumbsLD(blogSlug, post.title.length ? post.title[0].text : 'Article')}
       />
-    </React.Fragment>
+    </>
   );
 };
 
