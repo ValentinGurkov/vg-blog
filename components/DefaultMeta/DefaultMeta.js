@@ -1,6 +1,6 @@
 import React from 'react';
-import { DEFAULT_SEO } from '~/lib/config';
 import Head from 'next/head';
+import { DEFAULT_SEO } from '~/lib/config';
 
 const DefaultMeta = () => (
   <Head>

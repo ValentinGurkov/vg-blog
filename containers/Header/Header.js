@@ -10,11 +10,11 @@ class Hader extends Component {
     showSideDrawer: false
   };
 
-  sideDrawerToggledHandler = () => {
+  handleSideDrawerToggled = () => {
     this.setState(prevState => ({ showSideDrawer: !prevState.showSideDrawer }));
   };
 
-  handleSideDrawerClosed = () => {
+  onSideDrawerClosed = () => {
     this.setState({ showSideDrawer: false });
   };
 
@@ -27,8 +27,8 @@ class Hader extends Component {
           <nav className={desktopNav}>
             <NavigationItems />
           </nav>
-          <DrawerToggle clicked={this.sideDrawerToggledHandler} />
-          <SideDrawer open={this.state.showSideDrawer} closed={this.handleSideDrawerClosed} />
+          <DrawerToggle clicked={this.handleSideDrawerToggled} />
+          <SideDrawer open={this.state.showSideDrawer} closed={this.onSideDrawerClosed} />
         </div>
         <style jsx>{classes}</style>
       </header>
