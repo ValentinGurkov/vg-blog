@@ -9,7 +9,7 @@
     "Valentin Gurkov"
   ],
   "engines": {
-    "node": ">=12"
+    "node": ">=10"
   },
   "scripts": {
     "dev": "node server/",
