@@ -5,13 +5,13 @@ import classes from './Footer.scss';
 import FooterTop from './FooterTop/FooterTop';
 import FooterBottom from './FooterBottom/FooterBottom';
 
-const newsLetterFormHandler = event => {
+const handleNewsLetterForm = event => {
   event.preventDefault();
 };
 
 const footer = () => (
   <footer className="footer">
-    <FooterTop newsLetterFormHandler={newsLetterFormHandler} />
+    <FooterTop handleNewsLetterForm={handleNewsLetterForm} />
     <FooterBottom />
     <style jsx>{classes}</style>
   </footer>
