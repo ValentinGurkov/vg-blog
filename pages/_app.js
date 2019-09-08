@@ -28,7 +28,7 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      <Container>
+      <>
         <DefaultMeta />
         <Layout>
           <main>
@@ -38,7 +38,7 @@ export default class MyApp extends App {
         <style jsx global>
           {global}
         </style>
-      </Container>
+      </>
     );
   }
 }
