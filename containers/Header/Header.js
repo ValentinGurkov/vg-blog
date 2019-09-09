@@ -6,9 +6,12 @@ import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 import NavigationItems from '../../components/Navigation/NavigationItems/NavigationItems';
 
 class Hader extends Component {
-  state = {
-    showSideDrawer: false
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      showSideDrawer: false
+    };
+  }
 
   onSideDrawerToggled = () => {
     this.setState(prevState => ({ showSideDrawer: !prevState.showSideDrawer }));

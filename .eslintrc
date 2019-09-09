@@ -23,7 +23,9 @@
   },
   "settings": {
     "import/resolver": "babel-plugin-root-import",
-    "import/core-modules": ["styled-jsx/css"]
+    "import/core-modules": [
+      "styled-jsx/css"
+    ]
   },
   "env": {
     "browser": true,
@@ -48,7 +50,10 @@
         "destructuring": "all"
       }
     ],
-    "arrow-body-style": [2, "as-needed"],
+    "arrow-body-style": [
+      2,
+      "as-needed"
+    ],
     "no-unused-expressions": [
       2,
       {
@@ -78,7 +83,10 @@
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [".js", ".jsx"]
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
       }
     ],
     "radix": 0,
@@ -86,7 +94,14 @@
       2,
       {
         "hoist": "all",
-        "allow": ["resolve", "reject", "done", "next", "err", "error"]
+        "allow": [
+          "resolve",
+          "reject",
+          "done",
+          "next",
+          "err",
+          "error"
+        ]
       }
     ],
     "quotes": [
@@ -97,13 +112,20 @@
         "allowTemplateLiterals": true
       }
     ],
-    "jsx-quotes": ["error", "prefer-double"],
-    "prettier/prettier": ["error"],
+    "jsx-quotes": [
+      "error",
+      "prefer-double"
+    ],
+    "prettier/prettier": [
+      "error"
+    ],
     "jsx-a11y/href-no-hash": "off",
     "jsx-a11y/anchor-is-valid": [
       "warn",
       {
-        "aspects": ["invalidHref"]
+        "aspects": [
+          "invalidHref"
+        ]
       }
     ],
     "react/destructuring-assignment": 0,
@@ -111,7 +133,29 @@
     "jsx-a11y/no-static-element-interactions": 1,
     "jsx-a11y/click-events-have-key-events": 1,
     "no-await-in-loop": 0,
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": ["**/*.test.js", "./jest/jest.js"] }]
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.test.js",
+          "./jest/jest.js"
+        ]
+      }
+    ],
+    "react/jsx-props-no-spreading": [
+      {
+        "exceptions": [
+          "Component"
+        ]
+      }
+    ]
   },
-  "plugins": ["prettier", "jest", "import", "jsx-a11y", "promise", "react"]
+  "plugins": [
+    "prettier",
+    "jest",
+    "import",
+    "jsx-a11y",
+    "promise",
+    "react"
+  ]
 }

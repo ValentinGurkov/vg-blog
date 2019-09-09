@@ -1,21 +1,11 @@
 import React from 'react';
-import App, { Container } from 'next/app';
+import App from 'next/app';
 import { register, unregister } from 'next-offline/runtime';
 import Layout from '~/containers/Layout/Layout';
 import DefaultMeta from '~/components/DefaultMeta/DefaultMeta';
 import global from '~/scss/global.scss';
 
 export default class MyApp extends App {
-  /* static async getInitialProps({ Component, ctx }) {
-    let pageProps = {};
-
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
-    }
-
-    return { pageProps };
-  } */
-
   componentDidMount() {
     register();
   }
