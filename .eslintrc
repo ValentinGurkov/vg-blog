@@ -143,7 +143,10 @@
       }
     ],
     "react/jsx-props-no-spreading": [
+      2,
       {
+        "html": "enforce",
+        "custom": "enforce",
         "exceptions": [
           "Component"
         ]
