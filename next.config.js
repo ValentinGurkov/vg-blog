@@ -2,7 +2,9 @@
 const withOffline = require('next-offline');
 const withOptimizedImages = require('next-optimized-images');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
-const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true'
+});
 const StyledJSXWebpackLoader = require('styled-jsx/webpack').loader;
 const { resolve } = require('path');
 

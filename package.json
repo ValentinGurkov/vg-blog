@@ -21,15 +21,11 @@
     "lint": "yarn lint:js && yarn lint:css",
     "test": "NODE_ENV=test jest",
     "test:win": "set NODE_ENV=test& jest",
-    "analyze": "BUNDLE_ANALYZE=both next build",
-    "analyze:server": "BUNDLE_ANALYZE=server next build",
-    "analyze:browser": "BUNDLE_ANALYZE=browser next build",
-    "analyze:win": "set BUNDLE_ANALYZE=both& next build",
-    "analyze:win:server": "set BUNDLE_ANALYZE=server& next build",
-    "analyze:win:browser": "set BUNDLE_ANALYZE=browser& next build"
+    "analyze": "ANALYZE=true next build",
+    "analyze:win": "set ANALYZE=true& next build"
   },
   "dependencies": {
-    "@zeit/next-bundle-analyzer": "^0.1.2",
+    "@next/bundle-analyzer": "^9.0.5",
     "babel-plugin-root-import": "^6.4.1",
     "cacheable-response": "^1.6.12",
     "compression": "^1.7.4",
