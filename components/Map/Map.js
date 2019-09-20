@@ -7,7 +7,7 @@ import classes from './Map.scss';
 export class MapContainer extends Component {
   render() {
     return (
-      <React.Fragment>
+      <>
         <Map
           className="map"
           google={this.props.google}
@@ -15,7 +15,8 @@ export class MapContainer extends Component {
           initialCenter={{
             lat: OFFICE_COORDINATES.lat,
             lng: OFFICE_COORDINATES.lng
-          }}>
+          }}
+        >
           <Marker
             title={"Valentin Gurkov's Blog Office"}
             name="Office"
@@ -25,8 +26,10 @@ export class MapContainer extends Component {
             }}
           />
         </Map>
-        <style jsx global>{classes}</style>
-      </React.Fragment>
+        <style jsx global>
+          {classes}
+        </style>
+      </>
     );
   }
 }
@@ -37,4 +40,4 @@ MapContainer.propTypes = {
 
 export default GoogleApiWrapper({
   apiKey: GOOGLE_API_KEY
-})(MapContainer);
+})(React.memo(MapContainer));

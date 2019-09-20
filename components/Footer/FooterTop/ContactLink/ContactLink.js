@@ -42,4 +42,4 @@ ContactLink.propTypes = {
   type: PropTypes.string.isRequired
 };
 
-export default ContactLink;
+export default React.memo(ContactLink);

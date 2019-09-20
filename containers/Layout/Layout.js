@@ -10,9 +10,12 @@ import * as gtag from '~/lib/gtag';
 Router.events.on('routeChangeComplete', url => gtag.pageview(url));
 
 export default class Layout extends Component {
-  state = {
-    loading: false
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: false
+    };
+  }
 
   componentDidMount() {
     Router.onRouteChangeStart = () => {

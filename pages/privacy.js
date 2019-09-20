@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import Map from '../components/Map/Map';
+import dynamic from 'next/dynamic';
+import Spinner from '../components/UI/Spinner/Spinner';
 import Breadcrumbs from '~/components/Breadcrumbs/Breadcrumbs';
 import { ROOT_URL, DEFAULT_SEO } from '../lib/config';
 
@@ -31,6 +32,10 @@ const addBreadcrumbsLD = () => ({
       "item":"${ROOT_URL}/privacy-policy"
     }]
   }`
+});
+
+const DynamicMap = dynamic(() => import('../components/Map/Map'), {
+  loading: () => <Spinner />
 });
 
 const privacyPolicy = () => (
@@ -266,23 +271,25 @@ const privacyPolicy = () => (
         <li>By visiting our office: Anak Krakatau Island, Pulau, South Lampung Regency, Lampung, Indonesia</li>
       </ul>
     </div>
-    <Map />
-    <style jsx>{`
-      .wrapper {
-        margin: 20px auto;
-        padding: 0 13px;
-        line-height: 1.4;
-      }
-      ul {
-        text-align: left;
-      }
-
-      @media (max-width: 768px) {
+    <DynamicMap />
+    <style jsx>
+      {`
         .wrapper {
-          font-size: 14px;
+          margin: 20px auto;
+          padding: 0 13px;
+          line-height: 1.4;
         }
-      }
-    `}</style>
+        ul {
+          text-align: left;
+        }
+
+        @media (max-width: 768px) {
+          .wrapper {
+            font-size: 14px;
+          }
+        }
+      `}
+    </style>
     <script type="application/ld+json" dangerouslySetInnerHTML={addBreadcrumbsLD()} />
   </>
 );

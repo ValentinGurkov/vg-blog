@@ -14,6 +14,7 @@ const generateSitemap = require('./generateSitemap')
 const port = process.env.PORT || 3000
 const root = dev ? `http://localhost:${port}` : `https://www.valentingurkov.com:${port}`
 const app = next({ dev })
+const handle = app.getRequestHandler()
 
 const ssrCache = CacheableResponse({
   ttl: dev ? 0 : 1000 * 60 * 60, // 1hour
@@ -44,19 +45,30 @@ app
   .prepare()
   .then(() => {
     const server = express()
+
     server.use(cors(corsOptions))
+
     server.use(compression())
+
     server.use(helmet())
+
+    server.use(
+      '/static',
+      express.static(join(__dirname, '../static'), {
+        maxAge: '365d',
+        immutable: true
+      })
+    )
 
     server.options('*', cors())
 
-    server.get('/privacy-policy', (req, res) => app.render(req, res, '/privacy'))
+    server.get('/privacy-policy', (req, res) => ssrCache({ req, res, pagePath: '/privacy' }))
 
-    server.get('/terms-and-conditions', (req, res) => app.render(req, res, '/terms'))
+    server.get('/terms-and-conditions', (req, res) => ssrCache({ req, res, pagePath: '/terms' }))
 
-    server.get('/our-mission', (req, res) => app.render(req, res, '/ourMission'))
+    server.get('/our-mission', (req, res) => ssrCache({ req, res, pagePath: '/ourMission' }))
 
-    server.get('/articles', (req, res) => app.render(req, res, '/articles'))
+    server.get('/articles', (req, res) => ssrCache({ req, res, pagePath: '/articles' }))
 
     server.get('/articles/:slug', (req, res) => {
       const nextJsPage = '/blogPost'
@@ -66,15 +78,14 @@ app
 
     server.get('/sitemap.xml', async (req, res) => {
       const sitemap = await generateSitemap()
-      sitemap.toXML((err, xml) => {
-        if (err) {
-          res.status(500).end()
-          return
-        }
-
-        res.header('Content-Type', 'application/xml;charset=UTF-8')
+      try {
+        const xml = sitemap.toXML()
+        res.header('Content-Type', 'application/xml')
         res.status(200).send(xml)
-      })
+      } catch (e) {
+        console.error(e)
+        res.status(500).end()
+      }
     })
 
     const iconFileOptions = {
@@ -97,16 +108,10 @@ app
         'Content-Type': 'text/plain;charset=UTF-8'
       }
     }
-
     server.get('/robots.txt', (req, res) => res.status(200).sendFile('robots.txt', robotsOptions))
 
-    server.use(
-      '/static',
-      express.static(join(__dirname, '../static'), {
-        maxAge: '365d',
-        immutable: true
-      })
-    )
+    server.get('/', (req, res) => ssrCache({ req, res, pagePath: req.url }))
+
     server.get('*', (req, res) => {
       if (req.url.includes('/service-worker.js')) {
         // Don't cache service worker is a best practice (otherwise clients wont get emergency bug fix)
@@ -115,13 +120,13 @@ app
         const filePath = join(__dirname, '../.next/static', 'service-worker.js')
         app.serveStatic(req, res, filePath)
       } else {
-        ssrCache({ req, res, pagePath: req.url })
+        handle(req, res, req.url)
       }
     })
 
     server.listen(port, err => {
       if (err) throw err
-      console.log(`> Ready on ${root}`)
+      console.log(`Ready on ${root}`)
     })
   })
   .catch(ex => {

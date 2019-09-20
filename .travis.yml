@@ -1,6 +1,7 @@
 language: node_js
 node_js:
-  - 11
+  - 'node'
+  - 10
 script:
   - yarn lint
   - yarn test

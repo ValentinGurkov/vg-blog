@@ -11,7 +11,7 @@ const FooterTop = props => (
       <p className="footerParagraph">Sign up for our newsletter to be notified about the latest blog posts</p>
       <form>
         <input type="email" className="footerInput" placeholder="Enter your email address" />
-        <button className="footerButton" type="submit" value="Join now" onClick={props.newsLetterFormHandler}>
+        <button className="footerButton" type="submit" value="Join now" onClick={props.handleNewsLetterForm}>
           <span>JOIN NOW</span>
         </button>
       </form>
@@ -41,7 +41,7 @@ const FooterTop = props => (
 );
 
 FooterTop.propTypes = {
-  newsLetterFormHandler: PropTypes.func.isRequired
+  handleNewsLetterForm: PropTypes.func.isRequired
 };
 
-export default FooterTop;
+export default React.memo(FooterTop);

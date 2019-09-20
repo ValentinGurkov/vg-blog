@@ -6,15 +6,18 @@ import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 import NavigationItems from '../../components/Navigation/NavigationItems/NavigationItems';
 
 class Hader extends Component {
-  state = {
-    showSideDrawer: false
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      showSideDrawer: false
+    };
+  }
 
-  sideDrawerToggledHandler = () => {
+  onSideDrawerToggled = () => {
     this.setState(prevState => ({ showSideDrawer: !prevState.showSideDrawer }));
   };
 
-  sideDrawerClosedHandler = () => {
+  onSideDrawerClosed = () => {
     this.setState({ showSideDrawer: false });
   };
 
@@ -27,8 +30,8 @@ class Hader extends Component {
           <nav className={desktopNav}>
             <NavigationItems />
           </nav>
-          <DrawerToggle clicked={this.sideDrawerToggledHandler} />
-          <SideDrawer open={this.state.showSideDrawer} closed={this.sideDrawerClosedHandler} />
+          <DrawerToggle handleClicked={this.onSideDrawerToggled} />
+          <SideDrawer open={this.state.showSideDrawer} closed={this.onSideDrawerClosed} />
         </div>
         <style jsx>{classes}</style>
       </header>

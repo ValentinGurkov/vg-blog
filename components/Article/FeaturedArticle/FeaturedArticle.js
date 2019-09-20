@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
-import moment from 'moment';
 import { linkResolver } from '~/lib/prismic';
+import { formatArticleDate } from '~/server/util';
 import classes from './FeaturedArticle.scss';
 
 const FeaturedArticle = props => {
-  const date = moment(new Date(props.post.data.date_published)).format('D MMMM');
+  const date = formatArticleDate(new Date(props.post.data.date_published));
   const blogPostUrl = linkResolver(props.post);
   return (
     <div className="wrapper">
@@ -46,4 +46,4 @@ FeaturedArticle.propTypes = {
   post: PropTypes.object.isRequired
 };
 
-export default FeaturedArticle;
+export default React.memo(FeaturedArticle);

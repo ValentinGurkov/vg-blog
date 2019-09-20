@@ -40,18 +40,18 @@ const getIconProps = type =>
 const Icon = props => {
   const { url, title, alt, src } = getIconProps(props.type);
   return (
-    <React.Fragment>
+    <>
       <Link href={url}>
         <a title={title} target="_blank" rel="noopener">
           <img className="socialIcon" src={src} alt={alt} />
         </a>
       </Link>
       <style jsx>{classes}</style>
-    </React.Fragment>
+    </>
   );
 };
 
 Icon.propTypes = {
   type: PropTypes.string.isRequired
 };
-export default Icon;
+export default React.memo(Icon);

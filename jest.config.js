@@ -3,7 +3,7 @@ module.exports = {
   coverageDirectory: './coverage/',
   collectCoverage: true,
   moduleFileExtensions: ['js', 'json'],
-  setupTestFrameworkScriptFile: '<rootDir>/jest/index.js',
+  setupFilesAfterEnv: ['<rootDir>/jest/index.js'],
   testRegex: '\\.test\\.js$',
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
