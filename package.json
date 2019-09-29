@@ -43,7 +43,7 @@
     "prismic-reactjs": "^1.1.1",
     "prop-types": "^15.7.2",
     "react": "^16.10.1",
-    "react-dom": "^16.10.0",
+    "react-dom": "^16.10.1",
     "sitemap": "^4.1.1",
     "webpack-pwa-manifest": "^4.0.0"
   },
