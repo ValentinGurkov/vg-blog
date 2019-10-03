@@ -36,7 +36,7 @@
     "google-maps-react": "^2.0.2",
     "helmet": "^3.21.1",
     "next": "^9.0.7",
-    "next-offline": "^4.0.5",
+    "next-offline": "^4.0.6",
     "next-optimized-images": "^2.5.3",
     "pretty-error": "^2.1.1",
     "prismic-javascript": "^2.1.1",
