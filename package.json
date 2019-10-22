@@ -42,7 +42,7 @@
     "prismic-javascript": "^2.1.1",
     "prismic-reactjs": "^1.1.1",
     "prop-types": "^15.7.2",
-    "react": "^16.10.2",
+    "react": "^16.11.0",
     "react-dom": "^16.10.2",
     "sitemap": "^5.0.0",
     "webpack-pwa-manifest": "^4.1.1"
