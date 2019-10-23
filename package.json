@@ -44,7 +44,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "sitemap": "^5.0.0",
+    "sitemap": "^5.0.1",
     "webpack-pwa-manifest": "^4.1.1"
   },
   "browserslist": [
