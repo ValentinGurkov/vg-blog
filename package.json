@@ -34,7 +34,7 @@
     "express": "^4.17.1",
     "glob": "^7.1.5",
     "google-maps-react": "^2.0.2",
-    "helmet": "^3.21.1",
+    "helmet": "^3.21.2",
     "next": "^9.1.1",
     "next-offline": "^4.0.6",
     "next-optimized-images": "^2.5.3",
