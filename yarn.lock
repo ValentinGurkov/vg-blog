@@ -2656,12 +2656,12 @@ cacheable-request@^2.1.1:
     normalize-url "2.0.1"
     responselike "1.0.2"
 
-cacheable-response@^1.8.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/cacheable-response/-/cacheable-response-1.8.0.tgz#1d47de51fce4e741e4f4434177edd1680bce912e"
-  integrity sha512-JKcr7s0KaHVVCGCHycinsYRfBA5ul15xFl0uztyzZG3Rwz/9knkyaWV5zyoaRmbcs7nlrDFV+ulkhzC0l5HCag==
+cacheable-response@^1.9.0:
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/cacheable-response/-/cacheable-response-1.9.0.tgz#746cf5e606a4bcb7ef435fe409322f2845a35186"
+  integrity sha512-RMmawHC4rdEn5j+bJS2LrKYTpWD42QGaCVQPxPfu56Hy4vE0fTcExAvZp5xpQiAIpNpfO/Rt/e7e8YYanbP6QQ==
   dependencies:
-    compress-brotli "~1.0.8"
+    compress-brotli "~1.2.0"
     debug-logfmt "~1.0.4"
     etag "~1.8.1"
     keyv "~3.1.0"
@@ -3112,10 +3112,12 @@ component-emitter@^1.2.1:
   resolved "https://registry.yarnpkg.com/component-emitter/-/component-emitter-1.3.0.tgz#16e4070fba8ae29b679f2215853ee181ab2eabc0"
   integrity sha512-Rd3se6QB+sO1TwqZjscQrurpEPIfO0/yYnSin6Q/rD3mOutHvUrCAhJub3r90uNb+SESBuE0QYoB90YdfatsRg==
 
-compress-brotli@~1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/compress-brotli/-/compress-brotli-1.0.8.tgz#c226d523e60ce11a12f822a8cfe7472e6fa18418"
-  integrity sha512-rL+08q7QLgIruEQc7FD/xQHmEOIwjhwjnHTBtf9UyOOnrC2Ek7tR9fXDwCvfJE0BgDuvA3742Ru77M5vGtTexA==
+compress-brotli@~1.2.0:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/compress-brotli/-/compress-brotli-1.2.1.tgz#7456043257a2f17a4299626372b8f7f7378de4f3"
+  integrity sha512-VEJA1F1P8w9EggqO0TtvDCSFQuQ0c6EB7JFDXq60US6s8VxD6pjWWxhDqpXF3hRO5wSOCGqGDirqARjlvipeKg==
+  dependencies:
+    json-buffer "~3.0.1"
 
 compressible@~2.0.16:
   version "2.0.17"
@@ -7237,6 +7239,11 @@ json-buffer@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/json-buffer/-/json-buffer-3.0.0.tgz#5b1f397afc75d677bde8bcfc0e47e1f9a3d9a898"
   integrity sha1-Wx85evx11ne96Lz8Dkfh+aPZqJg=
+
+json-buffer@~3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/json-buffer/-/json-buffer-3.0.1.tgz#9338802a30d3b6605fbe0613e094008ca8c05a13"
+  integrity sha512-4bV5BfR2mqfQTJm+V5tPPdf+ZpuhiIvTuAB5g8kcrXOZpTT/QwwVRWBywX1ozr6lEuPdbHxwaJlm9G6mI2sfSQ==
 
 json-parse-better-errors@^1.0.1, json-parse-better-errors@^1.0.2:
   version "1.0.2"
