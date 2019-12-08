@@ -2751,10 +2751,10 @@ cacheable-request@^2.1.1:
     normalize-url "2.0.1"
     responselike "1.0.2"
 
-cacheable-response@^1.9.2:
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/cacheable-response/-/cacheable-response-1.9.2.tgz#d433a4bdf08fb87c4c6895b7771a8fc6897ec6e8"
-  integrity sha512-4Q2VPa3fEcjJeEtSKRqqsN6ctRknaQxVU28sWzWAUehdHDQU8UsQii5UpzQLXw34+kc+Q29muoLPwj+ZIvgFgw==
+cacheable-response@^1.10.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/cacheable-response/-/cacheable-response-1.10.0.tgz#c80f003dd53463a3218edc49dca675d06e796c34"
+  integrity sha512-mTPFDCbKnLgrcksLW0yLD4U257uM+5h0+fgdqxTfgd1s1lNVLHHgEoJ4DbV4k0m/BL0bCC+vfQkTnYRop2TZLw==
   dependencies:
     compress-brotli "~1.2.1"
     debug-logfmt "~1.0.4"
