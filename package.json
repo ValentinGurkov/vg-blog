@@ -25,9 +25,9 @@
     "analyze:win": "set ANALYZE=true& next build"
   },
   "dependencies": {
-    "@next/bundle-analyzer": "^9.1.7",
+    "@next/bundle-analyzer": "^9.2.1",
     "babel-plugin-root-import": "^6.4.1",
-    "cacheable-response": "^1.10.0",
+    "cacheable-response": "^1.10.2",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
@@ -35,7 +35,7 @@
     "glob": "^7.1.6",
     "google-maps-react": "^2.0.2",
     "helmet": "^3.21.2",
-    "next": "^9.1.7",
+    "next": "^9.2.1",
     "next-offline": "^4.0.6",
     "next-optimized-images": "^2.5.4",
     "pretty-error": "^2.1.1",
