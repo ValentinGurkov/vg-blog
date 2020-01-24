@@ -84,7 +84,7 @@
     "imagemin-svgo": "^7.0.0",
     "jest": "^24.9.0",
     "jest-environment-node-debug": "^2.0.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "prettier": "^1.19.1",
     "prettier-stylelint": "^0.4.2",
     "react-test-renderer": "^16.12.0",
