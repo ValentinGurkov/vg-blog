@@ -3065,16 +3065,16 @@ cacheable-request@^2.1.1:
     normalize-url "2.0.1"
     responselike "1.0.2"
 
-cacheable-response@^1.10.2:
-  version "1.10.2"
-  resolved "https://registry.yarnpkg.com/cacheable-response/-/cacheable-response-1.10.2.tgz#8b66f69738eabf5800422d7b10ace9a959a73863"
-  integrity sha512-QZ/nvK8xIId8vLh9Bq3zhryEHLItD0OZM2oSofV9eeY1SIeNT87RSZmFB5/+wwI4HS9b26GbsprzScck8P3z9A==
+cacheable-response@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/cacheable-response/-/cacheable-response-2.0.0.tgz#04273e8d81ab6a825a8c4603a41629ca09012b5d"
+  integrity sha512-XNJojbggBU1uFdRRUtYlhEacEZSNVFQezFY3CnVzVxJTqrWjBNbFCk3gWx7oQSdw4fRGZqO434GVrHW7JdROUw==
   dependencies:
     compress-brotli "~1.2.1"
     debug-logfmt "~1.0.4"
     etag "~1.8.1"
     keyv "~4.0.0"
-    normalize-url "~4.5.0"
+    normalize-url "~5.0.0"
     pretty-ms "~5.1.0"
 
 call-me-maybe@^1.0.1:
@@ -9241,10 +9241,10 @@ normalize-url@2.0.1:
     query-string "^5.0.1"
     sort-keys "^2.0.0"
 
-normalize-url@~4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-4.5.0.tgz#453354087e6ca96957bd8f5baf753f5982142129"
-  integrity sha512-2s47yzUxdexf1OhyRi4Em83iQk0aPvwTddtFz4hnSSw9dCEsLEGf6SwIO8ss/19S9iBb5sJaOuTvTGDeZI00BQ==
+normalize-url@~5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-5.0.0.tgz#f46c9dc20670495e4e18fbd1b4396e41d199f63c"
+  integrity sha512-bAEm2fx8Dq/a35Z6PIRkkBBJvR56BbEJvhpNtvCZ4W9FyORSna77fn+xtYFjqk5JpBS+fMnAOG/wFgkQBmB7hw==
 
 npm-bundled@^1.0.1:
   version "1.0.6"
