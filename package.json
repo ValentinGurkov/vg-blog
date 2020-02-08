@@ -35,7 +35,6 @@
     "glob": "^7.1.6",
     "google-maps-react": "^2.0.2",
     "helmet": "^3.21.2",
-    "merge-files-webpack-plugin": "^1.1.2",
     "next": "^9.2.1",
     "next-offline": "^4.0.6",
     "next-optimized-images": "^2.5.4",
@@ -102,11 +101,11 @@
   "lint-staged": {
     "*.js": [
       "prettier --write",
-      "eslint --fix",
+      "yarn lint:js",
       "git add"
     ],
     "*.scss": [
-      "stylelint --fix",
+      "yarn lint:css",
       "git add"
     ]
   }
