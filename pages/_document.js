@@ -13,7 +13,7 @@ export default class MyDocument extends Document {
       <html lang="en">
         <Head>
           <meta key="charset" charSet={DEFAULT_SEO.charset} />
-          <link key="manifest" rel="manifest" type="application/manifest+json" href="/_next/public/manifest.json" />
+          <link key="manifest" rel="manifest" type="application/manifest+json" href="/_next/static/manifest.json" />
           <meta key="viewport" name="viewport" content="width=device-width, initial-scale=1" />
           <meta key="msapplication-TileColor" name="msapplication-TileColor" content="#da532c" />
           <meta name="msapplication-TileImage" content="/public/icons/mstile-144x144.png" />

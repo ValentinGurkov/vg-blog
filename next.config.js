@@ -41,7 +41,10 @@ const workboxOpts = {
         urlPattern: /^https?.*/,
         handler: 'NetworkFirst',
         options: {
-          cacheName: 'html-cache'
+          cacheName: 'offlineCache',
+          expiration: {
+            maxEntries: 200
+          }
         }
       }
     ]
@@ -68,7 +71,7 @@ const analyzeBundles = {
 };
 
 const manifestConfig = {
-  filename: 'public/manifest.json',
+  filename: 'static/manifest.json',
   name: "Valentin Gurkov's Blog",
   short_name: 'VG Blog',
   description: 'Making good health and lifestyle choices has never been easier.',
@@ -89,12 +92,12 @@ const manifestConfig = {
     {
       src: resolve('public/logo.png'),
       sizes: [72, 96, 128, 144, 152, 192, 256, 384, 512],
-      destination: '/public'
+      destination: '/static'
     },
     {
       src: resolve('public/icons/apple-touch-icon.png'),
       sizes: [57, 60, 72, 76, 120, 144, 152, 180],
-      destination: '/public',
+      destination: '/static',
       ios: true
     }
   ],

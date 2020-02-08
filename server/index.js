@@ -93,32 +93,17 @@ app
     }
 
     server.get('/browserconfig.xml', (req, res) => res.status(200).sendFile('browserconfig.xml', iconFileOptions))
-
     server.get('/apple-touch-icon.png', (req, res) => res.status(200).sendFile('apple-touch-icon.png', iconFileOptions))
-
-    const rootFileOptions = {
-      root: join(__dirname, '../public')
-    }
-
-    server.get('/favicon.ico', (req, res) => res.status(200).sendFile('favicon.ico', rootFileOptions))
-
-    const robotsOptions = {
-      ...rootFileOptions,
-      headers: {
-        'Content-Type': 'text/plain;charset=UTF-8'
-      }
-    }
-    server.get('/robots.txt', (req, res) => res.status(200).sendFile('robots.txt', robotsOptions))
 
     server.get('/', (req, res) => ssrCache({ req, res, pagePath: req.url }))
 
     server.get('*', (req, res) => {
       if (req.url.includes('/service-worker.js')) {
         // Don't cache service worker is a best practice (otherwise clients wont get emergency bug fix)
-        //res.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
-        //res.set('Content-Type', 'application/javascript')
-        //const filePath = join(__dirname, '../.next/public', 'service-worker.js')
-        //app.serveStatic(req, res, filePath)
+        res.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
+        res.set('Content-Type', 'application/javascript')
+        const filePath = join(__dirname, '../.next/public', 'service-worker.js')
+        app.serveStatic(req, res, filePath)
       } else {
         handle(req, res, req.url)
       }
