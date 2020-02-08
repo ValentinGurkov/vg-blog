@@ -6,7 +6,7 @@ import classes from './Backdrop.scss';
 const Backdrop = props =>
   props.show ? (
     <>
-      <div className="backdrop" onClick={props.handleClicked} /> <style jsx>{classes}</style>
+      <div className="backdrop" onClick={props.handleClicked} /> <style jsx scoped>{classes}</style>
     </>
   ) : null;
 

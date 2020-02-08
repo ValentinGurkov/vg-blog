@@ -8,7 +8,7 @@ const DrawerToggle = props => (
     <span />
     <span />
     <span />
-    <style jsx>{classes}</style>
+    <style jsx scoped>{classes}</style>
   </div>
 );
 

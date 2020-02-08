@@ -36,7 +36,7 @@ const FooterTop = props => (
         <Icon type="youtube" />
       </div>
     </div>
-    <style jsx>{classes}</style>
+    <style jsx scoped>{classes}</style>
   </div>
 );
 

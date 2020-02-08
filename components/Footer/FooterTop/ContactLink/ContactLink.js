@@ -30,10 +30,8 @@ const ContactLink = props => {
   const { href, title, text } = getContactdata(props.type);
   return (
     <li className="contactLink">
-      <Link href={href}>
-        <a title={title}>{text}</a>
-      </Link>
-      <style jsx>{classes}</style>
+      <a href={href} title={title}>{text}</a>
+      <style jsx scoped>{classes}</style>
     </li>
   );
 };

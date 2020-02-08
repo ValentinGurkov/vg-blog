@@ -3,8 +3,18 @@
     "target": "ES6",
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./*"]
+      "~/*": [
+        "./*"
+      ]
     }
   },
-  "exclude": ["node_modules", "static", ".next", "coverage", ".vscode", "bundles"]
+  "exclude": [
+    "node_modules",
+    "static",
+    ".next",
+    "coverage",
+    ".vscode",
+    "bundles",
+    "public"
+  ]
 }

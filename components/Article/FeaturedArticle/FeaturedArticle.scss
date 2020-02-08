@@ -1,3 +1,4 @@
+
 @import '../../../scss/variables';
 
 .wrapper {
@@ -77,7 +78,7 @@
       position: absolute;
       width: 7px;
       height: 12px;
-      background: url(/static/arrow-orange-right.svg) no-repeat left center;
+      background: url(/public/arrow-orange-right.svg) no-repeat left center;
       right: 0;
       top: 52%;
       transform: translateY(-50%);

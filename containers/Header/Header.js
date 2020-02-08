@@ -33,7 +33,7 @@ class Hader extends Component {
           <DrawerToggle handleClicked={this.onSideDrawerToggled} />
           <SideDrawer open={this.state.showSideDrawer} closed={this.onSideDrawerClosed} />
         </div>
-        <style jsx>{classes}</style>
+        <style jsx scoped>{classes}</style>
       </header>
     );
   }

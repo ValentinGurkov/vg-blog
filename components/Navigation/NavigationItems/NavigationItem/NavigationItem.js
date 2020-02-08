@@ -12,7 +12,7 @@ const NavigationItem = props => (
         </a>
       </Link>
     </li>
-    <style jsx>{classes}</style>
+    <style jsx scoped>{classes}</style>
   </>
 );
 

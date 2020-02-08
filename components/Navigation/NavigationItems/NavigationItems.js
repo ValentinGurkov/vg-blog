@@ -13,7 +13,7 @@ const NavigationItems = () => (
     <NavigationItem to="/ourMission" as="/our-mission" title="Our Mission">
       Our mission
     </NavigationItem>
-    <style jsx>{classes}</style>
+    <style jsx scoped>{classes}</style>
   </ul>
 );
 

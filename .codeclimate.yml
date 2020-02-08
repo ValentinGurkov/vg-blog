@@ -24,4 +24,5 @@ exclude_patterns:
   - node_modules/
   - .next/
   - static/
+  - public/
   - .vscode/

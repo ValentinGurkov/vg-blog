@@ -41,7 +41,7 @@ const FooterLink = props => {
           {text}
         </a>
       </Link>
-      <style jsx>{classes}</style>
+      <style jsx scoped>{classes}</style>
     </li>
   );
 };

@@ -37,7 +37,7 @@ const FeaturedArticle = props => {
           </a>
         </Link>
       </div>
-      <style jsx>{classes}</style>
+      <style jsx scoped>{classes}</style>
     </div>
   );
 };

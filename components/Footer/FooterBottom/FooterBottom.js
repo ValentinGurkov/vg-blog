@@ -16,7 +16,7 @@ const FooterBottom = () => (
         <FooterLink type="sitemap" />
       </ul>
     </nav>
-    <style jsx>{classes}</style>
+    <style jsx scoped>{classes}</style>
   </div>
 );
 export default FooterBottom;

@@ -13,13 +13,9 @@ const dev = process.env.NODE_ENV !== 'production';
 const workboxOpts = {
   dontAutoRegisterSw: true,
   workboxOpts: {
-    swDest: 'static/service-worker.js',
+    swDest: 'public/service-worker.js',
     clientsClaim: true,
     skipWaiting: true,
-    globPatterns: ['.next/static/*', '.next/static/commons/*'],
-    modifyURLPrefix: {
-      '.next': '/_next'
-    },
     runtimeCaching: [
       {
         urlPattern: new RegExp('https://uniblog.cdn.prismic.io/api/v2'),
@@ -72,7 +68,7 @@ const analyzeBundles = {
 };
 
 const manifestConfig = {
-  filename: 'static/manifest.json',
+  filename: 'public/manifest.json',
   name: "Valentin Gurkov's Blog",
   short_name: 'VG Blog',
   description: 'Making good health and lifestyle choices has never been easier.',
@@ -91,14 +87,14 @@ const manifestConfig = {
   },
   icons: [
     {
-      src: resolve('static/logo.png'),
+      src: resolve('public/logo.png'),
       sizes: [72, 96, 128, 144, 152, 192, 256, 384, 512],
-      destination: '/static'
+      destination: '/public'
     },
     {
-      src: resolve('static/icons/apple-touch-icon.png'),
+      src: resolve('public/icons/apple-touch-icon.png'),
       sizes: [57, 60, 72, 76, 120, 144, 152, 180],
-      destination: '/static',
+      destination: '/public',
       ios: true
     }
   ],
@@ -127,7 +123,7 @@ module.exports = withBundleAnalyzer(
             {
               loader: StyledJSXWebpackLoader,
               options: {
-                type: 'scoped'
+                type: "global"
               }
             },
             'sass-loader'

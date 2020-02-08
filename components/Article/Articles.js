@@ -11,7 +11,7 @@ const Articles = props => (
         <ArticleThumb key={index} post={post} />
       ))}
     </ul>
-    <style jsx>{classes}</style>
+    <style jsx scoped>{classes}</style>
   </div>
 );
 

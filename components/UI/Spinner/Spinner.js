@@ -3,7 +3,7 @@ import React from 'react';
 const Spinner = () => (
   <>
     <div className="loader" />
-    <style jsx>
+    <style jsx scoped>
       {`
         .loader {
           font-size: 10px;

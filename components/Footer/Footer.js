@@ -13,7 +13,7 @@ const footer = () => (
   <footer className="footer">
     <FooterTop handleNewsLetterForm={handleNewsLetterForm} />
     <FooterBottom />
-    <style jsx>{classes}</style>
+    <style jsx scoped>{classes}</style>
   </footer>
 );
 

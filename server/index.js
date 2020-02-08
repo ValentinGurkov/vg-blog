@@ -17,7 +17,7 @@ const app = next({ dev })
 const handle = app.getRequestHandler()
 
 const ssrCache = CacheableResponse({
-  ttl: dev ? 0 : 1000 * 60 * 60, // 1hour
+  ttl: 0, //dev ? 0, : 1000 * 60 * 60, // 1hour
   get: async ({ req, res, pagePath, queryParams }) => ({
     data: await app.renderToHTML(req, res, pagePath, queryParams)
   }),
@@ -53,8 +53,8 @@ app
     server.use(helmet())
 
     server.use(
-      '/static',
-      express.static(join(__dirname, '../static'), {
+      '/public',
+      express.static(join(__dirname, '../public'), {
         maxAge: '365d',
         immutable: true
       })
@@ -89,7 +89,7 @@ app
     })
 
     const iconFileOptions = {
-      root: join(__dirname, '../static/icons')
+      root: join(__dirname, '../public/icons')
     }
 
     server.get('/browserconfig.xml', (req, res) => res.status(200).sendFile('browserconfig.xml', iconFileOptions))
@@ -97,7 +97,7 @@ app
     server.get('/apple-touch-icon.png', (req, res) => res.status(200).sendFile('apple-touch-icon.png', iconFileOptions))
 
     const rootFileOptions = {
-      root: join(__dirname, '../static')
+      root: join(__dirname, '../public')
     }
 
     server.get('/favicon.ico', (req, res) => res.status(200).sendFile('favicon.ico', rootFileOptions))
@@ -115,10 +115,10 @@ app
     server.get('*', (req, res) => {
       if (req.url.includes('/service-worker.js')) {
         // Don't cache service worker is a best practice (otherwise clients wont get emergency bug fix)
-        res.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
-        res.set('Content-Type', 'application/javascript')
-        const filePath = join(__dirname, '../.next/static', 'service-worker.js')
-        app.serveStatic(req, res, filePath)
+        //res.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
+        //res.set('Content-Type', 'application/javascript')
+        //const filePath = join(__dirname, '../.next/public', 'service-worker.js')
+        //app.serveStatic(req, res, filePath)
       } else {
         handle(req, res, req.url)
       }

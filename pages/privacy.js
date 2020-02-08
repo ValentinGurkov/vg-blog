@@ -272,7 +272,7 @@ const privacyPolicy = () => (
       </ul>
     </div>
     <DynamicMap />
-    <style jsx>
+    <style jsx scoped>
       {`
         .wrapper {
           margin: 20px auto;

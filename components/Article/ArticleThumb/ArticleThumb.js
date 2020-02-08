@@ -44,7 +44,7 @@ const ArticleThumb = props => {
           </a>
         </strong>
       </Link>
-      <style jsx>{classes}</style>
+      <style jsx scoped>{classes}</style>
     </li>
   );
 };

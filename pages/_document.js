@@ -13,10 +13,10 @@ export default class MyDocument extends Document {
       <html lang="en">
         <Head>
           <meta key="charset" charSet={DEFAULT_SEO.charset} />
-          <link key="manifest" rel="manifest" type="application/manifest+json" href="/_next/static/manifest.json" />
+          <link key="manifest" rel="manifest" type="application/manifest+json" href="/_next/public/manifest.json" />
           <meta key="viewport" name="viewport" content="width=device-width, initial-scale=1" />
           <meta key="msapplication-TileColor" name="msapplication-TileColor" content="#da532c" />
-          <meta name="msapplication-TileImage" content="/static/icons/mstile-144x144.png" />
+          <meta name="msapplication-TileImage" content="/public/icons/mstile-144x144.png" />
           <meta name="msapplication-config" content="/browserconfig.xml" />
           <meta key="theme-color" name="theme-color" content="#ff6c0c" />
           <Icons />
@@ -43,66 +43,66 @@ export default class MyDocument extends Document {
 
 const Icons = () => (
   <>
-    <link key="apple-touch-icon" rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png" />
+    <link key="apple-touch-icon" rel="apple-touch-icon" sizes="180x180" href="/public/icons/apple-touch-icon.png" />
     <link
       key="apple-touch-icon-152x152"
       rel="apple-touch-icon"
       sizes="152x152"
-      href="/static/icons/apple-touch-icon-152x152.png"
+      href="/public/icons/apple-touch-icon-152x152.png"
     />
-    <link key="icon-32x32" rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32x32.png" />
-    <link key="icon-194x194" rel="icon" type="image/png" sizes="194x194" href="/static/icons/favicon-194x194.png" />
+    <link key="icon-32x32" rel="icon" type="image/png" sizes="32x32" href="/public/icons/favicon-32x32.png" />
+    <link key="icon-194x194" rel="icon" type="image/png" sizes="194x194" href="/public/icons/favicon-194x194.png" />
     <link
       key="icon-192x192"
       rel="icon"
       type="image/png"
       sizes="192x192"
-      href="/static/icons/android-chrome-192x192.png"
+      href="/public/icons/android-chrome-192x192.png"
     />
-    <link key="icon-16x16" rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16x16.png" />
-    <link key="mask-icon" rel="mask-icon" href="/static/icons/safari-pinned-tab.svg" color="#414042" />
+    <link key="icon-16x16" rel="icon" type="image/png" sizes="16x16" href="/public/icons/favicon-16x16.png" />
+    <link key="mask-icon" rel="mask-icon" href="/public/icons/safari-pinned-tab.svg" color="#414042" />
     <meta key="msapplication-TileColor" name="msapplication-TileColor" content="#da532c" />
     <link
       key="apple-touch-icon-144x144"
       rel="apple-touch-icon"
       sizes="144x144"
-      href="/static/icons/apple-touch-icon-144x144.png"
+      href="/public/icons/apple-touch-icon-144x144.png"
     />
     <link
       key="apple-touch-icon-120x120"
       rel="apple-touch-icon"
       sizes="120x120"
-      href="/static/icons/apple-touch-icon-120x120.png"
+      href="/public/icons/apple-touch-icon-120x120.png"
     />
     <link
       key="apple-touch-icon-60x60"
       rel="apple-touch-icon"
       sizes="60x60"
-      href="/static/icons/apple-touch-icon-60x60.png"
+      href="/public/icons/apple-touch-icon-60x60.png"
     />
     <link
       key="apple-touch-icon-72x72"
       rel="apple-touch-icon"
       sizes="72x72"
-      href="/static/icons/apple-touch-icon-72x72.png"
+      href="/public/icons/apple-touch-icon-72x72.png"
     />
     <link
       key="apple-touch-icon-76x76"
       rel="apple-touch-icon"
       sizes="76x76"
-      href="/static/icons/apple-touch-icon-76x76.png"
+      href="/public/icons/apple-touch-icon-76x76.png"
     />
     <link
       key="apple-touch-icon-114x114"
       rel="apple-touch-icon"
       sizes="114x114"
-      href="/static/icons/apple-touch-icon-114x114.png"
+      href="/public/icons/apple-touch-icon-114x114.png"
     />
     <link
       key="apple-touch-icon-57x57"
       rel="apple-touch-icon"
       sizes="57x57"
-      href="/static/icons/apple-touch-icon-57x57.png"
+      href="/public/icons/apple-touch-icon-57x57.png"
     />
   </>
 );

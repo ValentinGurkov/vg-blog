@@ -17,7 +17,7 @@ const SideDrawer = props => {
       <nav className={attachedClasses}>
         <NavigationItems />
       </nav>
-      <style jsx>{classes}</style>
+      <style jsx scoped>{classes}</style>
     </>
   );
 };

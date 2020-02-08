@@ -102,7 +102,7 @@ const BlogPost = props => {
   const info = props.post;
   const blogSlug = info.uid;
   const postUrl = `${ROOT_URL}/articles/${blogSlug}`;
-  const logoUrl = `${ROOT_URL}${require('../static/og-image.jpg')}`;
+  const logoUrl = `${ROOT_URL}${require('../public/og-image.jpg')}`;
   const breadcrumbs = getBreadrumbs(blogSlug, post.title.length ? post.title[0].text : 'Article');
   return (
     <>
@@ -114,7 +114,7 @@ const BlogPost = props => {
         {RichText.render(post.body, linkResolver)}
         {post.body1[0] && post.body1[0].primary.text ? RichText.render(post.body1[0].primary.text, linkResolver) : null}
       </article>
-      <style jsx>
+      <style jsx scoped>
         {`
           .blogPost {
             margin: 10px auto 20px;

@@ -112,7 +112,7 @@ const terms = () => (
 
       <p>If you have any questions about these Terms, please contact us.</p>
     </div>
-    <style jsx>
+    <style jsx scoped>
       {`
         .wrapper {
           margin: 20px auto;

@@ -14,7 +14,7 @@ const Breadcrumbs = props => (
         </Link>
       </span>
     ))}
-    <style jsx>{styles}</style>
+    <style jsx scoped>{styles}</style>
   </div>
 );
 

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import classes from './Logo.scss';
 
 const Logo = props => {
-  const src = props.footer ? require('../../static/footer-logo.svg') : require('../../static/logo.svg');
+  const src = props.footer ? require('../../public/footer-logo.svg') : require('../../public/logo.svg');
   return (
     <div className="logo">
       <Link href="/">
@@ -12,7 +12,7 @@ const Logo = props => {
           <img width="40px" height="40px" src={src} alt="Logo" />
         </a>
       </Link>
-      <style jsx>{classes}</style>
+      <style jsx scoped>{classes}</style>
     </div>
   );
 };
