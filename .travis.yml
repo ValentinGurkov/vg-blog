@@ -1,21 +1,21 @@
 language: node_js
 node_js:
-  - 'node'
-  - 10
+- node
+- 10
 script:
-  - yarn lint
-  - yarn test
-  - yarn build
+- yarn lint
+- yarn test
+- yarn build
 notifications:
   email:
     on_failure: change
 cache:
   yarn: true
   directories:
-    - node_modules
+  - node_modules
 deploy:
   provider: heroku
   app: valentingurkov
   skip_cleanup: true
   api_key:
-    secure: M4J5fGLhJrOIjIWxqQiu8+CBDLluK12j28J4QZhLNzau5PhFyXYd1DnzwRKlml0hUFGruMDX7LF7j3rd2IOkIL0TzrVMdyICTuv6RhYCSPO+6sXrPYWmRy+B5QJ6w6gUTuBdS5BiNrLuUUeKYAyGQxHJoxAtLHxmgJ8ga2y6Sa5afrZ0f0uj8JBIfP4l9RYF0KzDJBx+LLOHeBArG9ePN1FL9FEcqi2rRcB5VnAbeliz5GXMKdDjTVRgHrPLEpLRNteQur2ni9winPfrEpAUwD1Pci8pISnOkojszzJJ8rm0gQkCAMHkVoZ9b/OC3Qt6+N+HDmalGtzznCrw0Sglyak++j7o+YAP1WyPBiMtjPQdZIwinkHo0fBsqpPvHoipHBuOKzcvyfQAWzhgShp5HSvk9pG2x3QBa2kmgqgx6QF5o01ARsSc0j8faJtHSWraVYxY3HDNxRA3dcwW0NlzhABogYbUOwxClbTD2q6W0erkJCNEFg/8oPmPQR3McWhcCrTtWKZ6a7rHN7n3zBuJVr/567VhPpxVKe96AGzUZF8/mAx030J7KODRGCCWQmiHd2Fk08Nw+y0MoCl66+nLkj2SZW1qCD0mNAgSZ7EC9j+Q43HLyeJl5+UOOjN2jjtejgFP2XiVjNPG94UYeiZT8WWYfywjgxZmfAwY7SVeQJI=
+    secure: NtXEpbz7dF36dOYUlEZhZQa0/yKREpvHFz9EoG4o7SlD+xOjAs8MO2SvKmXUepoKkRlTmhtB6Jxk3YTvoCYRjiPK4FQgjFPW2Fq1mwgvq8EDZNYFJDn7HjM5PcCUp8N1Epvxp4Ex3vt2bGqlVOXBeAJ85Py/uYot8r1qWKCH7rBhtTISIxzuxpZxcb9QSgpqaDlj27vIVLLXlRasdz2NblsHot1B8/rAOEDzkVOIyMS42AF4Rdeonk8MiUEJIADBwkbksb1aqUm1p1/8ZrCCYB+R/JfRiODvSc2qnJcCeFj+dq7SNgGF7PxmckhXAsYUYjEppDkz1X3AozpBJXrPmvGbqtUa5JP7hQCTleaMqZ8lOBXKVT9aCrmZ9wYKFYkkOZbM/NvjHu2kX8zdh9fIVzt1guJ4bxuY8xYfIBJM4Tnv/FI9H/W+KZm3/7IS71d+roV1buONLSMitdGIycR/O4IVjOUB6KSWNv830AmWnogxHM1FLXLE7HnQQ4HGwZeslzJGz1QN1ygbRRZNa0gNtv3Ehf3wpL9IsxyFJrpR8nBhBeE53ZGp9yap7jltC2u9LegirR70IFgpN/4LPVx8jO63JJnqkzMIFDiNw8g0I+2OeIpDC2DLY3ox2JaqKq/8PJESp2YnITsRQyRsy5VQAijmP0WCt3OEUkXeld1V6jc=
