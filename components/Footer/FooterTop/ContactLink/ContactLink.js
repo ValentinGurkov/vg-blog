@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'next/link';
 import classes from './ContactLink.scss';
 
 const getContactdata = type => {

@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import PropTypes from 'prop-types';
 import classes from './Icon.scss';
 
@@ -41,7 +40,7 @@ const Icon = props => {
   const { url, title, alt, src } = getIconProps(props.type);
   return (
     <>
-      <a href={url} title={title} target="_blank" rel="noopener">
+      <a href={url} title={title} target="_blank" rel="noopener noreferrer">
         <img className="socialIcon" src={src} alt={alt} />
       </a>
       <style jsx scoped>{classes}</style>
