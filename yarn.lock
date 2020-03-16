@@ -2940,17 +2940,17 @@ cacheable-request@^2.1.1:
     normalize-url "2.0.1"
     responselike "1.0.2"
 
-cacheable-response@^2.0.6:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/cacheable-response/-/cacheable-response-2.0.6.tgz#206d5c3d79eb283ce9ecb5edb2ddfeb5446206f0"
-  integrity sha512-65MEuXXmXVG/4iTkEcrZ5ZhDczRUNPI7giDve5yQDXwyZqRJ7PvLNNhUCx2iby3CGS9uBQr4+ej5gIIvdrNL9w==
+cacheable-response@^2.0.7:
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/cacheable-response/-/cacheable-response-2.0.7.tgz#7f9b30490321461295371ac58d7deea0060a42b7"
+  integrity sha512-8SEuNHp8UVm6lfkpiaRkySyDtpAFwl7VcDVXY6o4bN2Uky94dXx4PKvGRBcCScykwUmRT6Etv7ZuPqGFq/Cv+A==
   dependencies:
     compress-brotli "~1.2.1"
     debug-logfmt "~1.0.4"
     etag "~1.8.1"
     keyv "~4.0.0"
     normalize-url "~5.0.0"
-    pretty-ms "~6.0.0"
+    pretty-ms "~6.0.1"
 
 call-me-maybe@^1.0.1:
   version "1.0.1"
@@ -10479,10 +10479,10 @@ pretty-format@^25.1.0:
     ansi-styles "^4.0.0"
     react-is "^16.12.0"
 
-pretty-ms@~6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/pretty-ms/-/pretty-ms-6.0.0.tgz#39a0eb5f31d359bcee43c9579e6ddf4a02a82ff0"
-  integrity sha512-X5i1y9/8VuBMb9WU8zubTiLKnJG4lcKvL7eaCEVc/jpTe3aS74gCcBM6Yd1vvUDoTCXm4Y15obNS/16yB0FTaQ==
+pretty-ms@~6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/pretty-ms/-/pretty-ms-6.0.1.tgz#03ec6cfee20329f142645e63efad96bb775d3da4"
+  integrity sha512-ke4njoVmlotekHlHyCZ3wI/c5AMT8peuHs8rKJqekj/oR5G8lND2dVpicFlUz5cbZgE290vvkMuDwfj/OcW1kw==
   dependencies:
     parse-ms "^2.1.0"
 
