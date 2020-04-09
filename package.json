@@ -77,7 +77,7 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^3.0.0",
     "eslint-plugin-standard": "^4.0.1",
-    "html-webpack-plugin": "^4.0.4",
+    "html-webpack-plugin": "^4.1.0",
     "identity-obj-proxy": "^3.0.0",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-optipng": "^7.1.0",
