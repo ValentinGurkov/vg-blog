@@ -35,7 +35,7 @@
     "glob": "^7.1.6",
     "google-maps-react": "^2.0.6",
     "helmet": "^3.22.0",
-    "next": "^9.3.5",
+    "next": "^9.3.6",
     "next-offline": "^5.0.1",
     "next-optimized-images": "^2.6.0",
     "pretty-error": "^2.1.1",
