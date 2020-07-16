@@ -79,7 +79,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "html-webpack-plugin": "^4.3.0",
     "identity-obj-proxy": "^3.0.0",
-    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^7.1.0",
     "imagemin-svgo": "^8.0.0",
     "jest": "^26.1.0",
