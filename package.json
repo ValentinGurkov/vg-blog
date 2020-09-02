@@ -25,7 +25,7 @@
     "analyze:win": "set ANALYZE=true& next build"
   },
   "dependencies": {
-    "@next/bundle-analyzer": "^9.4.4",
+    "@next/bundle-analyzer": "^9.5.3",
     "babel-plugin-root-import": "^6.5.0",
     "cacheable-response": "^2.1.0",
     "compression": "^1.7.4",
