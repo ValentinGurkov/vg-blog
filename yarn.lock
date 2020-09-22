@@ -3135,16 +3135,16 @@ cacheable-request@^2.1.1:
     normalize-url "2.0.1"
     responselike "1.0.2"
 
-cacheable-response@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/cacheable-response/-/cacheable-response-2.1.0.tgz#697147fcf126245375270cbf122c3bd69ddf30af"
-  integrity sha512-H3pc8TJwjBjl3OQ5liegGtVuW1Psjw38NLt2yxohWmqZ0gbeZVtsCeR/F4ql2Ynfz9KmhKt2CppYsJeSmlI9Ww==
+cacheable-response@^2.1.6:
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/cacheable-response/-/cacheable-response-2.1.6.tgz#b75c0bcdc50b5dd941babca96fc4c59364567306"
+  integrity sha512-BtFBdBKUGGp+pWk8mqRn0HbUS/0Pdo6m0YkmT5sYl6db2pxTeF/f+mnnNATXwbYNkMWvNzNCAWs0scKOYJAyXw==
   dependencies:
-    compress-brotli "~1.2.1"
+    compress-brotli "~1.2.2"
     debug-logfmt "~1.0.4"
     etag "~1.8.1"
-    keyv "~4.0.0"
-    normalize-url "~5.0.0"
+    keyv "~4.0.1"
+    normalize-url "~5.1.0"
     pretty-ms "~7.0.0"
 
 call-me-maybe@^1.0.1:
@@ -3653,10 +3653,10 @@ compose-function@3.0.3:
   dependencies:
     arity-n "^1.0.4"
 
-compress-brotli@~1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/compress-brotli/-/compress-brotli-1.2.1.tgz#7456043257a2f17a4299626372b8f7f7378de4f3"
-  integrity sha512-VEJA1F1P8w9EggqO0TtvDCSFQuQ0c6EB7JFDXq60US6s8VxD6pjWWxhDqpXF3hRO5wSOCGqGDirqARjlvipeKg==
+compress-brotli@~1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/compress-brotli/-/compress-brotli-1.2.2.tgz#69770c223440f32e839ab774e5a87252d24c1a6c"
+  integrity sha512-lT7wgpZ/WNkvzeciuHkPj2pDB+fhrzZ9ImxwQZhrVbyKI6MuFwcogrKvBNgpc/O099mBbOYFiG3O4ZiZZe+1QA==
   dependencies:
     json-buffer "~3.0.1"
 
@@ -8032,10 +8032,10 @@ keyv@3.0.0:
   dependencies:
     json-buffer "3.0.0"
 
-keyv@~4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/keyv/-/keyv-4.0.0.tgz#2d1dab694926b2d427e4c74804a10850be44c12f"
-  integrity sha512-U7ioE8AimvRVLfw4LffyOIRhL2xVgmE8T22L6i0BucSnBUyv4w+I7VN/zVZwRKHOI6ZRUcdMdWHQ8KSUvGpEog==
+keyv@~4.0.1:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/keyv/-/keyv-4.0.3.tgz#4f3aa98de254803cafcd2896734108daa35e4254"
+  integrity sha512-zdGa2TOpSZPq5mU6iowDARnMBZgtCqJ11dJROFi6tg6kTn4nuUdU09lFyLFSaHrWqpIJ+EBq4E8/Dc0Vx5vLdA==
   dependencies:
     json-buffer "3.0.1"
 
@@ -9205,10 +9205,10 @@ normalize-url@^3.0.0:
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-3.3.0.tgz#b2e1c4dc4f7c6d57743df733a4f5978d18650559"
   integrity sha512-U+JJi7duF1o+u2pynbp2zXDW2/PADgC30f0GsHZtRh+HOcXHnw137TrNlyxxRvWW5fjKd3bcLHPxofWuCjaeZg==
 
-normalize-url@~5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-5.0.0.tgz#f46c9dc20670495e4e18fbd1b4396e41d199f63c"
-  integrity sha512-bAEm2fx8Dq/a35Z6PIRkkBBJvR56BbEJvhpNtvCZ4W9FyORSna77fn+xtYFjqk5JpBS+fMnAOG/wFgkQBmB7hw==
+normalize-url@~5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-5.1.0.tgz#04b8f1b34ea49ff713fc20b2218eba41fb9974a3"
+  integrity sha512-UxHuSWsSAmzSqN+DSjasaZWQ3QPtEisHdlr4y9MJ5zg0RcImv5fQt8QM0izJSCdsdmhJGK+ubcTpJXwVDmwSVQ==
 
 npm-conf@^1.1.0:
   version "1.1.3"
