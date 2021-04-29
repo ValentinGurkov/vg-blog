@@ -1,0 +1,34 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "03:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: cacheable-response
+    versions:
+    - 2.1.10
+    - 2.1.11
+    - 2.1.9
+  - dependency-name: y18n
+    versions:
+    - 4.0.1
+  - dependency-name: eslint-plugin-react
+    versions:
+    - 7.22.0
+    - 7.23.0
+    - 7.23.1
+  - dependency-name: stylelint
+    versions:
+    - 13.10.0
+    - 13.11.0
+    - 13.12.0
+    - 13.9.0
+  - dependency-name: helmet
+    versions:
+    - 4.4.1
+  - dependency-name: node-notifier
+    versions:
+    - 8.0.1
